@@ -44,3 +44,27 @@ export const Button = styled.button`
     color: #111;
   }
 `;
+
+export const ButtonInside = styled.button`
+  width: 100%;
+  height: 3rem;
+  border-radius: 0.5rem;
+  background: #125570;
+  border: 2px solid;
+  margin-top: 10px;
+  border-color: #0b3140;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+
+  :focus {
+    background: #1b7ea5;
+    border: 2px solid;
+    margin-top: 10px;
+    border-color: #0b3140;
+    color: #111;
+  }
+`;

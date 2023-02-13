@@ -74,7 +74,7 @@ export const SavingPassword = styled.div`
   justify-content: space-between;
   flex-direction: row;
 
-  text {
+  div {
     cursor: pointer;
   }
 `;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import Modal from "react-modal";
 import { Link, useNavigation } from "react-router-dom";
-import { Button, MessageContainer } from "./styles";
+import { Button, ButtonInside, MessageContainer } from "./styles";
 import { useNavigate } from "react-router-dom";
 
 const customStyles = {
@@ -56,7 +56,9 @@ export function MiniModal({
           >
             <MessageContainer>
               <h3>{message}</h3>
-              <button onClick={() => closeModal(address)}>Vamos!</button>
+              <ButtonInside onClick={() => closeModal(address)}>
+                Vamos!
+              </ButtonInside>
             </MessageContainer>
           </Modal>
         </>

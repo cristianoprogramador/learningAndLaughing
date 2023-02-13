@@ -1,5 +1,5 @@
 import { ButtonView, Container } from "./styles";
-import logoImg from "../../assets/logozuado.png";
+import logoImg from "../../assets/logosemescrito.png";
 import { MiniModal } from "../../components/MiniModal";
 import { useState } from "react";
 

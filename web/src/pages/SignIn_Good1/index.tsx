@@ -7,7 +7,7 @@ import {
   CheckBox,
   SavingPassword,
 } from "./styles";
-import logoImg from "../../assets/logozuado.png";
+import logoImg from "../../assets/logosemescrito.png";
 import personSVG from "../../assets/svg/icon_person.svg";
 import passwordSVG from "../../assets/svg/icon_password.svg";
 
@@ -32,14 +32,14 @@ export function SignIn_Good1() {
           <CheckBox>
             <input type="checkbox" /> Lembrar-me
           </CheckBox>
-          <text>Esqueceu a senha?</text>
+          <div>Esqueceu a senha?</div>
         </SavingPassword>
         <ButtonView>
           <MiniModal
             goodLooking={true}
-            address="/SignIn_Good1"
+            address="/Home"
             title={"Acessar"}
-            message={`Melhorou? Vamos continuar...`}
+            message={"Melhorou? \n Vamos continuar..."}
           />
         </ButtonView>
       </InputView>
