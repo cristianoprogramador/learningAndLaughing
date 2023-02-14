@@ -2,6 +2,10 @@ import styled from "styled-components";
 
 export const Container = styled.main`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   height: 100vh;
   background-image: linear-gradient(
     to right top,
@@ -51,6 +55,8 @@ export const EmailView = styled.div`
   border-radius: 0.5rem;
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const PasswordView = styled.div`
@@ -61,6 +67,8 @@ export const PasswordView = styled.div`
   border-radius: 0.5rem;
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   gap: 1rem;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ButtonView = styled.div`

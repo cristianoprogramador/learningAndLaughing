@@ -4,6 +4,7 @@ export const Container = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   margin: 0 3rem;
 `;
 
@@ -12,6 +13,9 @@ export const IconView = styled.div`
   height: 3em;
   width: 3em;
   border-radius: 30px;
+  align-items: center;
+  justify-content: center;
+
   align-self: center;
   cursor: pointer;
 
@@ -25,15 +29,19 @@ export const IconView = styled.div`
 export const LeftSide = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const LogoView = styled.div`
   display: flex;
   flex-direction: row;
+  align-items: center;
 `;
 
 export const ImageLogo = styled.img`
   height: 4em;
+  justify-content: center;
+  align-items: center;
 `;
 
 export const Center = styled.div``;
@@ -51,4 +59,8 @@ export const RightSide = styled.div`
 
 export const ButtonProfile = styled.div`
   cursor: pointer;
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
 `;

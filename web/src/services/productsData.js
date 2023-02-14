@@ -1,3 +1,22 @@
+import phone0 from "../assets/products/phone0.jpg";
+import phone1 from "../assets/products/phone1.jpg";
+import phone2 from "../assets/products/phone2.jpg";
+import phone3 from "../assets/products/phone3.jpeg";
+import phone4 from "../assets/products/phone4.jpg";
+import phone5 from "../assets/products/phone5.jpg";
+import phone6 from "../assets/products/phone6.jpg";
+import monitor0 from "../assets/products/monitor0.jpg";
+import monitor1 from "../assets/products/monitor1.jpg";
+import monitor2 from "../assets/products/monitor2.jpg";
+import monitor3 from "../assets/products/monitor3.jpg";
+import monitor4 from "../assets/products/monitor4.jpg";
+import monitor5 from "../assets/products/monitor5.jpg";
+import vga1 from "../assets/products/vga1.jpg";
+import vga2 from "../assets/products/vga2.jpg";
+import vga3 from "../assets/products/vga3.jpg";
+import vga4 from "../assets/products/vga4.jpg";
+import vga5 from "../assets/products/vga5.jpg";
+
 export const products = [
   {
     id: "0",
@@ -6,7 +25,7 @@ export const products = [
     brand: "Vivo",
     type: "smartphone",
     special: "bestsellers",
-    image: "../assets/products/phone0.jpg",
+    image: phone0,
   },
   {
     id: "1",
@@ -15,7 +34,7 @@ export const products = [
     brand: "Vivo",
     type: "smartphone",
     special: "dailyoffer",
-    image: "../assets/products/phone1.jpg",
+    image: phone1,
   },
   {
     id: "2",
@@ -24,7 +43,7 @@ export const products = [
     brand: "Lenovo",
     type: "smartphone",
     special: "bestsellers",
-    image: "../assets/products/phone2.jpg",
+    image: phone2,
   },
   {
     id: "3",
@@ -33,7 +52,7 @@ export const products = [
     brand: "Xiaomi",
     type: "smartphone",
     special: "normal",
-    image: "../assets/products/phone3.jpeg",
+    image: phone3,
   },
   {
     id: "4",
@@ -42,7 +61,7 @@ export const products = [
     brand: "Asus",
     type: "smartphone",
     special: "normal",
-    image: "../assets/products/phone4.jpg",
+    image: phone4,
   },
   {
     id: "5",
@@ -50,8 +69,8 @@ export const products = [
     price: "1.222,00",
     brand: "Xiaomi",
     type: "smartphone",
-    special: "normal",
-    image: "../assets/products/phone5.jpg",
+    special: "bestsellers",
+    image: phone5,
   },
   {
     id: "6",
@@ -59,8 +78,8 @@ export const products = [
     price: "1.990,00",
     brand: "Nubia",
     type: "smartphone",
-    special: "normal",
-    image: "../assets/products/phone6.jpg",
+    special: "dailyoffer",
+    image: phone6,
   },
   {
     id: "7",
@@ -69,7 +88,7 @@ export const products = [
     brand: "BenQ",
     type: "monitor",
     special: "bestsellers",
-    image: "../assets/products/monitor0.jpg",
+    image: monitor0,
   },
   {
     id: "8",
@@ -77,8 +96,8 @@ export const products = [
     price: "2.590,00",
     brand: "LG",
     type: "monitor",
-    special: "normal",
-    image: "../assets/products/monitor1.jpg",
+    special: "dailyoffer",
+    image: monitor1,
   },
   {
     id: "9",
@@ -87,7 +106,7 @@ export const products = [
     brand: "Dell",
     type: "monitor",
     special: "dailyoffer",
-    image: "../assets/products/monitor2.jpg",
+    image: monitor2,
   },
   {
     id: "10",
@@ -95,8 +114,8 @@ export const products = [
     price: "2.150,00",
     brand: "AOC",
     type: "monitor",
-    special: "normal",
-    image: "../assets/products/monitor3.jpg",
+    special: "bestsellers",
+    image: monitor3,
   },
   {
     id: "11",
@@ -104,8 +123,8 @@ export const products = [
     price: "1.150,00",
     brand: "BenQ",
     type: "monitor",
-    special: "normal",
-    image: "../assets/products/monitor4.jpg",
+    special: "dailyoffer",
+    image: monitor4,
   },
   {
     id: "12",
@@ -114,7 +133,7 @@ export const products = [
     brand: "Acer",
     type: "monitor",
     special: "bestsellers",
-    image: "../assets/products/monitor5.jpg",
+    image: monitor5,
   },
   {
     id: "13",
@@ -123,7 +142,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
-    image: "../assets/products/vga1.jpg",
+    image: vga1,
   },
   {
     id: "14",
@@ -132,7 +151,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
-    image: "../assets/products/vga2.jpg",
+    image: vga2,
   },
   {
     id: "15",
@@ -141,7 +160,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
-    image: "../assets/products/vga3.jpg",
+    image: vga3,
   },
   {
     id: "16",
@@ -150,7 +169,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
-    image: "../assets/products/vga4.jpg",
+    image: vga4,
   },
   {
     id: "17",
@@ -158,7 +177,7 @@ export const products = [
     price: "2.780,00",
     brand: "AMD",
     type: "placa de video",
-    special: "normal",
-    image: "../assets/products/vga5.jpg",
+    special: "bestsellers",
+    image: vga5,
   },
 ];

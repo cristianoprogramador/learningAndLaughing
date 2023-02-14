@@ -3,6 +3,7 @@ import {
   Container,
   ImageContainer,
   OptionContainer,
+  SelectionContainer,
   TitleSelection,
 } from "./styles";
 import SuperMarketImage from "../../assets/images/supermarket.jpg";
@@ -22,7 +23,7 @@ export function Home() {
       <Header />
       <TitleSelection>
         {optionSelected === "0" ? (
-          <>
+          <SelectionContainer>
             <h1>Selecione o tipo de Conteúdo:</h1>
             <ImageContainer>
               <OptionContainer onClick={() => handleSelection("super")}>
@@ -34,7 +35,7 @@ export function Home() {
                 <h3>Videos de Cursos</h3>
               </OptionContainer>
             </ImageContainer>
-          </>
+          </SelectionContainer>
         ) : (
           <SuperMarket />
         )}

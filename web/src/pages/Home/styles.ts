@@ -1,16 +1,30 @@
 import styled from "styled-components";
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
 
 export const TitleSelection = styled.div`
   display: flex;
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const SelectionContainer = styled.div`
+  display: flex;
+  flex-direction: column;
   height: calc(100vh - 4rem);
+  justify-content: center;
+  align-items: center;
 `;
 
 export const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+
+  justify-content: center;
+  align-items: center;
 
   gap: 50px;
 
@@ -26,6 +40,10 @@ export const ImageContainer = styled.div`
 
 export const OptionContainer = styled.div`
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   gap: 20px;
 
   h3 {
