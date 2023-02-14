@@ -6,7 +6,7 @@ export const products = [
     brand: "Vivo",
     type: "smartphone",
     special: "bestsellers",
-    image: require("../assets/products/phone0.jpg"),
+    image: "../assets/products/phone0.jpg",
   },
   {
     id: "1",
@@ -15,7 +15,7 @@ export const products = [
     brand: "Vivo",
     type: "smartphone",
     special: "dailyoffer",
-    image: require("../assets/products/phone1.jpg"),
+    image: "../assets/products/phone1.jpg",
   },
   {
     id: "2",
@@ -24,7 +24,7 @@ export const products = [
     brand: "Lenovo",
     type: "smartphone",
     special: "bestsellers",
-    image: require("../assets/products/phone2.jpg"),
+    image: "../assets/products/phone2.jpg",
   },
   {
     id: "3",
@@ -33,7 +33,7 @@ export const products = [
     brand: "Xiaomi",
     type: "smartphone",
     special: "normal",
-    image: require("../assets/products/phone3.jpeg"),
+    image: "../assets/products/phone3.jpeg",
   },
   {
     id: "4",
@@ -42,7 +42,7 @@ export const products = [
     brand: "Asus",
     type: "smartphone",
     special: "normal",
-    image: require("../assets/products/phone4.jpg"),
+    image: "../assets/products/phone4.jpg",
   },
   {
     id: "5",
@@ -51,7 +51,7 @@ export const products = [
     brand: "Xiaomi",
     type: "smartphone",
     special: "normal",
-    image: require("../assets/products/phone5.jpg"),
+    image: "../assets/products/phone5.jpg",
   },
   {
     id: "6",
@@ -60,7 +60,7 @@ export const products = [
     brand: "Nubia",
     type: "smartphone",
     special: "normal",
-    image: require("../assets/products/phone6.jpg"),
+    image: "../assets/products/phone6.jpg",
   },
   {
     id: "7",
@@ -69,7 +69,7 @@ export const products = [
     brand: "BenQ",
     type: "monitor",
     special: "bestsellers",
-    image: require("../assets/products/monitor0.jpg"),
+    image: "../assets/products/monitor0.jpg",
   },
   {
     id: "8",
@@ -78,7 +78,7 @@ export const products = [
     brand: "LG",
     type: "monitor",
     special: "normal",
-    image: require("../assets/products/monitor1.jpg"),
+    image: "../assets/products/monitor1.jpg",
   },
   {
     id: "9",
@@ -87,7 +87,7 @@ export const products = [
     brand: "Dell",
     type: "monitor",
     special: "dailyoffer",
-    image: require("../assets/products/monitor2.jpg"),
+    image: "../assets/products/monitor2.jpg",
   },
   {
     id: "10",
@@ -96,6 +96,7 @@ export const products = [
     brand: "AOC",
     type: "monitor",
     special: "normal",
+    image: "../assets/products/monitor3.jpg",
   },
   {
     id: "11",
@@ -104,6 +105,7 @@ export const products = [
     brand: "BenQ",
     type: "monitor",
     special: "normal",
+    image: "../assets/products/monitor4.jpg",
   },
   {
     id: "12",
@@ -112,14 +114,16 @@ export const products = [
     brand: "Acer",
     type: "monitor",
     special: "bestsellers",
+    image: "../assets/products/monitor5.jpg",
   },
   {
     id: "13",
-    name: " GeForce RTX 4090",
+    name: "GeForce RTX 4090",
     price: "7.150,00",
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
+    image: "../assets/products/vga1.jpg",
   },
   {
     id: "14",
@@ -128,6 +132,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
+    image: "../assets/products/vga2.jpg",
   },
   {
     id: "15",
@@ -136,6 +141,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
+    image: "../assets/products/vga3.jpg",
   },
   {
     id: "16",
@@ -144,6 +150,7 @@ export const products = [
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
+    image: "../assets/products/vga4.jpg",
   },
   {
     id: "17",
@@ -152,5 +159,6 @@ export const products = [
     brand: "AMD",
     type: "placa de video",
     special: "normal",
+    image: "../assets/products/vga5.jpg",
   },
 ];

@@ -4,7 +4,7 @@ export const Container = styled.div``;
 
 export const TitleSelection = styled.div`
   display: flex;
-  height: calc(100vh - 6.5rem);
+  height: calc(100vh - 4rem);
 `;
 
 export const ImageContainer = styled.div`
