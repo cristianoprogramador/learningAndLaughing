@@ -13,7 +13,7 @@ import { FiMenu } from "react-icons/fi";
 import { FaBell } from "react-icons/fa";
 import logoImg from "../../assets/logozuado.png";
 import { SearchBar } from "../SearchBar";
-import React from "react";
+import { useState } from "react";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
@@ -22,8 +22,8 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { DrawerMenu } from "../DrawerMenu";
 
-export function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
+export function Header(props: any) {
+  const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
@@ -42,7 +42,7 @@ export function Header() {
             backgroundColor: "black",
           }}
         >
-          <DrawerMenu />
+          <DrawerMenu closeDrawer={(data: boolean) => setIsOpen(data)} />
         </Drawer>
         <LogoView>
           <ImageLogo src={logoImg} alt="logo" />

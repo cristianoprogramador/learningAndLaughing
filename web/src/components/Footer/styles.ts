@@ -8,6 +8,8 @@ export const Container = styled.main`
   align-items: center;
   background-color: ${(props) => props.theme["gray-800"]};
   margin-top: 40px;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
 `;
 
 export const LogoView = styled.div`

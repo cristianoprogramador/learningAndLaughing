@@ -1,15 +1,8 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+export const Container = styled.div``;
 
-export const TitleSelection = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-`;
+export const TitleSelection = styled.div``;
 
 export const SelectionContainer = styled.div`
   display: flex;

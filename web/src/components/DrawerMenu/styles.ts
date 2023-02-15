@@ -6,13 +6,15 @@ export const Container = styled.div`
 export const CloseButton = styled.div`
   position: absolute;
   font-size: xx-large;
-  background-color: gray;
+  background-color: ${(props) => props.theme["gray-800"]};
   text-align: center;
   height: 40px;
   width: 40px;
   border-radius: 20px;
   top: 10px;
   right: 10px;
+
+  cursor: pointer;
 `;
 
 export const TitleDrawer = styled.div`
@@ -33,7 +35,6 @@ export const ImageLogo = styled.img`
 export const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  margin-top: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid gray;
 `;
@@ -43,8 +44,10 @@ export const Categories = styled.div`
 `;
 
 export const TitleSelection = styled.h2`
-  margin-left: 10px;
+  padding-left: 10px;
   margin-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
   border-bottom: 1px solid gray;
+
+  cursor: pointer;
 `;

@@ -26,6 +26,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
 
 export function SuperMarket() {
   const dailyOfferProducts = products.filter(
@@ -41,6 +42,7 @@ export function SuperMarket() {
 
   return (
     <Container>
+      <Header />
       <Title>MARKETPLACE</Title>
       <LowText>MELHORES PRODUTOS & MELHORES PREÇOS</LowText>
       <GeneralInfo>

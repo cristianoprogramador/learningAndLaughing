@@ -9,24 +9,27 @@ import {
 } from "./styles";
 import market from "../../assets/images/market.png";
 import { typeOfProduct } from "../../services/typeOfProductData.js";
+import { useNavigate } from "react-router-dom";
 
-export function DrawerMenu() {
+export function DrawerMenu(props: any) {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <TitleDrawer>
         <ImageLogo src={market} alt="logo" />
-        <CloseButton>X</CloseButton>
-        <h1>MarketPlace</h1>
+        <CloseButton onClick={() => props.closeDrawer(false)}>X</CloseButton>
+        <h1 style={{ marginTop: 10 }}>MarketPlace</h1>
       </TitleDrawer>
-      <TitleSelection>Início</TitleSelection>
+      <TitleSelection onClick={() => navigate("/Home")}>Início</TitleSelection>
 
       <OptionsContainer>
-        <h2 style={{ marginLeft: 10 }}>Categorias</h2>
+        <TitleSelection>Categorias</TitleSelection>
 
         {typeOfProduct.map((product, index) => {
           return (
             <Categories key={product.id}>
-              <h3 style={{ marginLeft: 25, color: "gray" }}>
+              <h3 style={{ marginLeft: 25, color: "gray", cursor: "pointer" }}>
                 {product.type.toLowerCase()}
               </h3>
             </Categories>
