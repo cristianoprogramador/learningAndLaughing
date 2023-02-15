@@ -30,6 +30,14 @@ export const SectionTitle = styled.h1`
   width: 80%;
 `;
 
+export const SectionTitleSecond = styled.h1`
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  width: 80%;
+  margin-top: 3rem;
+`;
+
 export const GeneralInfo = styled.main`
   background-color: ${(props) => props.theme["gray-700"]};
   border-radius: 0.4rem;
@@ -62,6 +70,9 @@ export const ContainerDailyOffers = styled(SwiperSlide)`
   flex-direction: column;
   margin-top: 1rem;
 
+  background-color: ${(props) => props.theme["gray-800"]};
+  border-radius: 1rem;
+
   img {
     align-self: center;
     height: 250px;
@@ -69,13 +80,13 @@ export const ContainerDailyOffers = styled(SwiperSlide)`
     object-fit: contain;
     border-radius: 10px;
     cursor: pointer;
-    background-color: ${(props) => props.theme["gray-700"]};
   }
 
   h2 {
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
+    color: ${(props) => props.theme["green-700"]};
   }
 
   h3 {
@@ -89,6 +100,9 @@ export const BestSellers = styled(SwiperSlide)`
   flex-direction: column;
   margin-top: 1rem;
 
+  background-color: ${(props) => props.theme["gray-800"]};
+  border-radius: 1rem;
+
   img {
     align-self: center;
     height: 250px;
@@ -103,11 +117,16 @@ export const BestSellers = styled(SwiperSlide)`
     justify-content: flex-start;
     align-items: flex-start;
     align-self: flex-start;
+    color: ${(props) => props.theme["green-700"]};
   }
 
   h3 {
     text-align: left;
   }
-`;
 
-export const Categories = styled.div``;
+  h1 {
+    font-size: x-large;
+    text-align: center;
+    margin-top: 15px;
+  }
+`;

@@ -1,6 +1,5 @@
 import {
   BestSellers,
-  Categories,
   Container,
   ContainerDailyOffers,
   DailyOffers,
@@ -8,11 +7,13 @@ import {
   InfoAndIcon,
   LowText,
   SectionTitle,
+  SectionTitleSecond,
   Title,
 } from "./styles";
 
 import { FaHandshake, FaRegCreditCard, FaMobileAlt } from "react-icons/fa";
 import { products } from "../../services/productsData.js";
+import { typeOfProduct } from "../../services/typeOfProductData.js";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -81,7 +82,7 @@ export function SuperMarket() {
         })}
       </Swiper>
 
-      <SectionTitle>Produtos mais vendidos</SectionTitle>
+      <SectionTitleSecond>Produtos mais vendidos</SectionTitleSecond>
 
       <Swiper
         style={{
@@ -107,7 +108,32 @@ export function SuperMarket() {
           );
         })}
       </Swiper>
-      <Categories></Categories>
+
+      <SectionTitleSecond>
+        Selecione uma das categorias abaixo:
+      </SectionTitleSecond>
+
+      <Swiper
+        style={{
+          height: "430px",
+          width: "80%",
+        }}
+        modules={[Navigation, Pagination]}
+        spaceBetween={20}
+        slidesPerView={5}
+        navigation
+        onSwiper={(swiper) => console.log(swiper)}
+        onSlideChange={() => console.log("slide change")}
+      >
+        {typeOfProduct.map((product, index) => {
+          return (
+            <BestSellers key={product.id}>
+              <img src={product.image} alt="" />
+              <h1> {product.type.toUpperCase()} </h1>
+            </BestSellers>
+          );
+        })}
+      </Swiper>
     </Container>
   );
 }

@@ -16,6 +16,15 @@ import vga2 from "../assets/products/vga2.jpg";
 import vga3 from "../assets/products/vga3.jpg";
 import vga4 from "../assets/products/vga4.jpg";
 import vga5 from "../assets/products/vga5.jpg";
+import game0 from "../assets/products/game0.jpg";
+import game1 from "../assets/products/game1.jpg";
+import game2 from "../assets/products/game2.jpg";
+import game3 from "../assets/products/game3.jpg";
+import game4 from "../assets/products/game4.jpg";
+import game5 from "../assets/products/game5.jpg";
+import tv0 from "../assets/products/tv0.jpg";
+import tv1 from "../assets/products/tv1.jpg";
+import tv2 from "../assets/products/tv2.jpg";
 
 export const products = [
   {
@@ -179,5 +188,86 @@ export const products = [
     type: "placa de video",
     special: "bestsellers",
     image: vga5,
+  },
+  {
+    id: "18",
+    name: "Controle Playstation 4",
+    price: "400,00",
+    brand: "Sony",
+    type: "videogame",
+    special: "bestsellers",
+    image: game0,
+  },
+  {
+    id: "19",
+    name: "Controle Playstation 5",
+    price: "500,00",
+    brand: "Sony",
+    type: "videogame",
+    special: "bestsellers",
+    image: game1,
+  },
+  {
+    id: "20",
+    name: "Controle Xbox One",
+    price: "350,00",
+    brand: "Microsoft",
+    type: "videogame",
+    special: "dailyoffer",
+    image: game2,
+  },
+  {
+    id: "21",
+    name: "Controle Xbox Series X",
+    price: "450,00",
+    brand: "Microsoft",
+    type: "videogame",
+    special: "normal",
+    image: game3,
+  },
+  {
+    id: "22",
+    name: "Xbox Series X",
+    price: "4.000,00",
+    brand: "Microsoft",
+    type: "videogame",
+    special: "dailyoffer",
+    image: game4,
+  },
+  {
+    id: "23",
+    name: "Playstation 5",
+    price: "4.450,00",
+    brand: "Sony",
+    type: "videogame",
+    special: "normal",
+    image: game5,
+  },
+  {
+    id: "24",
+    name: "LG Smart TV OLED 55 4K",
+    price: "7.600,00",
+    brand: "LG",
+    type: "smart TV",
+    special: "normal",
+    image: tv0,
+  },
+  {
+    id: "25",
+    name: "Samsung Smart TV 55 QLED 4K",
+    price: "6.600,00",
+    brand: "Samsung",
+    type: "smart TV",
+    special: "normal",
+    image: tv1,
+  },
+  {
+    id: "25",
+    name: "Smart TV AOC 43 Full HD ROKU TV",
+    price: "2.010,00",
+    brand: "AOC",
+    type: "smart TV",
+    special: "normal",
+    image: tv2,
   },
 ];
