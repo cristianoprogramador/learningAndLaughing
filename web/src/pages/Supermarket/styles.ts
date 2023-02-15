@@ -13,6 +13,11 @@ export const Title = styled.h1`
   margin-top: 1rem;
 `;
 
+export const TextContainer = styled.div`
+  margin-left: 1rem;
+  margin-top: 1rem;
+`;
+
 export const LowText = styled.h3`
   justify-content: center;
   align-items: center;

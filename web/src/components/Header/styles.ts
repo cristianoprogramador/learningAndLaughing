@@ -1,11 +1,16 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
+  width: 100%;
   display: flex;
+  position: sticky;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  margin: 0 3rem;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  background: ${(props) => props.theme["gray-900"]};
 `;
 
 export const IconView = styled.div`

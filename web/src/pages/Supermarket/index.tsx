@@ -8,6 +8,7 @@ import {
   LowText,
   SectionTitle,
   SectionTitleSecond,
+  TextContainer,
   Title,
 } from "./styles";
 
@@ -24,6 +25,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
+import { Footer } from "../../components/Footer";
 
 export function SuperMarket() {
   const dailyOfferProducts = products.filter(
@@ -61,6 +63,7 @@ export function SuperMarket() {
         style={{
           height: "400px",
           width: "80%",
+          paddingBottom: 20,
         }}
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -73,10 +76,12 @@ export function SuperMarket() {
           return (
             <ContainerDailyOffers key={product.id}>
               <img src={product.image} alt="" />
-              <h3>{product.name}</h3>
-              <h2>{product.price}</h2>
-              <h4>{product.type}</h4>
-              <h4>{product.brand}</h4>
+              <TextContainer>
+                <h3>{product.name}</h3>
+                <h2>{product.price}</h2>
+                <h4>{product.type}</h4>
+                <h4>{product.brand}</h4>
+              </TextContainer>
             </ContainerDailyOffers>
           );
         })}
@@ -86,8 +91,9 @@ export function SuperMarket() {
 
       <Swiper
         style={{
-          height: "430px",
+          height: "400px",
           width: "80%",
+          paddingBottom: 20,
         }}
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -100,10 +106,12 @@ export function SuperMarket() {
           return (
             <BestSellers key={product.id}>
               <img src={product.image} alt="" />
-              <h3>{product.name}</h3>
-              <h2>{product.price}</h2>
-              <h4>{product.type}</h4>
-              <h4>{product.brand}</h4>
+              <TextContainer>
+                <h3>{product.name}</h3>
+                <h2>{product.price}</h2>
+                <h4>{product.type}</h4>
+                <h4>{product.brand}</h4>
+              </TextContainer>
             </BestSellers>
           );
         })}
@@ -115,8 +123,9 @@ export function SuperMarket() {
 
       <Swiper
         style={{
-          height: "430px",
+          height: "320px",
           width: "80%",
+          paddingBottom: 20,
         }}
         modules={[Navigation, Pagination]}
         spaceBetween={20}
@@ -134,6 +143,8 @@ export function SuperMarket() {
           );
         })}
       </Swiper>
+
+      <Footer />
     </Container>
   );
 }
