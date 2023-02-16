@@ -118,7 +118,11 @@ export function SuperMarket() {
           return (
             <BestSellers
               key={product.id}
-              onClick={() => navigate("/SuperMarket/ProductInfo")}
+              onClick={() =>
+                navigate("/SuperMarket/ProductInfo", {
+                  state: product,
+                })
+              }
             >
               <img src={product.image} alt="" />
               <TextContainer>
