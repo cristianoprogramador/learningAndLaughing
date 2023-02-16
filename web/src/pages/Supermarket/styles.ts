@@ -77,6 +77,7 @@ export const ContainerDailyOffers = styled(SwiperSlide)`
 
   background-color: ${(props) => props.theme["gray-800"]};
   border-radius: 1rem;
+  cursor: pointer;
 
   img {
     align-self: center;
@@ -107,6 +108,7 @@ export const BestSellers = styled(SwiperSlide)`
 
   background-color: ${(props) => props.theme["gray-800"]};
   border-radius: 1rem;
+  cursor: pointer;
 
   img {
     align-self: center;

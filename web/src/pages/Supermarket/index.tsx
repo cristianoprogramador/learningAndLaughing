@@ -27,8 +27,11 @@ import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
+import { useNavigate } from "react-router-dom";
 
 export function SuperMarket() {
+  const navigate = useNavigate();
+
   const dailyOfferProducts = products.filter(
     (product) => product.special === "dailyoffer"
   );
@@ -37,8 +40,8 @@ export function SuperMarket() {
     (product) => product.special === "bestsellers"
   );
 
-  console.log(dailyOfferProducts);
-  console.log(products);
+  // console.log(dailyOfferProducts);
+  // console.log(products);
 
   return (
     <Container>
@@ -71,12 +74,19 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         {dailyOfferProducts.map((product, index) => {
           return (
-            <ContainerDailyOffers key={product.id}>
+            <ContainerDailyOffers
+              key={product.id}
+              onClick={() =>
+                navigate("/SuperMarket/ProductInfo", {
+                  state: product,
+                })
+              }
+            >
               <img src={product.image} alt="" />
               <TextContainer>
                 <h3>{product.name}</h3>
@@ -101,12 +111,15 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         {bestSellersProducts.map((product, index) => {
           return (
-            <BestSellers key={product.id}>
+            <BestSellers
+              key={product.id}
+              onClick={() => navigate("/SuperMarket/ProductInfo")}
+            >
               <img src={product.image} alt="" />
               <TextContainer>
                 <h3>{product.name}</h3>
@@ -133,8 +146,8 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log("slide change")}
+        // onSwiper={(swiper) => console.log(swiper)}
+        // onSlideChange={() => console.log("slide change")}
       >
         {typeOfProduct.map((product, index) => {
           return (
