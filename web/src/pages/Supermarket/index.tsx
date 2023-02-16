@@ -28,9 +28,11 @@ import "swiper/css/scrollbar";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { useNavigate } from "react-router-dom";
+import { useState } from "react";
 
 export function SuperMarket() {
   const navigate = useNavigate();
+  const [filtered, setFiltered] = useState();
 
   const dailyOfferProducts = products.filter(
     (product) => product.special === "dailyoffer"
@@ -40,13 +42,10 @@ export function SuperMarket() {
     (product) => product.special === "bestsellers"
   );
 
-  // console.log(dailyOfferProducts);
-  // console.log(products);
-
   return (
     <Container>
       <Header />
-      <Title>MARKETPLACE</Title>
+      <Title>SUPERMARKET</Title>
       <LowText>MELHORES PRODUTOS & MELHORES PREÇOS</LowText>
       <GeneralInfo>
         <InfoAndIcon>
@@ -155,7 +154,15 @@ export function SuperMarket() {
       >
         {typeOfProduct.map((product, index) => {
           return (
-            <BestSellers key={product.id}>
+            <BestSellers
+              key={product.id}
+              // onClick={() => handleFilter(product.type)}
+              onClick={() =>
+                navigate("/SuperMarket/ProductsFiltered", {
+                  state: product.type,
+                })
+              }
+            >
               <img src={product.image} alt="" />
               <h1> {product.type.toUpperCase()} </h1>
             </BestSellers>

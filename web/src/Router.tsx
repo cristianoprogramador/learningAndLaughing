@@ -4,6 +4,7 @@ import { SignIn_Bad1 } from "./pages/SignIn_Bad1";
 import { SignIn_Good1 } from "./pages/SignIn_Good1";
 import { SuperMarket } from "./pages/Supermarket";
 import { ProductInfo } from "./pages/Supermarket/ProductInfo";
+import { ProductsFiltered } from "./pages/Supermarket/ProductsFiltered";
 
 export function Router() {
   return (
@@ -13,6 +14,10 @@ export function Router() {
       <Route path="/Home" element={<Home />} />
       <Route path="/SuperMarket" element={<SuperMarket />} />
       <Route path="/SuperMarket/ProductInfo" element={<ProductInfo />} />
+      <Route
+        path="/SuperMarket/ProductsFiltered"
+        element={<ProductsFiltered />}
+      />
     </Routes>
   );
 }

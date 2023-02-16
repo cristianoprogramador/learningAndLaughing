@@ -45,9 +45,14 @@ export const Categories = styled.div`
 
 export const TitleSelection = styled.h2`
   padding-left: 10px;
-  margin-top: 2rem;
-  padding-bottom: 2rem;
+  margin-top: 1.5rem;
+  padding-bottom: 1.5rem;
   border-bottom: 1px solid gray;
 
+  cursor: pointer;
+`;
+export const TitleSelectionCategories = styled.h2`
+  padding-left: 10px;
+  margin-top: 1.5rem;
   cursor: pointer;
 `;

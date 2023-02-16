@@ -7,7 +7,7 @@ export const Container = styled.main`
   justify-content: space-around;
   align-items: center;
   background-color: ${(props) => props.theme["gray-800"]};
-  margin-top: 40px;
+  margin-top: 110px;
   padding-bottom: 1rem;
   padding-top: 1rem;
 `;

@@ -14,12 +14,22 @@ import {
 
 import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { BsPin, BsTruck } from "react-icons/bs";
 import { Button } from "../../../components/Button";
+import { useEffect } from "react";
 
 export function ProductInfo() {
   const { state } = useLocation();
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (!state) {
+      navigate("/SuperMarket");
+    }
+  }, []);
+
+  if (!state) return <></>;
 
   const teste = Number(state.price.replace(/[^0-9.-]+/g, ""));
 
@@ -55,10 +65,10 @@ export function ProductInfo() {
             <text className="price">{state.price}</text>
             <text>
               ou em 10 vezes <strong>(SEM JUROS)</strong> por:
-              <h3>
-                <strong>{valorFormatado}</strong>
-              </h3>
             </text>
+            <h3 style={{ margin: 10 }}>
+              <strong>{valorFormatado}</strong>
+            </h3>
             <text className="description">Descrição:</text>
             <text className="description">{state.description}</text>
           </ProductDetails>
