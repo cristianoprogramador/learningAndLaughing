@@ -18,9 +18,10 @@ const customStyles = {
 
 interface MiniModalProps {
   title: string;
-  message: string;
+  message?: string;
   address?: string | any;
   goodLooking: boolean;
+  differentColor?: boolean;
 }
 
 export function MiniModal({
@@ -28,6 +29,7 @@ export function MiniModal({
   message,
   address,
   goodLooking,
+  differentColor,
 }: MiniModalProps) {
   const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
@@ -36,17 +38,24 @@ export function MiniModal({
     setIsOpen(true);
   }
 
-  function closeModal(address: any) {
+  function handleNavigation(address: any) {
     console.log(address);
     setIsOpen(false);
     navigate(`${address}`);
+  }
+
+  function closeModal(address: any) {
+    console.log(address);
+    setIsOpen(false);
   }
 
   return (
     <div>
       {goodLooking === true ? (
         <>
-          <Button onClick={openModal}>{title}</Button>
+          <Button onClick={openModal} differentColor={differentColor}>
+            {title}
+          </Button>
           <Modal
             ariaHideApp={false}
             isOpen={modalIsOpen}
@@ -56,7 +65,7 @@ export function MiniModal({
           >
             <MessageContainer>
               <h3>{message}</h3>
-              <ButtonInside onClick={() => closeModal(address)}>
+              <ButtonInside onClick={() => handleNavigation(address)}>
                 Vamos!
               </ButtonInside>
             </MessageContainer>
@@ -74,7 +83,9 @@ export function MiniModal({
           >
             <MessageContainer>
               <h3>{message}</h3>
-              <button onClick={() => closeModal(address)}>Ta bom né</button>
+              <button onClick={() => handleNavigation(address)}>
+                Ta bom né
+              </button>
             </MessageContainer>
           </Modal>
         </>

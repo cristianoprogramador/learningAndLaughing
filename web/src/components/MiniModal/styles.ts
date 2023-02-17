@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { ButtonHTMLAttributes } from "react";
 
 export const MessageContainer = styled.main`
   display: flex;
@@ -21,15 +22,21 @@ export const MessageContainer = styled.main`
   }
 `;
 
-export const Button = styled.button`
+interface ButtonProps {
+  differentColor?: boolean;
+}
+
+export const Button = styled.button<ButtonProps>`
   width: 100%;
   height: 3rem;
   border-radius: 0.5rem;
-  background: #125570;
+  background: ${({ differentColor }) =>
+    differentColor === true ? "#0b3646" : "#186f8f"};
   border: 2px solid;
   margin-top: 10px;
   border-color: #0b3140;
-  color: #111;
+  color: ${({ differentColor }) =>
+    differentColor === true ? "#f9f9f9" : "#0b3646"};
   font-weight: 600;
   cursor: pointer;
   justify-content: center;

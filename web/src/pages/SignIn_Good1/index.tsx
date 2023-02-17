@@ -41,7 +41,15 @@ export function SignIn_Good1() {
             title={"Acessar"}
             message={"Melhorou? \n Vamos continuar..."}
           />
+          <MiniModal
+            goodLooking={true}
+            address="/SignUp"
+            title={"Criar usuário"}
+            message={"Melhorou? \n Vamos continuar..."}
+            differentColor={true}
+          />
         </ButtonView>
+        {/* COLOCAR ICONES DE SIGNUP - FACEBOOK GITHUB GOOGLE MICROSOFT */}
       </InputView>
     </Container>
   );
