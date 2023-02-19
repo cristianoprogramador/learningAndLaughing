@@ -10,9 +10,9 @@ import {
 
 interface InputProps {
   name: string;
-  type: string;
-  label: string;
-  required: boolean;
+  type?: string;
+  label?: string;
+  required?: boolean;
 }
 
 export const Input = ({

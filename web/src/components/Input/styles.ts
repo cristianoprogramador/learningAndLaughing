@@ -22,9 +22,7 @@ export const Container = styled.div`
   width: 100%;
 `;
 
-export const Label = styled.label`
-  text-transform: capitalize;
-`;
+export const Label = styled.label``;
 
 export const RequiredLabel = styled.span`
   color: red;

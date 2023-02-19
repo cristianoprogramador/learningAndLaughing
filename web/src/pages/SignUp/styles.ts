@@ -29,6 +29,10 @@ export const InputView = styled.div`
   padding: 1.5rem 4rem 1.5rem 4rem;
   border-radius: 1rem;
   justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  width: 540px;
 
   input {
     font-size: 1rem;
@@ -38,7 +42,6 @@ export const InputView = styled.div`
     border: 0 none;
     outline: 0;
     background-color: lightgray;
-    height: 100%;
   }
 
   img {
