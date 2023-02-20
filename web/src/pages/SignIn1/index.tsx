@@ -22,7 +22,7 @@ import { MiniModal } from "../../components/MiniModal";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-export function SignIn_Good1() {
+export function SignIn1() {
   const navigate = useNavigate();
 
   return (
@@ -40,22 +40,23 @@ export function SignIn_Good1() {
         </PasswordView>
         <SavingPassword>
           <CheckBox>
-            <input type="checkbox" /> Lembrar-me
+            <input type="checkbox" id="Lembrar" name="Lembrar" />
+            <label htmlFor="Lembrar">Lembrar-me</label>
           </CheckBox>
           <div>Esqueceu a senha?</div>
         </SavingPassword>
         <ButtonView>
-          <MiniModal
+          {/* <MiniModal
             goodLooking={true}
             address="/Home"
             title={"Acessar"}
             message={"Melhorou? \n Vamos continuar..."}
-          />
+          /> */}
+          <Button onClick={() => navigate("/Home")}>Acessar</Button>
           <Button onClick={() => navigate("/SignUp")} differentColor>
             Criar usuário
           </Button>
         </ButtonView>
-        {/* COLOCAR ICONES DE SIGNUP - FACEBOOK GITHUB GOOGLE MICROSOFT */}
         <SignUpIcons>
           <img src={facebookSVG} alt="facebook" />
           <img src={githubSVG} alt="github" />

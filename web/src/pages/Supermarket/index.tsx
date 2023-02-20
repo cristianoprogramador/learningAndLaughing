@@ -89,7 +89,13 @@ export function SuperMarket() {
               <img src={product.image} alt="" />
               <TextContainer>
                 <h3>{product.name}</h3>
-                <h2>{product.price}</h2>
+                <h2>
+                  R$
+                  {Number(product.price).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </h2>
                 <h4>{product.type}</h4>
                 <h4>{product.brand}</h4>
               </TextContainer>
@@ -126,7 +132,13 @@ export function SuperMarket() {
               <img src={product.image} alt="" />
               <TextContainer>
                 <h3>{product.name}</h3>
-                <h2>{product.price}</h2>
+                <h2>
+                  R$ {"\n"}
+                  {Number(product.price).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </h2>
                 <h4>{product.type}</h4>
                 <h4>{product.brand}</h4>
               </TextContainer>

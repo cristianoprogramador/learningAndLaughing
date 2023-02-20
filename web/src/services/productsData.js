@@ -30,7 +30,7 @@ export const products = [
   {
     id: "0",
     name: "Vivo X90 Pro+",
-    price: "1.450,20",
+    price: "1450.20",
     brand: "Vivo",
     type: "smartphone",
     special: "bestsellers",
@@ -41,7 +41,7 @@ export const products = [
   {
     id: "1",
     name: "iQOO 11",
-    price: "1.150,00",
+    price: "1150.00",
     brand: "Vivo",
     type: "smartphone",
     special: "dailyoffer",
@@ -52,7 +52,7 @@ export const products = [
   {
     id: "2",
     name: "Legion Y70",
-    price: "2.330,00",
+    price: "2330.00",
     brand: "Lenovo",
     type: "smartphone",
     special: "bestsellers",
@@ -63,7 +63,7 @@ export const products = [
   {
     id: "3",
     name: "Redmi K50 Ultra",
-    price: "1.800,20",
+    price: "1800.20",
     brand: "Xiaomi",
     type: "smartphone",
     special: "normal",
@@ -74,7 +74,7 @@ export const products = [
   {
     id: "4",
     name: "ASUS Zenfone 9",
-    price: "1.700,00",
+    price: "1700.00",
     brand: "Asus",
     type: "smartphone",
     special: "normal",
@@ -85,7 +85,7 @@ export const products = [
   {
     id: "5",
     name: "Xiaomi 12T Pro",
-    price: "1.222,00",
+    price: "1222.00",
     brand: "Xiaomi",
     type: "smartphone",
     special: "bestsellers",
@@ -96,7 +96,7 @@ export const products = [
   {
     id: "6",
     name: "Red Magic 7",
-    price: "1.990,50",
+    price: "1990.50",
     brand: "Nubia",
     type: "smartphone",
     special: "dailyoffer",
@@ -107,7 +107,7 @@ export const products = [
   {
     id: "7",
     name: "Monitor BenQ ZOWIE",
-    price: "1.990,00",
+    price: "1990.00",
     brand: "BenQ",
     type: "monitor",
     special: "bestsellers",
@@ -118,7 +118,7 @@ export const products = [
   {
     id: "8",
     name: "Monitor LG Full HD",
-    price: "2.590,00",
+    price: "2590.00",
     brand: "LG",
     type: "monitor",
     special: "dailyoffer",
@@ -129,7 +129,7 @@ export const products = [
   {
     id: "9",
     name: "Monitor Dell Ultrasharp",
-    price: "2.200,50",
+    price: "2200.50",
     brand: "Dell",
     type: "monitor",
     special: "dailyoffer",
@@ -140,7 +140,7 @@ export const products = [
   {
     id: "10",
     name: "AOC Hero 27",
-    price: "2.150,00",
+    price: "2150.00",
     brand: "AOC",
     type: "monitor",
     special: "bestsellers",
@@ -151,7 +151,7 @@ export const products = [
   {
     id: "11",
     name: "Monitor BenQ BL2420PT",
-    price: "1.150,00",
+    price: "1150.00",
     brand: "BenQ",
     type: "monitor",
     special: "dailyoffer",
@@ -162,7 +162,7 @@ export const products = [
   {
     id: "12",
     name: "Monitor Acer 27",
-    price: "2.150,00",
+    price: "2150.00",
     brand: "Acer",
     type: "monitor",
     special: "bestsellers",
@@ -173,7 +173,7 @@ export const products = [
   {
     id: "13",
     name: "GeForce RTX 4090",
-    price: "7.150,50",
+    price: "7150.50",
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
@@ -184,7 +184,7 @@ export const products = [
   {
     id: "14",
     name: "GeForce RTX 4080",
-    price: "4.150,00",
+    price: "4150.00",
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
@@ -195,7 +195,7 @@ export const products = [
   {
     id: "15",
     name: "GeForce RTX 4070 Ti",
-    price: "3.180,00",
+    price: "3180.00",
     brand: "Nvidia",
     type: "placa de video",
     special: "normal",
@@ -206,7 +206,7 @@ export const products = [
   {
     id: "16",
     name: "GeForce RTX 3090 Ti",
-    price: "2.980,00",
+    price: "2980.00",
     brand: "Nvidia",
     type: "placa de video",
     special: "dailyoffer",
@@ -217,7 +217,7 @@ export const products = [
   {
     id: "17",
     name: "Radeon RX 7900 XTX",
-    price: "2.780,50",
+    price: "2780.50",
     brand: "AMD",
     type: "placa de video",
     special: "bestsellers",
@@ -228,7 +228,7 @@ export const products = [
   {
     id: "18",
     name: "Controle Playstation 4",
-    price: "400,00",
+    price: "400.00",
     brand: "Sony",
     type: "videogame",
     special: "bestsellers",
@@ -239,7 +239,7 @@ export const products = [
   {
     id: "19",
     name: "Controle Playstation 5",
-    price: "500,00",
+    price: "500.00",
     brand: "Sony",
     type: "videogame",
     special: "bestsellers",
@@ -250,7 +250,7 @@ export const products = [
   {
     id: "20",
     name: "Controle Xbox One",
-    price: "350,52",
+    price: "350.52",
     brand: "Microsoft",
     type: "videogame",
     special: "dailyoffer",
@@ -261,7 +261,7 @@ export const products = [
   {
     id: "21",
     name: "Controle Xbox Series X",
-    price: "450,20",
+    price: "450.20",
     brand: "Microsoft",
     type: "videogame",
     special: "normal",
@@ -272,7 +272,7 @@ export const products = [
   {
     id: "22",
     name: "Xbox Series X",
-    price: "4.000,80",
+    price: "4000.80",
     brand: "Microsoft",
     type: "videogame",
     special: "dailyoffer",
@@ -283,7 +283,7 @@ export const products = [
   {
     id: "23",
     name: "Playstation 5",
-    price: "4.450,20",
+    price: "4450.20",
     brand: "Sony",
     type: "videogame",
     special: "normal",
@@ -294,7 +294,7 @@ export const products = [
   {
     id: "24",
     name: "LG Smart TV OLED 55 4K",
-    price: "7.600,50",
+    price: "7600.50",
     brand: "LG",
     type: "smart TV",
     special: "normal",
@@ -305,7 +305,7 @@ export const products = [
   {
     id: "25",
     name: "Samsung Smart TV 55 QLED 4K",
-    price: "6.600,50",
+    price: "6600.50",
     brand: "Samsung",
     type: "smart TV",
     special: "normal",
@@ -316,7 +316,7 @@ export const products = [
   {
     id: "26",
     name: "Smart TV AOC 43 Full HD ROKU TV",
-    price: "2.010,10",
+    price: "2010.10",
     brand: "AOC",
     type: "smart TV",
     special: "normal",

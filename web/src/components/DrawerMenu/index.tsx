@@ -61,8 +61,24 @@ export function DrawerMenu(props: any) {
       <TitleSelection onClick={() => navigate("/SuperMarket/ProductsFiltered")}>
         Ver Todos
       </TitleSelection>
-      <TitleSelection>Ofertas do Dia</TitleSelection>
-      <TitleSelection>Produtos mais Vendidos</TitleSelection>
+      <TitleSelection
+        onClick={() =>
+          navigate("/SuperMarket/ProductsFiltered", {
+            state: "dailyoffer",
+          })
+        }
+      >
+        Ofertas do Dia
+      </TitleSelection>
+      <TitleSelection
+        onClick={() =>
+          navigate("/SuperMarket/ProductsFiltered", {
+            state: "bestsellers",
+          })
+        }
+      >
+        Produtos mais Vendidos
+      </TitleSelection>
       <TitleSelection onClick={() => navigate("/Home")}>Sair</TitleSelection>
     </Container>
   );

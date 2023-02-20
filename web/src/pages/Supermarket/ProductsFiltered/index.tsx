@@ -41,7 +41,19 @@ export function ProductsFiltered() {
 
   function showProducts() {
     console.log(state);
-    if (state !== null) {
+    if (state === "dailyoffer") {
+      const filteredItems = products.filter(
+        (product) => product.special === state
+      );
+      setFilter(filteredItems);
+      setNameCategory("Melhores ofertas do dia");
+    } else if (state === "bestsellers") {
+      const filteredItems = products.filter(
+        (product) => product.special === state
+      );
+      setFilter(filteredItems);
+      setNameCategory("Produtos mais vendidos");
+    } else if (state !== null) {
       const filteredItems = products.filter(
         (product) => product.type === state
       );
@@ -93,7 +105,13 @@ export function ProductsFiltered() {
               <img src={product.image} alt="" />
               <TextContainer>
                 <h3>{product.name}</h3>
-                <h2>{product.price}</h2>
+                <h2>
+                  R$ {"\n"}
+                  {Number(product.price).toLocaleString("pt-BR", {
+                    minimumFractionDigits: 2,
+                    maximumFractionDigits: 2,
+                  })}
+                </h2>
                 <h4>{product.type}</h4>
                 <h4>{product.brand}</h4>
               </TextContainer>

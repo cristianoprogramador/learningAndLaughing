@@ -3,7 +3,7 @@ import logoImg from "../../assets/logosemescrito.png";
 import { MiniModal } from "../../components/MiniModal";
 import { useState } from "react";
 
-export function SignIn_Bad1() {
+export function SignIn2() {
   return (
     <Container>
       <img src={logoImg} alt="logo" />
@@ -19,7 +19,7 @@ export function SignIn_Bad1() {
       <ButtonView>
         <MiniModal
           goodLooking={false}
-          address="/SignIn_Good1"
+          address="/SignIn1"
           title={"ME APERTA"}
           message={`Gostou da interface? não né? \n calma, vamos melhorar um pouco...`}
         />

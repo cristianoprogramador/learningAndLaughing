@@ -74,7 +74,7 @@ export function Header(props: any) {
             alt=""
           />
         </ButtonProfile>
-        <ButtonProfile onClick={() => navigate("/SignIn_Good1")}>
+        <ButtonProfile onClick={() => navigate("/SignIn1")}>
           <ImExit size={28} />
         </ButtonProfile>
       </RightSide>

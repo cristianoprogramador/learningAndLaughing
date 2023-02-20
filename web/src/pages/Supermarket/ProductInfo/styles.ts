@@ -147,7 +147,7 @@ export const ImportantInf = styled.div`
     flex-direction: column;
     gap: 1.5rem;
 
-    text {
+    p {
       font-size: small;
       margin-left: 1rem;
       text-align: left;

@@ -31,12 +31,7 @@ export function ProductInfo() {
 
   if (!state) return <></>;
 
-  const teste = Number(state.price.replace(/[^0-9.-]+/g, ""));
-
-  console.log("OQ OURVE", teste);
-
-  const priceWithDescont =
-    (Number(state.price.replace(/[^0-9.-]+/g, "")) * 1000) / 10;
+  const priceWithDescont = Number(state.price.replace(/[^0-9.-]+/g, "")) / 10;
 
   const priceCorret = Math.round(priceWithDescont * 100) / 100;
 
@@ -45,7 +40,12 @@ export function ProductInfo() {
     currency: "BRL",
   });
 
-  const totalStock = Math.floor(Math.random() * 20);
+  const number = Number(state.price);
+
+  const formattedNumber = number.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+  });
 
   return (
     <Container>
@@ -57,44 +57,44 @@ export function ProductInfo() {
           </ProductImages>
 
           <ProductDetails>
-            <text className="title">{state.type}</text>
-            <text className="name">
+            <p className="title">{state.type}</p>
+            <p className="name">
               <b>{state.name}</b>
-            </text>
-            <text>Por apenas:</text>
-            <text className="price">{state.price}</text>
-            <text>
+            </p>
+            <p>Por apenas:</p>
+            <p className="price">{formattedNumber}</p>
+            <p>
               ou em 10 vezes <strong>(SEM JUROS)</strong> por:
-            </text>
+            </p>
             <h3 style={{ margin: 10 }}>
               <strong>{valorFormatado}</strong>
             </h3>
-            <text className="description">Descrição:</text>
-            <text className="description">{state.description}</text>
+            <p className="description">Descrição:</p>
+            <p className="description">{state.description}</p>
           </ProductDetails>
 
           <ProductCheckout>
             <AddressContainer>
               <BsTruck size={25} />
               <AddressDetails>
-                <text className="arrive">
+                <p className="arrive">
                   Chegará grátis entre segunda-feira e sexta-feira 30 de março
-                </text>
+                </p>
                 <SendTo>
                   <BsPin size={18} />
-                  <text className="sendto">Enviar para Rua Alameda 689</text>
+                  <p className="sendto">Enviar para Rua Alameda 689</p>
                 </SendTo>
               </AddressDetails>
             </AddressContainer>
 
             <StockContainer>
-              <text>
+              <p>
                 Estoque Disponivel <b>(38 unidades)</b>
-              </text>
-              <text>
+              </p>
+              <p>
                 Quantidade: <b>1 unidade</b>
-              </text>
-              <text className="howMany">Você pode comprar até 10 unidades</text>
+              </p>
+              <p className="howMany">Você pode comprar até 10 unidades</p>
               <Button text="Comprar" style={{ width: "80%" }} />
               <Button
                 text="Adicionar ao Carrinho "
@@ -102,12 +102,12 @@ export function ProductInfo() {
               />
               <ImportantInf>
                 <div>
-                  <text>👀 Devolução grátis</text>
-                  <text>✅ Compra Garantida</text>
+                  <p>👀 Devolução grátis</p>
+                  <p>✅ Compra Garantida</p>
                 </div>
                 <div>
-                  <text>😎 Pontos no Site</text>
-                  <text>😁 Cupom especial</text>
+                  <p>😎 Pontos no Site</p>
+                  <p>😁 Cupom especial</p>
                 </div>
               </ImportantInf>
             </StockContainer>
