@@ -1,11 +1,13 @@
-import { ButtonView, Container, InputView } from "./styles";
+import { ButtonView, Container, ContainerForm, InputView } from "./styles";
 
 import { Form, Formik } from "formik";
 import * as Yup from "yup";
 import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
+import { Input } from "../../components/InputFormik";
+import { useNavigate } from "react-router-dom";
 
 export function SignUp() {
+  const navigate = useNavigate();
   const initialValues = {
     nomeCompleto: "",
     apelido: "",
@@ -27,10 +29,10 @@ export function SignUp() {
       .email("E-mail inválido")
       .required("Favor informar o seu e-mail"),
     password: Yup.string()
-      .required("Favor informar uma senha.")
-      .min(8, "Your password is too short."),
+      .required("Favor informar uma senha")
+      .min(8, "Mínimo de 8 caracteres"),
     retypePassword: Yup.string()
-      .required("Favor repetir a senha escolhida.")
+      .required("Favor repetir a senha")
       .oneOf([Yup.ref("password")], "As senhas não batem."),
   });
 
@@ -38,6 +40,7 @@ export function SignUp() {
     console.log("tetsse");
 
     setSubmitting(false);
+    navigate("/Home");
   };
 
   return (
@@ -45,36 +48,36 @@ export function SignUp() {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={() => {
-          console.log("submit!");
-        }}
+        onSubmit={handleSubmit}
       >
         {({ values, isSubmitting }) => (
           <Form>
-            <InputView>
-              <Input
-                name="nomeCompleto"
-                required
-                label="Nome Completo"
-                type=""
-              />
-              <Input name="apelido" label="Apelido" />
-              <Input
-                name="dataNascimento"
-                type="date"
-                label="Data de Nascimento"
-                required
-              />
-              <Input name="email" required type="string" label="E-mail" />
-              <Input name="password" required type="password" label="Senha" />
-              <Input
-                name="retypePassword"
-                required
-                type="password"
-                label="Repetir a senha"
-              />
-            </InputView>
-            <Button type="submit" disabled={isSubmitting} text="Enviar" />
+            <ContainerForm>
+              <InputView>
+                <Input
+                  name="nomeCompleto"
+                  required
+                  label="Nome Completo"
+                  type=""
+                />
+                <Input name="apelido" label="Apelido" />
+                <Input
+                  name="dataNascimento"
+                  type="date"
+                  label="Data de Nascimento"
+                  required
+                />
+                <Input name="email" required type="string" label="E-mail" />
+                <Input name="password" required type="password" label="Senha" />
+                <Input
+                  name="retypePassword"
+                  required
+                  type="password"
+                  label="Repetir a senha"
+                />
+              </InputView>
+              <Button type="submit" disabled={isSubmitting} text="Enviar" />
+            </ContainerForm>
           </Form>
         )}
       </Formik>

@@ -14,6 +14,8 @@ import { FaBell } from "react-icons/fa";
 import logoImg from "../../assets/logozuado.png";
 import { SearchBar } from "../SearchBar";
 import { useState } from "react";
+import { AiOutlineSetting } from "react-icons/ai";
+import { ImExit } from "react-icons/im";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
@@ -21,8 +23,10 @@ import Drawer from "react-modern-drawer";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { DrawerMenu } from "../DrawerMenu";
+import { useNavigate } from "react-router-dom";
 
 export function Header(props: any) {
+  const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
@@ -62,10 +66,16 @@ export function Header(props: any) {
           <FaBell size={28} />
         </ButtonProfile>
         <ButtonProfile>
+          <AiOutlineSetting size={28} />
+        </ButtonProfile>
+        <ButtonProfile onClick={() => navigate("/Profile")}>
           <ProfilePicture
             src="https://avatars.githubusercontent.com/u/102186472?v=4"
             alt=""
           />
+        </ButtonProfile>
+        <ButtonProfile onClick={() => navigate("/SignIn_Good1")}>
+          <ImExit size={28} />
         </ButtonProfile>
       </RightSide>
     </Container>

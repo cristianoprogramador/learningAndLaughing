@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { ButtonHTMLAttributes } from "react";
 
 export const MessageContainer = styled.main`
   display: flex;

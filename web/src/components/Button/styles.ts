@@ -1,10 +1,15 @@
 import styled from "styled-components";
 
-export const ButtonContainer = styled.button`
+interface ButtonProps {
+  differentColor?: boolean;
+}
+
+export const ButtonContainer = styled.button<ButtonProps>`
   padding: 0.75rem 2.8rem;
   color: white;
   font-weight: 700;
-  background: ${(props) => props.theme["green-700"]};
+  background: ${({ differentColor, theme }) =>
+    differentColor === true ? theme["blue-700"] : theme["green-700"]};
   font-size: medium;
   border: none;
   border-radius: 6px;
@@ -19,6 +24,7 @@ export const ButtonContainer = styled.button`
   }
 
   &:not(:disabled):hover {
-    background: ${(props) => props.theme["green-500"]};
+    background: ${({ differentColor, theme }) =>
+      differentColor === true ? theme["blue-500"] : theme["green-500"]};
   }
 `;

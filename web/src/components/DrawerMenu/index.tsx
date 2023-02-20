@@ -58,7 +58,9 @@ export function DrawerMenu(props: any) {
           }
         })}
       </OptionsContainer>
-      <TitleSelection>Ver Todos</TitleSelection>
+      <TitleSelection onClick={() => navigate("/SuperMarket/ProductsFiltered")}>
+        Ver Todos
+      </TitleSelection>
       <TitleSelection>Ofertas do Dia</TitleSelection>
       <TitleSelection>Produtos mais Vendidos</TitleSelection>
       <TitleSelection onClick={() => navigate("/Home")}>Sair</TitleSelection>

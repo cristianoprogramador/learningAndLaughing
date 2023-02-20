@@ -30,15 +30,32 @@ import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 
+import { useEffect, useState } from "react";
+
 export function ProductsFiltered() {
   const navigate = useNavigate();
   const { state } = useLocation();
+  const [filter, setFilter] = useState(products);
 
-  console.log(state);
+  const [nameCategory, setNameCategory] = useState("Todos os produtos");
 
-  const filteredItems = products.filter((product) => product.type === state);
+  function showProducts() {
+    console.log(state);
+    if (state !== null) {
+      const filteredItems = products.filter(
+        (product) => product.type === state
+      );
+      setFilter(filteredItems);
+      setNameCategory("Categoria: " + state.toUpperCase());
+    } else {
+      setFilter(products);
+      setNameCategory("Todos os produtos");
+    }
+  }
 
-  console.log(filteredItems);
+  useEffect(() => {
+    showProducts();
+  }, [state]);
 
   return (
     <Container>
@@ -60,10 +77,10 @@ export function ProductsFiltered() {
         </InfoAndIcon>
       </GeneralInfo>
 
-      <SectionTitle>Categoria : {state.toUpperCase()}</SectionTitle>
+      <SectionTitle>{nameCategory}</SectionTitle>
 
       <Products>
-        {filteredItems.map((product, index) => {
+        {filter.map((product, index) => {
           return (
             <ContainerDailyOffers
               key={product.id}

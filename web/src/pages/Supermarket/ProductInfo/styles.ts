@@ -9,7 +9,7 @@ export const Information = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 46.05rem;
+  height: 41.7rem;
 `;
 
 export const ProductContainer = styled.div`

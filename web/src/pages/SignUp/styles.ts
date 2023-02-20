@@ -26,12 +26,12 @@ export const Container = styled.main`
 
 export const InputView = styled.div`
   background-color: ${(props) => props.theme["gray-700"]};
-  padding: 1.5rem 4rem 1.5rem 4rem;
+  padding: 2rem 4rem;
   border-radius: 1rem;
   justify-content: space-evenly;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 6rem;
+  gap: 2rem;
   width: 540px;
 
   input {
@@ -43,11 +43,6 @@ export const InputView = styled.div`
     outline: 0;
     background-color: lightgray;
   }
-
-  img {
-    height: 40px;
-    width: 40px;
-  }
 `;
 
 export const ButtonView = styled.div`
@@ -55,4 +50,11 @@ export const ButtonView = styled.div`
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+`;
+
+export const ContainerForm = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;

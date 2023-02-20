@@ -314,7 +314,7 @@ export const products = [
     image: tv1,
   },
   {
-    id: "25",
+    id: "26",
     name: "Smart TV AOC 43 Full HD ROKU TV",
     price: "2.010,10",
     brand: "AOC",
