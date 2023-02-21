@@ -37,7 +37,7 @@ export function SignUp() {
   });
 
   const handleSubmit = (values, { setSubmitting }) => {
-    console.log("tetsse");
+    console.log(values);
 
     setSubmitting(false);
     navigate("/Home");

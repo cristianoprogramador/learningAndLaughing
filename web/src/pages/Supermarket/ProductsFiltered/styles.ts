@@ -79,6 +79,7 @@ export const Products = styled.div`
   justify-content: center;
   align-items: center;
   align-self: center;
+  margin-bottom: 3rem;
 `;
 
 export const ContainerDailyOffers = styled(SwiperSlide)`

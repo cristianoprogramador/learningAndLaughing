@@ -8,10 +8,11 @@ export const ProfileContainer = styled.div`
   align-items: center;
   height: calc(100vh - 6rem);
 `;
+
 export const InformationContainer = styled.div`
   background-color: ${(props) => props.theme["gray-700"]};
   border-radius: 1rem;
-  height: 600px;
+  height: 620px;
   width: 500px;
 `;
 

@@ -297,7 +297,7 @@ export const products = [
     price: "7600.50",
     brand: "LG",
     type: "smart TV",
-    special: "normal",
+    special: "cart",
     description:
       "A LG Smart TV OLED 55 4K oferece qualidade de imagem excepcional, com tecnologia de pixels autoilumináveis que oferecem cores vibrantes e pretos profundos, além de contar com o sistema operacional webOS para acesso fácil a conteúdos de streaming.",
     image: tv0,
@@ -308,7 +308,7 @@ export const products = [
     price: "6600.50",
     brand: "Samsung",
     type: "smart TV",
-    special: "normal",
+    special: "cart",
     description:
       "A Samsung Smart TV 55 QLED 4K oferece qualidade de imagem excepcional, com tecnologia de pontos quânticos que oferecem cores vivas e brilho intenso, além de contar com o sistema operacional Tizen para acesso fácil a conteúdos de streaming.",
     image: tv1,
@@ -319,7 +319,7 @@ export const products = [
     price: "2010.10",
     brand: "AOC",
     type: "smart TV",
-    special: "normal",
+    special: "cart",
     description:
       "A Smart TV AOC 43 Full HD ROKU TV oferece qualidade de imagem em alta definição, com acesso fácil a conteúdos de streaming através do sistema operacional Roku TV, além de contar com recursos exclusivos, como o controle remoto com botões de atalho para serviços de streaming populares.",
     image: tv2,

@@ -77,12 +77,13 @@ export function ProductInfo() {
             <AddressContainer>
               <BsTruck size={25} />
               <AddressDetails>
-                <p className="arrive">
-                  Chegará grátis entre segunda-feira e sexta-feira 30 de março
+                <p className="arrive">Frete grátis para todo o Brasil</p>
+                <p style={{ textAlign: "center" }}>
+                  <strong>(Promoção Especial)</strong>
                 </p>
                 <SendTo>
                   <BsPin size={18} />
-                  <p className="sendto">Enviar para Rua Alameda 689</p>
+                  <p className="sendto">Disponível apenas para Brasil</p>
                 </SendTo>
               </AddressDetails>
             </AddressContainer>
@@ -99,6 +100,7 @@ export function ProductInfo() {
               <Button
                 text="Adicionar ao Carrinho "
                 className="buttonDifferent"
+                onClick={() => navigate("/SuperMarket/Cart")}
               />
               <ImportantInf>
                 <div>

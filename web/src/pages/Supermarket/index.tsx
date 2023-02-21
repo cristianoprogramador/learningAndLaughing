@@ -156,6 +156,7 @@ export function SuperMarket() {
           height: "320px",
           width: "80%",
           paddingBottom: 20,
+          marginBottom: 50,
         }}
         modules={[Navigation, Pagination]}
         spaceBetween={20}

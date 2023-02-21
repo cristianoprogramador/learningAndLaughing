@@ -7,6 +7,7 @@ import { SignUp } from "./pages/SignUp";
 import { SuperMarket } from "./pages/Supermarket";
 import { ProductInfo } from "./pages/Supermarket/ProductInfo";
 import { ProductsFiltered } from "./pages/Supermarket/ProductsFiltered";
+import { Cart } from "./pages/Supermarket/Cart";
 
 export function Router() {
   return (
@@ -22,6 +23,7 @@ export function Router() {
         path="/SuperMarket/ProductsFiltered"
         element={<ProductsFiltered />}
       />
+      <Route path="/SuperMarket/Cart" element={<Cart />} />
     </Routes>
   );
 }
