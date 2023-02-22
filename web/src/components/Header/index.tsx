@@ -19,7 +19,11 @@ import { FaBell } from "react-icons/fa";
 import logoImg from "../../assets/logozuado.png";
 import { SearchBar } from "../SearchBar";
 import { useState } from "react";
-import { AiOutlineSetting } from "react-icons/ai";
+import {
+  AiOutlineBell,
+  AiOutlineSetting,
+  AiOutlineShoppingCart,
+} from "react-icons/ai";
 import { ImExit } from "react-icons/im";
 
 // import component 👇
@@ -30,7 +34,7 @@ import "react-modern-drawer/dist/index.css";
 import { DrawerMenu } from "../DrawerMenu";
 import { useNavigate } from "react-router-dom";
 
-export function Header(props: any) {
+export function Header(props: any, market: false) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -95,8 +99,16 @@ export function Header(props: any) {
       </Center>
 
       <RightSide>
+        {market && (
+          <ButtonProfile>
+            <AiOutlineShoppingCart
+              size={28}
+              onClick={() => navigate("/SuperMarket/Cart")}
+            />
+          </ButtonProfile>
+        )}
         <ButtonProfile>
-          <FaBell size={28} />
+          <AiOutlineBell size={28} />
         </ButtonProfile>
         <ButtonSettings>
           <AiOutlineSetting
@@ -146,14 +158,14 @@ export function Header(props: any) {
                 <p>Ações realizadas</p>
               </OptionsView>
               <OptionsView>
-                <p onClick={() => navigate("/SignIn1")}>Excluir Perfil</p>
+                <p onClick={() => navigate("/SignIn1")}>Sair</p>
               </OptionsView>
             </ProfileOptions>
           )}
         </ButtonProfile>
-        <ButtonExit onClick={() => navigate("/SignIn1")}>
+        {/* <ButtonExit onClick={() => navigate("/SignIn1")}>
           <ImExit size={28} />
-        </ButtonExit>
+        </ButtonExit> */}
       </RightSide>
     </Container>
   );

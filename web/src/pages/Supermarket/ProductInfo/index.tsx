@@ -18,6 +18,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { BsPin, BsTruck } from "react-icons/bs";
 import { Button } from "../../../components/Button";
 import { useEffect } from "react";
+import { useCart } from "../../../hooks/useCart";
 
 export function ProductInfo() {
   const { state } = useLocation();
@@ -46,6 +47,16 @@ export function ProductInfo() {
     style: "currency",
     currency: "BRL",
   });
+
+  const { addProductToCart } = useCart();
+
+  function handleAddToCart() {
+    const productToAdd = {
+      ...state,
+      quantity: 1,
+    };
+    addProductToCart(productToAdd);
+  }
 
   return (
     <Container>
@@ -96,11 +107,15 @@ export function ProductInfo() {
                 Quantidade: <b>1 unidade</b>
               </p>
               <p className="howMany">Você pode comprar até 10 unidades</p>
-              <Button text="Comprar" style={{ width: "80%" }} />
               <Button
-                text="Adicionar ao Carrinho "
-                className="buttonDifferent"
+                text="Comprar"
+                style={{ width: "80%" }}
                 onClick={() => navigate("/SuperMarket/Cart")}
+              />
+              <Button
+                text="Adicionar ao Carrinho"
+                className="buttonDifferent"
+                onClick={handleAddToCart}
               />
               <ImportantInf>
                 <div>

@@ -11,7 +11,7 @@ export const Information = styled(Form)`
   justify-content: center;
   align-items: center;
   gap: 1rem;
-  min-height: 41.7rem;
+  min-height: 45.55rem;
   margin-bottom: 3rem;
 `;
 

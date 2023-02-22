@@ -3,6 +3,7 @@ import { Router } from "./Router";
 import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
+import { ContextProvider } from "./contexts/Context";
 
 // import { Home } from './Home'
 
@@ -11,7 +12,9 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
-        <Router />
+        <ContextProvider>
+          <Router />
+        </ContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   );

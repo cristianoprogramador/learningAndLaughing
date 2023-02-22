@@ -27,10 +27,28 @@ import { Header } from "../../../components/Header";
 import { Input } from "../../../components/InputFormik";
 import { Button } from "../../../components/Button";
 import { QuantityInput } from "../../../components/QuantityInput";
+import { useEffect, useState } from "react";
+import { useCart } from "../../../hooks/useCart";
+import { CartItem } from "../../../contexts/Context";
+import { CartCard } from "../../../components/CartCard";
 
 const cartProducts = products.filter((product) => product.special === "cart");
 
-export function Cart() {
+interface CartCardProps {
+  product: CartItem;
+}
+
+export function Cart({ product }: CartCardProps) {
+  const { cartItems, cartItemsTotal, cartQuantity } = useCart();
+  console.log(cartItems);
+
+  const formattedItemsTotal = Number(cartItemsTotal).toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  console.log(formattedItemsTotal);
+
   const navigate = useNavigate();
   const initialValues = {
     zipCode: "",
@@ -41,6 +59,7 @@ export function Cart() {
     stateCode: "",
     paymentMethod: "",
   };
+  const [quantity, setQuantity] = useState(1);
 
   const validationSchema = Yup.object({
     zipCode: Yup.string()
@@ -127,32 +146,13 @@ export function Cart() {
             <ProductContainer>
               <Title>Carrinho de Compras:</Title>
 
-              {cartProducts.map((product, index) => {
-                return (
-                  <ListProducts key={product.id}>
-                    <InfoAndImage>
-                      <ProductImage src={product.image} alt="" />
-                      <ProductInfo>
-                        <h4>{product.name}</h4>
-                        <h3>
-                          R${"\n"}
-                          {Number(product.price).toLocaleString("pt-BR", {
-                            minimumFractionDigits: 2,
-                            maximumFractionDigits: 2,
-                          })}
-                        </h3>
-                      </ProductInfo>
-                    </InfoAndImage>
-                    <QuantityView>
-                      <QuantityInput quantity={1} />
-                    </QuantityView>
-                  </ListProducts>
-                );
+              {cartItems.map((product, index) => {
+                return <CartCard key={product.id} product={product} />;
               })}
 
               <TotalText>
                 <p>Total de Itens</p>
-                <p>R$: 16.211,10</p>
+                <p>R$: {formattedItemsTotal}</p>
               </TotalText>
               <TotalText>
                 <p>Entrega</p>
@@ -160,7 +160,7 @@ export function Cart() {
               </TotalText>
               <TotalText>
                 <h2>Total</h2>
-                <h2>R$: 16.211,10</h2>
+                <h2>R$: {formattedItemsTotal}</h2>
               </TotalText>
 
               <Button type="submit" text="Finalizar Compra" />
