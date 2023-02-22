@@ -6,6 +6,7 @@ export const Container = styled.main`
   height: 100vh;
   justify-content: center;
   align-items: center;
+  background: ${(props) => props.theme["gray-900"]};
 
   h1 {
     font-size: 2rem;
