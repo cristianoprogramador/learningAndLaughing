@@ -38,19 +38,37 @@ interface CartCardProps {
   product: CartItem;
 }
 
-export function Cart({ product }: CartCardProps) {
+export interface AddressFormProps {
+  zipCode: string;
+  street: string;
+  addressNumber: string;
+  district: string;
+  city: string;
+  stateCode: string;
+  paymentMethod: string;
+  deliverSystem: string;
+}
+
+export function Cart() {
+  const [deliveryPrice, setDeliveryPrice] = useState(0);
   const { cartItems, cartItemsTotal, cartQuantity } = useCart();
-  console.log(cartItems);
+
+  // console.log(cartItems);
 
   const formattedItemsTotal = Number(cartItemsTotal).toLocaleString("pt-BR", {
     minimumFractionDigits: 2,
     maximumFractionDigits: 2,
   });
 
-  console.log(formattedItemsTotal);
+  const formattedDelivery = Number(deliveryPrice).toLocaleString("pt-BR", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  });
+
+  // console.log(formattedItemsTotal);
 
   const navigate = useNavigate();
-  const initialValues = {
+  const initialValues: AddressFormProps = {
     zipCode: "",
     street: "",
     addressNumber: "",
@@ -58,8 +76,8 @@ export function Cart({ product }: CartCardProps) {
     city: "",
     stateCode: "",
     paymentMethod: "",
+    deliverSystem: "",
   };
-  const [quantity, setQuantity] = useState(1);
 
   const validationSchema = Yup.object({
     zipCode: Yup.string()
@@ -75,11 +93,10 @@ export function Cart({ product }: CartCardProps) {
     paymentMethod: Yup.string()
       .oneOf(["credit", "debit", "money"], "Método de pagamento inválido")
       .required("Método de pagamento é obrigatório"),
+    deliverSystem: Yup.string()
+      .oneOf(["sedexHoje", "sedex", "pac"], "Tipo de entrega inválido")
+      .required("Tipo de entrega é obrigatório"),
   });
-
-  const handleSubmit = (values: any) => {
-    console.log(values);
-  };
 
   return (
     <Container>
@@ -87,7 +104,14 @@ export function Cart({ product }: CartCardProps) {
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={(values, actions) => {
+          console.log({ values, actions });
+          actions.setSubmitting(false);
+
+          navigate("/SuperMarket/Delivery", {
+            state: values,
+          });
+        }}
       >
         {({ values, errors, touched, handleChange }) => (
           <Information>
@@ -141,6 +165,48 @@ export function Cart({ product }: CartCardProps) {
                 <div style={{ color: "red", marginTop: 5 }}>
                   <ErrorMessage name="paymentMethod" />
                 </div>
+                <Title>Tipo de Entrega:</Title>
+                <InputRadio>
+                  <InputOption>
+                    <input
+                      type="radio"
+                      id="sedexHoje"
+                      name="deliverSystem"
+                      value="sedexHoje"
+                      checked={values.deliverSystem === "sedexHoje"}
+                      onChange={handleChange}
+                      onInput={() => setDeliveryPrice(35)}
+                    />
+                    <label htmlFor="sedexHoje">Sedex Hoje</label>
+                  </InputOption>
+                  <InputOption>
+                    <input
+                      type="radio"
+                      id="sedex"
+                      name="deliverSystem"
+                      value="sedex"
+                      checked={values.deliverSystem === "sedex"}
+                      onChange={handleChange}
+                      onInput={() => setDeliveryPrice(20)}
+                    />
+                    <label htmlFor="sedex">Sedex</label>
+                  </InputOption>
+                  <InputOption>
+                    <input
+                      type="radio"
+                      id="pac"
+                      name="deliverSystem"
+                      value="pac"
+                      checked={values.deliverSystem === "pac"}
+                      onChange={handleChange}
+                      onInput={() => setDeliveryPrice(10)}
+                    />
+                    <label htmlFor="pac">PAC</label>
+                  </InputOption>
+                </InputRadio>
+                <div style={{ color: "red", marginTop: 5 }}>
+                  <ErrorMessage name="deliverSystem" />
+                </div>
               </InputView>
             </AddressContainer>
             <ProductContainer>
@@ -156,7 +222,7 @@ export function Cart({ product }: CartCardProps) {
               </TotalText>
               <TotalText>
                 <p>Entrega</p>
-                <p>R$: 0</p>
+                <p>R$: {formattedDelivery}</p>
               </TotalText>
               <TotalText>
                 <h2>Total</h2>
@@ -167,7 +233,7 @@ export function Cart({ product }: CartCardProps) {
               <Button
                 differentColor
                 text="Continuar Comprando"
-                onClick={() => navigate("/SuperMarket")}
+                onClick={() => navigate("/Home")}
               />
             </ProductContainer>
           </Information>

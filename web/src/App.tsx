@@ -4,6 +4,8 @@ import { BrowserRouter } from "react-router-dom";
 import { GlobalStyle } from "./styles/global";
 import { defaultTheme } from "./styles/themes/default";
 import { ContextProvider } from "./contexts/Context";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // import { Home } from './Home'
 
@@ -16,6 +18,7 @@ export function App() {
           <Router />
         </ContextProvider>
       </BrowserRouter>
+      <ToastContainer position="top-center" />
     </ThemeProvider>
   );
 }

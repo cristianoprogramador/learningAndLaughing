@@ -1,5 +1,6 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
 import { produce } from "immer";
+import { toast } from "react-toastify";
 
 export interface Product {
   id: string;
@@ -57,10 +58,9 @@ export function ContextProvider({ children }: ContextProviderProps) {
     const newCart = produce(cartItems, (draft) => {
       if (productAlreadyExistsInCart < 0) {
         draft.push(product);
-        alert("Produto adicionado com sucesso!");
+        toast.success("Produto adicionado com sucesso!");
       } else {
-        draft[productAlreadyExistsInCart].quantity += product.quantity;
-        alert("Produto já foi adicionado");
+        toast.warning("O produto já foi adicionado");
       }
     });
 
