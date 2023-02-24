@@ -51,7 +51,7 @@ export interface AddressFormProps {
 
 export function Cart() {
   const [deliveryPrice, setDeliveryPrice] = useState(0);
-  const { cartItems, cartItemsTotal, cartQuantity } = useCart();
+  const { cartItems, cartItemsTotal, cartQuantity, clearCart } = useCart();
 
   // console.log(cartItems);
 
@@ -107,7 +107,7 @@ export function Cart() {
         onSubmit={(values, actions) => {
           console.log({ values, actions });
           actions.setSubmitting(false);
-
+          clearCart();
           navigate("/SuperMarket/Delivery", {
             state: values,
           });
@@ -159,7 +159,7 @@ export function Cart() {
                       checked={values.paymentMethod === "money"}
                       onChange={handleChange}
                     />
-                    <label htmlFor="money">Dinheiro</label>
+                    <label htmlFor="money">Boleto</label>
                   </InputOption>
                 </InputRadio>
                 <div style={{ color: "red", marginTop: 5 }}>
@@ -229,7 +229,11 @@ export function Cart() {
                 <h2>R$: {formattedItemsTotal}</h2>
               </TotalText>
 
-              <Button type="submit" text="Finalizar Compra" />
+              <Button
+                type="submit"
+                text="Finalizar Compra"
+                disabled={cartQuantity <= 0}
+              />
               <Button
                 differentColor
                 text="Continuar Comprando"

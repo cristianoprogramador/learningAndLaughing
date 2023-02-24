@@ -9,6 +9,7 @@ import { ProductInfo } from "./pages/Supermarket/ProductInfo";
 import { ProductsFiltered } from "./pages/Supermarket/ProductsFiltered";
 import { Cart } from "./pages/Supermarket/Cart";
 import { Delivery } from "./pages/Supermarket/Delivery";
+import { ProductsSearched } from "./pages/Supermarket/ProductsSearched";
 
 export function Router() {
   return (
@@ -23,6 +24,10 @@ export function Router() {
       <Route
         path="/SuperMarket/ProductsFiltered"
         element={<ProductsFiltered />}
+      />
+      <Route
+        path="/SuperMarket/ProductsSearched"
+        element={<ProductsSearched />}
       />
       <Route path="/SuperMarket/Cart" element={<Cart />} />
       <Route path="/SuperMarket/Delivery" element={<Delivery />} />

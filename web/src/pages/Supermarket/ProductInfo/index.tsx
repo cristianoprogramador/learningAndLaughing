@@ -58,6 +58,15 @@ export function ProductInfo() {
     addProductToCart(productToAdd);
   }
 
+  function handleGoToCart() {
+    const productToAdd = {
+      ...state,
+      quantity: 1,
+    };
+    addProductToCart(productToAdd);
+    navigate("/SuperMarket/Cart");
+  }
+
   return (
     <Container>
       <Header />
@@ -110,7 +119,7 @@ export function ProductInfo() {
               <Button
                 text="Comprar"
                 style={{ width: "80%" }}
-                onClick={() => navigate("/SuperMarket/Cart")}
+                onClick={handleGoToCart}
               />
               <Button
                 text="Adicionar ao Carrinho"
