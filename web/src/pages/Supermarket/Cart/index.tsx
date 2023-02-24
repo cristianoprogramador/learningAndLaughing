@@ -237,7 +237,7 @@ export function Cart() {
               <Button
                 differentColor
                 text="Continuar Comprando"
-                onClick={() => navigate("/Home")}
+                onClick={() => navigate("/SuperMarket")}
               />
             </ProductContainer>
           </Information>

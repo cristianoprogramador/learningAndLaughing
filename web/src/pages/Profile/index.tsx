@@ -18,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 import cameraSVG from "../../assets/svg/camera.svg";
 import { Input } from "../../components/InputFormik";
 import { Button } from "../../components/Button";
+import { Footer } from "../../components/Footer";
 
 export function Profile() {
   const [optionSelected, setOptionSelected] = useState("0");
@@ -80,6 +81,7 @@ export function Profile() {
           </InputContainer>
         </InformationContainer>
       </ProfileContainer>
+      <Footer />
     </Container>
   );
 }

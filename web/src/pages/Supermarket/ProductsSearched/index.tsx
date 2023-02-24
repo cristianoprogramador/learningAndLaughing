@@ -48,8 +48,10 @@ export function ProductsSearched() {
 
   function showProducts(state: string) {
     let FilteredItems;
-    FilteredItems = products.filter((item) =>
-      item.name.toLowerCase().includes(state)
+    FilteredItems = products.filter(
+      (item) =>
+        item.name.toLowerCase().includes(state.toLowerCase()) ||
+        item.description.toLowerCase().includes(state.toLowerCase())
     );
     setFilter(FilteredItems);
   }

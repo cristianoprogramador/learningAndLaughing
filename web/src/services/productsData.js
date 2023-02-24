@@ -57,7 +57,7 @@ export const products = [
     type: "smartphone",
     special: "bestsellers",
     description:
-      "O Legion Y70 é um laptop gamer com tela de 17,3 polegadas, processador Intel Core i7 de 10ª geração e placa de vídeo NVIDIA GeForce RTX 2060, oferecendo uma experiência de jogo imersiva e de alta performance.",
+      "O Lenovo Legion Y70 é, sem dúvida, um dos smartphones Android mais avançados e abrangentes disponíveis no mercado, graças ao seu rico equipamento e recursos multimídia avançados. Tem um grande display de 6.67 polegadas com uma resolução de 2400x1080 pixel. As funcionalidades oferecidas pelo Lenovo Legion Y70 são muitas e inovadoras.",
     image: phone2,
   },
   {

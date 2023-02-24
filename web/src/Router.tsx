@@ -10,6 +10,7 @@ import { ProductsFiltered } from "./pages/Supermarket/ProductsFiltered";
 import { Cart } from "./pages/Supermarket/Cart";
 import { Delivery } from "./pages/Supermarket/Delivery";
 import { ProductsSearched } from "./pages/Supermarket/ProductsSearched";
+import { HistoryActions } from "./pages/HistoryActions";
 
 export function Router() {
   return (
@@ -19,6 +20,7 @@ export function Router() {
       <Route path="/SignUp" element={<SignUp />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Profile" element={<Profile />} />
+      <Route path="/HistoryActions" element={<HistoryActions />} />
       <Route path="/SuperMarket" element={<SuperMarket />} />
       <Route path="/SuperMarket/ProductInfo" element={<ProductInfo />} />
       <Route

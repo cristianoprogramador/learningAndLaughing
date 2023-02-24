@@ -155,7 +155,9 @@ export function Header(props: any, market: false) {
                 <p onClick={() => navigate("/Profile")}>Editar Perfil</p>
               </OptionsView>
               <OptionsView>
-                <p>Ações realizadas</p>
+                <p onClick={() => navigate("/HistoryActions")}>
+                  Ações realizadas
+                </p>
               </OptionsView>
               <OptionsView>
                 <p onClick={() => navigate("/SignIn1")}>Sair</p>

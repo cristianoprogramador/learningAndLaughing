@@ -6,10 +6,11 @@ export const ProfileContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  height: calc(100vh - 6rem);
+  height: calc(100vh - 10rem);
 `;
 
 export const InformationContainer = styled.div`
+  margin-top: 2rem;
   background-color: ${(props) => props.theme["gray-700"]};
   border-radius: 1rem;
   height: 620px;
