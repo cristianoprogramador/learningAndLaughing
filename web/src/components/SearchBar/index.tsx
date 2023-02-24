@@ -13,6 +13,16 @@ export function SearchBar() {
     setSearchTerm(event.target.value);
   };
 
+  const handleSearch = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (searchTerm === "") {
+      return null;
+    } else if (event.key === "Enter") {
+      navigate("/SuperMarket/ProductsSearched", {
+        state: searchTerm,
+      });
+    }
+  };
+
   return (
     <Container>
       <IconView>
@@ -30,6 +40,7 @@ export function SearchBar() {
         placeholder="Pesquisar por qualquer coisa..."
         value={searchTerm}
         onChange={handleSearchTermChange}
+        onKeyDown={handleSearch}
       />
     </Container>
   );

@@ -29,11 +29,16 @@ export const LowText = styled.h3`
 `;
 
 export const SectionTitle = styled.h1`
-  justify-content: center;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   align-self: center;
   width: 80%;
   margin-bottom: 2rem;
+
+  p {
+    text-transform: capitalize;
+  }
 `;
 
 export const SectionTitleSecond = styled.h1`

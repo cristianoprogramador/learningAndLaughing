@@ -35,25 +35,28 @@ import { useEffect, useState } from "react";
 export function ProductsSearched() {
   const navigate = useNavigate();
   const { state } = useLocation();
+
   const [filter, setFilter] = useState(products);
 
-  const [nameCategory, setNameCategory] = useState("");
+  const nameCategory = "Pesquisa por:";
 
-  console.log(state);
+  const filtro = state;
+  const capitalizedString2 = filtro.charAt(0).toUpperCase() + filtro.slice(1);
+  const combinedString = nameCategory + " " + capitalizedString2;
 
-  function showProducts() {
+  console.log("OQ VEM NO FILTRO" + filtro);
+
+  function showProducts(state: string) {
     let FilteredItems;
-
-    FilteredItems = products.filter((item) => item.name.includes(state));
+    FilteredItems = products.filter((item) =>
+      item.name.toLowerCase().includes(state)
+    );
     setFilter(FilteredItems);
-    setNameCategory(`Pesquisa por: ${state}`);
   }
 
-  console.log(filter);
-
   useEffect(() => {
-    showProducts();
-  }, []);
+    showProducts(state);
+  }, [filtro]);
 
   return (
     <Container>
@@ -75,7 +78,7 @@ export function ProductsSearched() {
         </InfoAndIcon>
       </GeneralInfo>
 
-      <SectionTitle>{nameCategory}</SectionTitle>
+      <SectionTitle>{combinedString}</SectionTitle>
 
       <Products>
         {filter.map((product, index) => {
