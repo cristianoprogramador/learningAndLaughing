@@ -22,6 +22,15 @@ export function SearchBar() {
       });
     }
   };
+  const handleSearchByClick = () => {
+    if (searchTerm === "") {
+      navigate("/SuperMarket/ProductsFiltered");
+    } else {
+      navigate("/SuperMarket/ProductsSearched", {
+        state: searchTerm,
+      });
+    }
+  };
 
   return (
     <Container>
@@ -29,11 +38,7 @@ export function SearchBar() {
         <FaSearch
           style={{ cursor: "pointer" }}
           size={26}
-          onClick={() =>
-            navigate("/SuperMarket/ProductsSearched", {
-              state: searchTerm,
-            })
-          }
+          onClick={handleSearchByClick}
         />
       </IconView>
       <InputBar

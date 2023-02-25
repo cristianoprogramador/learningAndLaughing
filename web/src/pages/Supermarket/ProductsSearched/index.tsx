@@ -36,6 +36,14 @@ export function ProductsSearched() {
   const navigate = useNavigate();
   const { state } = useLocation();
 
+  useEffect(() => {
+    if (!state) {
+      navigate("/SuperMarket");
+    }
+  }, []);
+
+  if (!state) return <></>;
+
   const [filter, setFilter] = useState(products);
 
   const nameCategory = "Pesquisa por:";
@@ -51,7 +59,8 @@ export function ProductsSearched() {
     FilteredItems = products.filter(
       (item) =>
         item.name.toLowerCase().includes(state.toLowerCase()) ||
-        item.description.toLowerCase().includes(state.toLowerCase())
+        item.description.toLowerCase().includes(state.toLowerCase()) ||
+        item.brand.toLowerCase().includes(state.toLowerCase())
     );
     setFilter(FilteredItems);
   }
@@ -72,7 +81,7 @@ export function ProductsSearched() {
         </InfoAndIcon>
         <InfoAndIcon>
           <FaRegCreditCard size={40} />
-          <h3>Até 8 parcelas sem juros!</h3>
+          <h3>Até 10 parcelas sem juros!</h3>
         </InfoAndIcon>
         <InfoAndIcon>
           <FaMobileAlt size={40} />

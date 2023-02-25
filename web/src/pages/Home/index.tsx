@@ -21,7 +21,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header />
+      <Header open />
       <TitleSelection>
         <SelectionContainer>
           <h1>Selecione o tipo de Conteúdo:</h1>

@@ -54,7 +54,7 @@ export function SuperMarket() {
         </InfoAndIcon>
         <InfoAndIcon>
           <FaRegCreditCard size={40} />
-          <h3>Até 8 parcelas sem juros!</h3>
+          <h3>Até 10 parcelas sem juros!</h3>
         </InfoAndIcon>
         <InfoAndIcon>
           <FaMobileAlt size={40} />

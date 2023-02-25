@@ -34,12 +34,18 @@ import "react-modern-drawer/dist/index.css";
 import { DrawerMenu } from "../DrawerMenu";
 import { useNavigate } from "react-router-dom";
 
-export function Header(props: any, market: false) {
+interface HeaderProps {
+  open: boolean;
+}
+
+export function Header({ open }: HeaderProps) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
+
+  console.log(open);
 
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
@@ -72,19 +78,23 @@ export function Header(props: any, market: false) {
   return (
     <Container>
       <LeftSide>
-        <IconView onClick={toggleDrawer}>
-          <FiMenu size={30} />
-        </IconView>
-        <Drawer
-          open={isOpen}
-          onClose={toggleDrawer}
-          direction="left"
-          style={{
-            backgroundColor: "black",
-          }}
-        >
-          <DrawerMenu closeDrawer={(data: boolean) => setIsOpen(data)} />
-        </Drawer>
+        {!open && (
+          <>
+            <IconView onClick={toggleDrawer}>
+              <FiMenu size={30} />
+            </IconView>
+            <Drawer
+              open={isOpen}
+              onClose={toggleDrawer}
+              direction="left"
+              style={{
+                backgroundColor: "black",
+              }}
+            >
+              <DrawerMenu closeDrawer={(data: boolean) => setIsOpen(data)} />
+            </Drawer>
+          </>
+        )}
         <LogoView onClick={() => navigate("/Home")}>
           <ImageLogo src={logoImg} alt="logo" />
           <div>
@@ -99,7 +109,7 @@ export function Header(props: any, market: false) {
       </Center>
 
       <RightSide>
-        {market && (
+        {!open && (
           <ButtonProfile>
             <AiOutlineShoppingCart
               size={28}
