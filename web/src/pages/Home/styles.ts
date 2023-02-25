@@ -7,7 +7,7 @@ export const TitleSelection = styled.div``;
 export const SelectionContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 4rem);
+  height: 100vh;
   justify-content: center;
   align-items: center;
 `;

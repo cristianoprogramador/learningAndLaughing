@@ -35,7 +35,7 @@ import { DrawerMenu } from "../DrawerMenu";
 import { useNavigate } from "react-router-dom";
 
 interface HeaderProps {
-  open: boolean;
+  open?: boolean;
 }
 
 export function Header({ open }: HeaderProps) {
@@ -175,9 +175,6 @@ export function Header({ open }: HeaderProps) {
             </ProfileOptions>
           )}
         </ButtonProfile>
-        {/* <ButtonExit onClick={() => navigate("/SignIn1")}>
-          <ImExit size={28} />
-        </ButtonExit> */}
       </RightSide>
     </Container>
   );

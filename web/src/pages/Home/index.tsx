@@ -21,7 +21,7 @@ export function Home() {
 
   return (
     <Container>
-      <Header open />
+      {/* <Header open /> */}
       <TitleSelection>
         <SelectionContainer>
           <h1>Selecione o tipo de Conteúdo:</h1>
@@ -32,7 +32,7 @@ export function Home() {
             </OptionContainer>
             <OptionContainer>
               <img src={StudyingImage} alt="logo" />
-              <h3>Videos de Cursos</h3>
+              <h3>Artigos Educacionais</h3>
             </OptionContainer>
           </ImageContainer>
         </SelectionContainer>
