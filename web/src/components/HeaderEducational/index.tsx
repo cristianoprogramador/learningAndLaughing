@@ -1,5 +1,9 @@
+import { useState } from "react";
+import { AiOutlineBell, AiOutlineSetting } from "react-icons/ai";
+import { FiMenu } from "react-icons/fi";
+import logoImg from "../../assets/logo.png";
+import { SearchBar } from "../SearchBar";
 import {
-  ButtonExit,
   ButtonProfile,
   ButtonSettings,
   Center,
@@ -14,31 +18,20 @@ import {
   RightSide,
   SettingsOptions,
 } from "./styles";
-import { FiMenu } from "react-icons/fi";
-import { FaBell } from "react-icons/fa";
-import logoImg from "../../assets/logo.png";
-import { SearchBar } from "../SearchBar";
-import { useState } from "react";
-import {
-  AiOutlineBell,
-  AiOutlineSetting,
-  AiOutlineShoppingCart,
-} from "react-icons/ai";
-import { ImExit } from "react-icons/im";
 
 // import component 👇
 import Drawer from "react-modern-drawer";
 
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
-import { DrawerMenu } from "../DrawerMenu";
 import { useNavigate } from "react-router-dom";
+import { DrawerMenu } from "../DrawerMenu";
 
 interface HeaderProps {
   open?: boolean;
 }
 
-export function Header({ open }: HeaderProps) {
+export function HeaderEducational({ open }: HeaderProps) {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
@@ -109,14 +102,6 @@ export function Header({ open }: HeaderProps) {
       </Center>
 
       <RightSide>
-        {!open && (
-          <ButtonProfile>
-            <AiOutlineShoppingCart
-              size={28}
-              onClick={() => navigate("/SuperMarket/Cart")}
-            />
-          </ButtonProfile>
-        )}
         <ButtonProfile>
           <AiOutlineBell size={28} />
         </ButtonProfile>

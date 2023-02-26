@@ -30,7 +30,7 @@ export function Home() {
               <img src={SuperMarketImage} alt="logo" />
               <h3>Supermercado</h3>
             </OptionContainer>
-            <OptionContainer>
+            <OptionContainer onClick={() => navigate("/Educational")}>
               <img src={StudyingImage} alt="logo" />
               <h3>Artigos Educacionais</h3>
             </OptionContainer>

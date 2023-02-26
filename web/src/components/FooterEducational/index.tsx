@@ -10,7 +10,7 @@ import { AiOutlineInstagram, AiOutlineFacebook } from "react-icons/ai";
 import { FiTwitter } from "react-icons/fi";
 import { FaTiktok } from "react-icons/fa";
 
-export function Footer() {
+export function FooterEducational() {
   return (
     <Container>
       <LogoView>
@@ -21,13 +21,16 @@ export function Footer() {
         </div>
       </LogoView>
       <div>
-        <h5>A melhor loja online de mentira, onde você terá inúmeros</h5>
-        <h5> produtos fantásticos com preços fictícios</h5>
+        <h5>A melhor escola online de programação, onde você terá inúmeros</h5>
+        <h5> artigos fantásticos, quiz e videos dos melhores do mercado.</h5>
       </div>
-      <h4>
-        Todos os direitos reservados. Os preços anunciados neste site ou via
-        e-mail promocional podem ser alterados sem aviso prévio.
-      </h4>
+      <div>
+        <h4>Todos os direitos reservados.</h4>
+        <h4>
+          Todos artigos e links tem os devidos créditos aos autores, caso esteja
+          errado favor entrar em contato para corrigirmos.
+        </h4>
+      </div>
 
       <IconContainer>
         <IconView>
