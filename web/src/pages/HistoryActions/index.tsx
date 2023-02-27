@@ -98,7 +98,7 @@ export function HistoryActions() {
 
   return (
     <Container>
-      <Header />
+      <Header open />
       <ProfileContainer>
         <InformationContainer>
           <Title>Ações Realizadas</Title>

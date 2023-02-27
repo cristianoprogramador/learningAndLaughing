@@ -32,7 +32,7 @@ export function Home() {
             </OptionContainer>
             <OptionContainer onClick={() => navigate("/Educational")}>
               <img src={StudyingImage} alt="logo" />
-              <h3>Artigos Educacionais</h3>
+              <h3>Programação & Educação</h3>
             </OptionContainer>
           </ImageContainer>
         </SelectionContainer>

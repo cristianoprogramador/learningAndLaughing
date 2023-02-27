@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AiOutlineBell, AiOutlineSetting } from "react-icons/ai";
 import { FiMenu } from "react-icons/fi";
 import logoImg from "../../assets/logo.png";
-import { SearchBar } from "../SearchBar";
+import { SearchBarEducational } from "../SearchBarEducational";
 import {
   ButtonProfile,
   ButtonSettings,
@@ -26,6 +26,7 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { useNavigate } from "react-router-dom";
 import { DrawerMenu } from "../DrawerMenu";
+import { DrawerMenuEducational } from "../DrawerMenuEducational";
 
 interface HeaderProps {
   open?: boolean;
@@ -38,7 +39,7 @@ export function HeaderEducational({ open }: HeaderProps) {
     setIsOpen((prevState) => !prevState);
   };
 
-  console.log(open);
+  // console.log(open);
 
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
@@ -84,7 +85,9 @@ export function HeaderEducational({ open }: HeaderProps) {
                 backgroundColor: "black",
               }}
             >
-              <DrawerMenu closeDrawer={(data: boolean) => setIsOpen(data)} />
+              <DrawerMenuEducational
+                closeDrawer={(data: boolean) => setIsOpen(data)}
+              />
             </Drawer>
           </>
         )}
@@ -98,7 +101,7 @@ export function HeaderEducational({ open }: HeaderProps) {
       </LeftSide>
 
       <Center>
-        <SearchBar />
+        <SearchBarEducational />
       </Center>
 
       <RightSide>

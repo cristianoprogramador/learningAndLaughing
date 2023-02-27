@@ -43,7 +43,7 @@ export function Profile() {
 
   return (
     <Container>
-      <Header />
+      <Header open />
       <ProfileContainer>
         <InformationContainer>
           <ImageContainer>

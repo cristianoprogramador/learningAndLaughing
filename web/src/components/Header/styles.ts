@@ -70,6 +70,7 @@ export const ButtonProfile = styled.div`
   border-radius: 30px;
   align-items: center;
   justify-content: center;
+  position: relative;
 
   align-self: center;
   cursor: pointer;
@@ -78,6 +79,20 @@ export const ButtonProfile = styled.div`
 
   :hover {
     background-color: #626262;
+  }
+
+  span {
+    position: absolute;
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    top: calc(-0.25rem / 2);
+    right: calc(-0.25rem / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
   }
 `;
 

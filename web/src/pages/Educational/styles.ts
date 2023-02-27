@@ -43,13 +43,22 @@ export const Title = styled.div`
 `;
 
 export const Topics = styled(SwiperSlide)`
-  margin-top: 2rem;
+  margin-top: 3rem;
 `;
 
 export const TopicsType = styled(SwiperSlide)`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 40%;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+`;
+
+export const TopicsPrincipal = styled(SwiperSlide)`
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 65%;
   justify-content: center;
   align-items: center;
   align-self: center;

@@ -12,6 +12,7 @@ import { Delivery } from "./pages/Supermarket/Delivery";
 import { ProductsSearched } from "./pages/Supermarket/ProductsSearched";
 import { HistoryActions } from "./pages/HistoryActions";
 import { Educational } from "./pages/Educational";
+import { MainTopics } from "./pages/Educational/MainTopics";
 
 export function Router() {
   return (
@@ -35,6 +36,7 @@ export function Router() {
       <Route path="/SuperMarket/Cart" element={<Cart />} />
       <Route path="/SuperMarket/Delivery" element={<Delivery />} />
       <Route path="/Educational" element={<Educational />} />
+      <Route path="/Educational/MainTopics" element={<MainTopics />} />
     </Routes>
   );
 }

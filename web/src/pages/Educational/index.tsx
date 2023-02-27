@@ -6,10 +6,15 @@ import {
   Title,
   TopicImage,
   Topics,
+  TopicsPrincipal,
   TopicsType,
   TopicTitle,
 } from "./styles";
-import { topics, typeOfTopics } from "../../services/articlesCoding";
+import {
+  topics,
+  typeOfActivities,
+  typeOfTopics,
+} from "../../services/articlesCoding";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
 
@@ -21,8 +26,11 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { HeaderEducational } from "../../components/HeaderEducational";
+import { useNavigate } from "react-router-dom";
 
 export function Educational() {
+  const navigate = useNavigate();
+
   return (
     <Container>
       <HeaderEducational />
@@ -57,7 +65,12 @@ export function Educational() {
         >
           {topics.map((topic, index) => {
             return (
-              <Topics key={topic.id}>
+              <Topics
+                key={topic.id}
+                onClick={() =>
+                  navigate("/Educational/MainTopics", { state: topic })
+                }
+              >
                 <TopicImage src={topic.image} />
                 <TopicTitle>{topic.name}</TopicTitle>
               </Topics>
@@ -76,9 +89,10 @@ export function Educational() {
             );
           })}
         </TopicsType>
+        <Title>Contéudo:</Title>
 
-        <TopicsType>
-          {typeOfTopics.map((topic, index) => {
+        <TopicsPrincipal>
+          {typeOfActivities.map((topic, index) => {
             return (
               <Topics key={topic.id}>
                 <TopicImage src={topic.image} />
@@ -86,7 +100,7 @@ export function Educational() {
               </Topics>
             );
           })}
-        </TopicsType>
+        </TopicsPrincipal>
       </MainMenu>
       <FooterEducational />
     </Container>

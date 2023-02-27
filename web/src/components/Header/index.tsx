@@ -33,19 +33,22 @@ import Drawer from "react-modern-drawer";
 import "react-modern-drawer/dist/index.css";
 import { DrawerMenu } from "../DrawerMenu";
 import { useNavigate } from "react-router-dom";
+import { useCart } from "../../hooks/useCart";
 
 interface HeaderProps {
   open?: boolean;
 }
 
 export function Header({ open }: HeaderProps) {
+  const { cartQuantity } = useCart();
+
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const toggleDrawer = () => {
     setIsOpen((prevState) => !prevState);
   };
 
-  console.log(open);
+  // console.log(open);
 
   const [settingsMenu, setSettingsMenu] = useState(false);
   const [profileMenu, setProfileMenu] = useState(false);
@@ -111,6 +114,7 @@ export function Header({ open }: HeaderProps) {
       <RightSide>
         {!open && (
           <ButtonProfile>
+            {cartQuantity >= 1 && <span>{cartQuantity}</span>}
             <AiOutlineShoppingCart
               size={28}
               onClick={() => navigate("/SuperMarket/Cart")}
