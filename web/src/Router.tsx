@@ -13,6 +13,7 @@ import { ProductsSearched } from "./pages/Supermarket/ProductsSearched";
 import { HistoryActions } from "./pages/HistoryActions";
 import { Educational } from "./pages/Educational";
 import { MainTopics } from "./pages/Educational/MainTopics";
+import { QuizGame } from "./pages/Educational/QuizGame";
 
 export function Router() {
   return (
@@ -37,6 +38,7 @@ export function Router() {
       <Route path="/SuperMarket/Delivery" element={<Delivery />} />
       <Route path="/Educational" element={<Educational />} />
       <Route path="/Educational/MainTopics" element={<MainTopics />} />
+      <Route path="/Educational/QuizGame" element={<QuizGame />} />
     </Routes>
   );
 }

@@ -35,7 +35,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { HeaderEducational } from "../../../components/HeaderEducational";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 export interface TopicDetailsProps {
   id: number;
@@ -48,6 +48,7 @@ export interface TopicDetailsProps {
 
 export function MainTopics() {
   const { state } = useLocation();
+  const navigate = useNavigate();
 
   const [data, setData] = useState(state);
   const [filter, setFilter] = useState<TopicDetailsProps[]>(data.topics);
@@ -172,7 +173,7 @@ export function MainTopics() {
         </ContainerTopic>
 
         <ContainerTopicQuiz>
-          <TypeTopic>
+          <TypeTopic onClick={() => navigate("/Educational/QuizGame")}>
             <TopicImage src={quiz} />
             <TopicTitleQuiz>Quiz - (Mais de 80 perguntas)</TopicTitleQuiz>
             <TopicResumeVideo>
