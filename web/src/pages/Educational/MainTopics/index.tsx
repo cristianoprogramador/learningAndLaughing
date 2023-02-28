@@ -10,6 +10,7 @@ import {
   Topics,
   TopicThumb,
   TopicTitle,
+  TopicTitleQuiz,
   TopicTitleVideo,
   TypeTopic,
 } from "./styles";
@@ -38,16 +39,18 @@ import { useLocation } from "react-router-dom";
 
 export interface TopicDetailsProps {
   id: number;
-  name: string;
+  type: string;
+  link: string;
+  title: string;
+  resume: string;
   image: string;
-  topics: [];
 }
 
 export function MainTopics() {
   const { state } = useLocation();
 
   const [data, setData] = useState(state);
-  const [filter, setFilter] = useState(data.topics);
+  const [filter, setFilter] = useState<TopicDetailsProps[]>(data.topics);
 
   const [videosData, setVideosData] = useState(filter);
   const [videosProject, setVideosProject] = useState(filter);
@@ -170,16 +173,12 @@ export function MainTopics() {
 
         <ContainerTopicQuiz>
           <TypeTopic>
-            <TopicImage src={quizeasy} color="red" />
-            <TopicTitle>Quiz - Iniciante</TopicTitle>
-          </TypeTopic>
-          <TypeTopic>
-            <TopicImage src={quizmedium} />
-            <TopicTitle>Quiz - Intermediario</TopicTitle>
-          </TypeTopic>
-          <TypeTopic>
-            <TopicImage src={quizhard} />
-            <TopicTitle>Quiz - Dificil</TopicTitle>
+            <TopicImage src={quiz} />
+            <TopicTitleQuiz>Quiz - (Mais de 80 perguntas)</TopicTitleQuiz>
+            <TopicResumeVideo>
+              Tente fazer a maior pontuação em 10 perguntas que serão sorteadas
+              para você, você pode fazer quantas vezes quiser!
+            </TopicResumeVideo>
           </TypeTopic>
         </ContainerTopicQuiz>
       </MainMenu>

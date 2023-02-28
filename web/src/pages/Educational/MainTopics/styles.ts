@@ -48,6 +48,19 @@ export const TopicTitle = styled.div`
   text-align: center;
 `;
 
+export const TopicTitleQuiz = styled.div`
+  font-size: x-large;
+  font-weight: bold;
+  display: flex;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  text-align: center;
+`;
+
 export const ContainerTopic = styled.div`
   display: flex;
   flex-direction: row;
