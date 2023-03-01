@@ -19,21 +19,25 @@ export const typeOfActivities = [
     id: 0,
     name: "Videos Gerais",
     image: watchingvideo,
+    type: "video",
   },
   {
     id: 1,
     name: "Videos de Projetos",
     image: videoproject,
+    type: "videoproject",
   },
   {
     id: 2,
     name: "Quiz / Testes",
     image: quiz,
+    type: "quiz",
   },
   {
     id: 3,
     name: "Artigos Interessantes",
     image: articles,
+    type: "articles",
   },
 ];
 
@@ -225,6 +229,39 @@ export const topics = [
     id: 2,
     name: "Java",
     image: java,
+    topics: [
+      {
+        id: 0,
+        type: "video",
+        language: "english",
+        title: "JavaScript Tutorial for Beginners: Learn JavaScript in 1 Hour",
+        description:
+          "Este vídeo oferece um tutorial abrangente sobre JavaScript para iniciantes, abrangendo conceitos básicos como variáveis, funções, objetos e muito mais.",
+        link: "https://www.youtube.com/watch?v=W6NZfCO5SIk",
+        image: "W6NZfCO5SIk",
+      },
+      {
+        id: 1,
+        type: "videoproject",
+        language: "english",
+        title: "E-Commerce JavaScript Tutorial - Shopping Cart from Scratch",
+        description:
+          "Aprenda a criar um carrinho de supermercado na linguagem de Javascript",
+        link: "https://www.youtube.com/watch?v=023Psne_-_4",
+        image: "023Psne_-_4",
+      },
+      {
+        id: 2,
+        type: "article",
+        language: "portuguese",
+        title: "O que é JavaScript e como funciona?",
+        description:
+          "Neste artigo, você vai conhecer o que é JavaScript, para que serve e como utilizá-lo. Quando você está pesquisando sobre o mercado de programação é muito comum se deparar com o nome JavaScript. E não é à toa, essa linguagem está presente em toda a Web e você provavelmente lida com ela diariamente enquanto usa seu navegador (e até mesmo fora dele!",
+        resume:
+          "O que é JavaScript e como funciona? Este artigo é uma introdução ao JavaScript, explicando sua história, como ele funciona no navegador e como começar a programar em JavaScript.",
+        link: "https://www.alura.com.br/artigos/javascript?gclid=CjwKCAiAxvGfBhB-EiwAMPakqoh_K0W1gsoHJ4lcWbKw9r2FfZ9WOlDLVoqdlBLuHBvyd_oTfSkInxoCKz8QAvD_BwE",
+      },
+    ],
   },
   {
     id: 3,

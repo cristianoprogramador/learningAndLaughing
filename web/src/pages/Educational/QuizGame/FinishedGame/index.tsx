@@ -29,6 +29,9 @@ export function FinishedGame() {
   }
 
   useEffect(() => {
+    if (!state) {
+      navigate("/Educational/QuizGame");
+    }
     handleResults(state);
   }, [state]);
 
@@ -46,6 +49,12 @@ export function FinishedGame() {
           style={{ cursor: "pointer" }}
         >
           Tentar Novamente?
+        </ScoreView>
+        <ScoreView
+          onClick={() => navigate("/Educational")}
+          style={{ cursor: "pointer", marginTop: 20 }}
+        >
+          Sair do Quiz
         </ScoreView>
       </MainMenu>
       <FooterEducational />

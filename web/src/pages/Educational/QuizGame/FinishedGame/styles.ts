@@ -10,7 +10,7 @@ export const MainMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   align-self: center;
-  min-height: 715px;
+  min-height: 777px;
 
   img {
     align-self: center;

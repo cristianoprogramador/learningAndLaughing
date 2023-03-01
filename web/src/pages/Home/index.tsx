@@ -8,6 +8,7 @@ import {
 } from "./styles";
 import SuperMarketImage from "../../assets/images/supermarket.jpg";
 import StudyingImage from "../../assets/images/studying.jpg";
+import callmusic from "../../assets/images/callmusic.jpg";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
@@ -33,6 +34,10 @@ export function Home() {
             <OptionContainer onClick={() => navigate("/Educational")}>
               <img src={StudyingImage} alt="logo" />
               <h3>Programação & Educação</h3>
+            </OptionContainer>
+            <OptionContainer onClick={() => navigate("/CallMusic")}>
+              <img src={callmusic} alt="logo" />
+              <h3>CallMusic</h3>
             </OptionContainer>
           </ImageContainer>
         </SelectionContainer>

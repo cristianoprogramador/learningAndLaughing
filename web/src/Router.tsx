@@ -15,6 +15,8 @@ import { Educational } from "./pages/Educational";
 import { MainTopics } from "./pages/Educational/MainTopics";
 import { QuizGame } from "./pages/Educational/QuizGame";
 import { FinishedGame } from "./pages/Educational/QuizGame/FinishedGame";
+import { CallMusic } from "./pages/CallMusic";
+import { SignUpMusic } from "./pages/CallMusic/SignUpMusic";
 
 export function Router() {
   return (
@@ -44,6 +46,8 @@ export function Router() {
         path="/Educational/QuizGame/FinishedGame"
         element={<FinishedGame />}
       />
+      <Route path="/CallMusic" element={<CallMusic />} />
+      <Route path="/CallMusic/SignUpMusic" element={<SignUpMusic />} />
     </Routes>
   );
 }

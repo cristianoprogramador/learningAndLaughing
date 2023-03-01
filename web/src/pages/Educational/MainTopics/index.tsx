@@ -20,13 +20,9 @@ import videoproject from "../../../assets/svg/videoproject.svg";
 import quiz from "../../../assets/svg/quiz.svg";
 import articles from "../../../assets/svg/articles.svg";
 
-import quizeasy from "../../../assets/svg/quizeasy.svg";
-import quizmedium from "../../../assets/svg/quizmedium.svg";
-import quizhard from "../../../assets/svg/quizhard.svg";
+import { Navigation, Pagination } from "swiper";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper } from "swiper/react";
 import { useState, useEffect } from "react";
 
 // Import Swiper styles
@@ -57,19 +53,11 @@ export function MainTopics() {
   const [videosProject, setVideosProject] = useState(filter);
   const [articlesData, setArticlesData] = useState(filter);
 
-  console.log("OQUE TA VINDO GERAL", data);
-
-  console.log("OQUE DEVERIA VIR", filter);
-
   function showTopics() {
     setVideosData(filter.filter((topic) => topic.type === "video"));
     setVideosProject(filter.filter((topic) => topic.type === "videoproject"));
     setArticlesData(filter.filter((topic) => topic.type === "article"));
   }
-
-  console.log("TACERTO", videosData);
-  console.log("TACERTO", videosProject);
-  console.log("TACERTO2", articlesData);
 
   useEffect(() => {
     showTopics();
