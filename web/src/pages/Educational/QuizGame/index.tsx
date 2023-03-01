@@ -5,7 +5,6 @@ import {
   Explanations,
   ImageContainer,
   MainMenu,
-  OptionsContainer,
   QuizContainer,
   ScoreView,
   Title,
@@ -18,11 +17,10 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { HeaderEducational } from "../../../components/HeaderEducational";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 import { quiz } from "../../../services/quiz";
-import gameover from "../../../assets/images/gameover.png";
 import { toast } from "react-toastify";
 import { ButtonQuiz } from "../../../components/ButtonQuiz";
 import { Button } from "../../../components/Button";
@@ -41,6 +39,7 @@ export interface QuizProps {
 
 export function QuizGame() {
   const { state } = useLocation();
+  const navigate = useNavigate();
 
   const [currentQuestion, setCurrentQuestion] = useState<QuizProps | null>(
     null
@@ -48,12 +47,12 @@ export function QuizGame() {
   const [askedQuestions, setAskedQuestions] = useState<QuizProps[]>([]);
   const [points, setPoints] = useState(0);
   const [totalPoints, setTotalPoints] = useState(0);
-  const [isGameOver, setIsGameOver] = useState<boolean>(false);
   const [selectedAnswerIndex, setSelectedAnswerIndex] = useState<number | null>(
     null
   );
   const [optionSelected, setOptionSelected] = useState("");
   const [isDisabled, setIsDisabled] = useState(false);
+  const [isDisabledSeeResults, setIsDisabledSeeResults] = useState(true);
   const [seeCorrection, setSeeCorrection] = useState(false);
   const [correctAnswer, setCorrectAnswer] = useState("");
   const [notAnswered, setNotAnswered] = useState(true);
@@ -62,8 +61,7 @@ export function QuizGame() {
     setSelectedAnswerIndex(null);
     const unansweredQuestions = quiz.filter((q) => !askedQuestions.includes(q));
     if (unansweredQuestions.length === 0) {
-      setIsGameOver(true);
-      setSeeCorrection(false);
+      navigate("/Educational/QuizGame/FinishedGame", { state: points });
     } else {
       const randomIndex = Math.floor(
         Math.random() * unansweredQuestions.length
@@ -73,7 +71,7 @@ export function QuizGame() {
     }
   }, [askedQuestions]);
 
-  console.log("QUAL RESPOSTA CORRETA? ", correctAnswer);
+  // console.log("QUAL RESPOSTA CORRETA? ", correctAnswer);
 
   function handleAnswer(selectedIndex: string) {
     const isCorrect = selectedIndex === currentQuestion!.correct;
@@ -86,6 +84,7 @@ export function QuizGame() {
     }
     setTotalPoints(totalPoints + 10);
     setIsDisabled(true);
+    setIsDisabledSeeResults(false);
     setNotAnswered(false);
   }
 
@@ -114,48 +113,44 @@ export function QuizGame() {
           <ScoreView>
             SCORE: {points}/{totalPoints}
           </ScoreView>
-          {isGameOver ? (
-            <QuizContainer>
-              <img src={gameover} alt="" />
-            </QuizContainer>
-          ) : (
-            <QuizContainer>
-              <ImageContainer>
-                <img src={currentQuestion.question} />
-              </ImageContainer>
-              <TitleQuiz>Resultado:</TitleQuiz>
-              {currentQuestion.answers.map((answer, index) => {
-                const buttonStyle = {
-                  backgroundColor:
-                    selectedAnswerIndex === index ? "green" : "gray",
-                  border:
-                    correctAnswer === answer.id ? "2px solid red" : "none",
-                  color: correctAnswer === answer.id && "red",
-                };
-                return (
-                  <ButtonQuiz
-                    text={answer.answer}
-                    onClick={() => {
-                      setSelectedAnswerIndex(index);
-                      setOptionSelected(answer.id);
-                    }}
-                    key={answer.id}
-                    style={buttonStyle}
-                    disabled={isDisabled}
-                  />
-                );
-              })}
-              <Button
-                text={"Testar a sorte!"}
-                differentColor
-                onClick={() => {
-                  handleAnswer(optionSelected);
-                }}
-                disabled={isDisabled}
-                style={{ width: "50%", alignSelf: "center" }}
-              />
-            </QuizContainer>
-          )}
+
+          <QuizContainer>
+            <ImageContainer>
+              <img src={currentQuestion.question} />
+            </ImageContainer>
+            <TitleQuiz>Resultado:</TitleQuiz>
+            {currentQuestion.answers.map((answer, index) => {
+              const buttonStyle = {
+                backgroundColor:
+                  selectedAnswerIndex === index ? "green" : "gray",
+                border: correctAnswer === answer.id ? "2px solid red" : "none",
+                color: correctAnswer === answer.id && "red",
+              };
+              return (
+                <ButtonQuiz
+                  text={answer.answer}
+                  onClick={() => {
+                    setSelectedAnswerIndex(index);
+                    setOptionSelected(answer.id);
+                    setIsDisabledSeeResults(false);
+                  }}
+                  key={answer.id}
+                  style={buttonStyle}
+                  disabled={isDisabled}
+                />
+              );
+            })}
+            <Button
+              text={"Testar a sorte!"}
+              differentColor
+              onClick={() => {
+                handleAnswer(optionSelected);
+                setIsDisabledSeeResults(true);
+              }}
+              disabled={isDisabledSeeResults}
+              style={{ width: "50%", alignSelf: "center", marginTop: "30px" }}
+            />
+          </QuizContainer>
         </div>
 
         <div

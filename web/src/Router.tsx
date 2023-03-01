@@ -14,6 +14,7 @@ import { HistoryActions } from "./pages/HistoryActions";
 import { Educational } from "./pages/Educational";
 import { MainTopics } from "./pages/Educational/MainTopics";
 import { QuizGame } from "./pages/Educational/QuizGame";
+import { FinishedGame } from "./pages/Educational/QuizGame/FinishedGame";
 
 export function Router() {
   return (
@@ -39,6 +40,10 @@ export function Router() {
       <Route path="/Educational" element={<Educational />} />
       <Route path="/Educational/MainTopics" element={<MainTopics />} />
       <Route path="/Educational/QuizGame" element={<QuizGame />} />
+      <Route
+        path="/Educational/QuizGame/FinishedGame"
+        element={<FinishedGame />}
+      />
     </Routes>
   );
 }
