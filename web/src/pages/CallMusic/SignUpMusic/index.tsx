@@ -46,6 +46,7 @@ export interface MusicianFormProps {
   howFarToPlay: number;
   priceByHour: number;
   musicStyles: [];
+  typeOfMusician: [];
   offerInstrumentals: boolean;
 }
 
@@ -71,6 +72,7 @@ const musicOptions: Option[] = [
   { value: "blues", label: "Blues" },
   { value: "nacional", label: "Nacional" },
   { value: "internacional", label: "Internacional" },
+  { value: "Clássica", label: "Clássica" },
 ];
 
 const teachOptions: Option[] = [
@@ -81,6 +83,20 @@ const teachOptions: Option[] = [
   { value: "piano", label: "Piano" },
   { value: "teclado", label: "Teclado" },
   { value: "bateria", label: "Bateria" },
+];
+
+const typeOfMusicianData: Option[] = [
+  { value: "Banda-Cover", label: "Banda-Cover" },
+  { value: "Orquestra", label: "Orquestra" },
+  { value: "Cover", label: "Cover" },
+  { value: "Solista", label: "Solista" },
+  { value: "Quarteto", label: "Quarteto" },
+  { value: "Banda-Autoral", label: "Banda-Autoral" },
+  { value: "Dupla", label: "Dupla" },
+  { value: "Trio", label: "Trio" },
+  { value: "DJ", label: "DJ" },
+  { value: "Cantor-Compositor", label: "Cantor-Compositor" },
+  { value: "Músico de sessão", label: "Músico de sessão" },
 ];
 
 const customStyles = {
@@ -102,6 +118,7 @@ export function SignUpMusic() {
     howFarToPlay: 0,
     priceByHour: 0,
     musicStyles: [],
+    typeOfMusician: [],
     offerInstrumentals: false,
   };
 
@@ -128,6 +145,9 @@ export function SignUpMusic() {
       .required("Preço é obrigatório"),
     musicStyles: Yup.array()
       .min(1, "Por favor, selecione pelo menos um estilo de música")
+      .of(Yup.string()),
+    typeOfMusician: Yup.array()
+      .min(1, "Por favor, selecione pelo menos dos formatos apresentados")
       .of(Yup.string()),
     offerInstrumentals: Yup.boolean(),
   });
@@ -181,7 +201,6 @@ export function SignUpMusic() {
               <div style={{ color: "red", marginTop: 5 }}>
                 <ErrorMessage name="sizeOfTheGroup" />
               </div>
-
               {values.sizeOfTheGroup === "individual" && (
                 <label
                   style={{
@@ -222,7 +241,6 @@ export function SignUpMusic() {
                     </div>
                   </div>
                 )}
-
               <div style={{ marginTop: 20, marginBottom: 20 }}>
                 <label htmlFor="placesToPlay">Locais para show</label>
                 <Select
@@ -247,7 +265,30 @@ export function SignUpMusic() {
                   <ErrorMessage name="placesToPlay" />
                 </div>
               </div>
-
+              <div style={{ marginBottom: 20 }}>
+                <label htmlFor="typeOfMusician">Formação</label>
+                <Select
+                  placeholder="Selecionar..."
+                  name="typeOfMusician"
+                  options={typeOfMusicianData}
+                  isMulti
+                  onChange={(selectedOptions) =>
+                    setFieldValue(
+                      "typeOfMusician",
+                      selectedOptions
+                        ? selectedOptions.map((option) => option.value)
+                        : []
+                    )
+                  }
+                  value={typeOfMusicianData.filter((option) =>
+                    values.typeOfMusician.includes(option.value)
+                  )}
+                  styles={customStyles}
+                />
+                <div style={{ color: "red", marginTop: 5 }}>
+                  <ErrorMessage name="typeOfMusician" />
+                </div>
+              </div>
               <InputView>
                 <InputContainer>
                   <Input

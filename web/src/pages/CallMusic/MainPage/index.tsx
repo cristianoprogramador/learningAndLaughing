@@ -37,12 +37,19 @@ export function MainPage() {
             </strong>
           </div>
         </Introduction>
-        <SectionTitle>Artistas mais Requisitados!</SectionTitle>
+        <SectionTitle>Artistas da sua Região!</SectionTitle>
 
         <ContainerProfile>
           {musicProfile.map((profile, index) => {
             return (
-              <GridContainer key={profile.id}>
+              <GridContainer
+                key={profile.id}
+                onClick={() =>
+                  navigate("/CallMusic/ProfilePage", {
+                    state: profile,
+                  })
+                }
+              >
                 <ProfileContaine
                   style={{
                     backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.6)), url(${profile.image})`,
@@ -51,15 +58,21 @@ export function MainPage() {
                   <BandInfo>
                     <NameOfBand>{profile.nameOfTheGroup}</NameOfBand>
                     <MusicStyle>
-                      {profile.musicStyles[0]}, {profile.musicStyles[1]},{" "}
-                      {profile.musicStyles[2]}...
+                      {profile.typeOfMusicianData.length > 1 ? (
+                        <div>
+                          {profile.typeOfMusicianData[0]},{" "}
+                          {profile.typeOfMusicianData[1]}
+                        </div>
+                      ) : (
+                        <div>{profile.typeOfMusicianData[0]}</div>
+                      )}
                     </MusicStyle>
                   </BandInfo>
                   <PriceInfo>
                     <Price>
-                      Preço{"\n"}
+                      Valor{"\n"}
                       <strong>
-                        R$:
+                        R$:{" "}
                         {Number(profile.priceByHour).toLocaleString("pt-BR", {
                           minimumFractionDigits: 2,
                           maximumFractionDigits: 2,
