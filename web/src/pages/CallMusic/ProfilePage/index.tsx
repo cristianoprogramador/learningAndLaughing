@@ -1,20 +1,30 @@
 import { FooterEducational } from "../../../components/FooterEducational";
 import {
   AddButton,
+  Bands,
+  BandsToPlay,
+  Buttons,
+  ContactButton,
   Container,
   Description,
   ImageProfile,
   InformationContainer,
+  LessonsContainer,
   MainMenu,
   MidiaContainer,
   Places,
   PlacesAndDetails,
   PlacesToPlay,
   Playlist,
+  PriceButton,
+  SignUpIcons,
   Style,
   Title,
   TitleOption,
 } from "./styles";
+
+import facebookSVG from "../../../assets/svg/facebook.svg";
+import instagramSVG from "../../../assets/svg/instagram.svg";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
@@ -23,7 +33,10 @@ import { HeaderEducational } from "../../../components/HeaderEducational";
 import band1 from "../../../assets/musicProfile/band1.jpg";
 import band2 from "../../../assets/musicProfile/band2.jpg";
 import band3 from "../../../assets/musicProfile/band3.jpg";
+import band4 from "../../../assets/musicProfile/band4.jpg";
 import { MdOutlinePermMedia } from "react-icons/md";
+import { IoIosListBox } from "react-icons/io";
+import { GrContact } from "react-icons/gr";
 
 export function ProfilePage() {
   const navigate = useNavigate();
@@ -34,9 +47,21 @@ export function ProfilePage() {
       <HeaderEducational />
       <MainMenu>
         <MidiaContainer>
+          <PriceButton>
+            <div>Valor:</div>
+            <strong>
+              R$:{" "}
+              {Number(state.priceByHour).toLocaleString("pt-BR", {
+                minimumFractionDigits: 2,
+                maximumFractionDigits: 2,
+              })}
+            </strong>
+          </PriceButton>
+          (Por Hora)
           <ImageProfile src={state.image} alt="" />
           <ImageProfile src={band2} alt="" />
           <ImageProfile src={band3} alt="" />
+          <ImageProfile src={band4} alt="" />
           <AddButton>
             <MdOutlinePermMedia size={20} />
             <div>Ver Fotos/Vídeos</div>
@@ -44,11 +69,13 @@ export function ProfilePage() {
         </MidiaContainer>
         <InformationContainer>
           <Title>{state.nameOfTheGroup}</Title>
-          <PlacesToPlay>
-            {state.typeOfMusicianData.map((place: any, index) => {
-              return <Style key={index}>{place}</Style>;
-            })}
-          </PlacesToPlay>
+          <PlacesAndDetails>
+            <PlacesToPlay>
+              {state.typeOfMusicianData.map((place: any, index) => {
+                return <Places key={index}>{place}</Places>;
+              })}
+            </PlacesToPlay>
+          </PlacesAndDetails>
           <Description>
             <div>
               Nós somos uma banda cover que adora tocar as músicas que as
@@ -81,9 +108,48 @@ export function ProfilePage() {
               })}
             </PlacesToPlay>
           </PlacesAndDetails>
-          <Playlist>
+          <PlacesAndDetails>
             <TitleOption>Repertório:</TitleOption>
-          </Playlist>
+            <BandsToPlay>
+              {state.playlistItems.map((place: any, index) => {
+                return <Bands key={index}>{place.bandName}</Bands>;
+              })}
+            </BandsToPlay>
+          </PlacesAndDetails>
+          <AddButton>
+            <IoIosListBox size={20} />
+            <div>Ver Lista de Músicas</div>
+          </AddButton>
+          <SignUpIcons>
+            <div style={{ cursor: "pointer" }}>
+              <img src={facebookSVG} alt="facebook" />
+              <div>{state.nameOfTheGroup}</div>
+            </div>
+            <div style={{ cursor: "pointer" }}>
+              <img src={instagramSVG} alt="instagram" />
+              <div>@{state.nameOfTheGroup}</div>
+            </div>
+          </SignUpIcons>
+          <Buttons>
+            <ContactButton>
+              <div>Entrar em Contato</div>
+              <GrContact size={35} />
+            </ContactButton>
+            {state.teach && (
+              <LessonsContainer>
+                <div>Aulas de</div>
+                <div>
+                  {state.teachWhat.map((teach, index) => {
+                    return (
+                      <div style={{ margin: 5, fontSize: 18 }} key={index}>
+                        <strong>{teach}</strong>{" "}
+                      </div>
+                    );
+                  })}
+                </div>
+              </LessonsContainer>
+            )}
+          </Buttons>
         </InformationContainer>
       </MainMenu>
       <FooterEducational />

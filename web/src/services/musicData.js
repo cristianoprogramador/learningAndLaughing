@@ -27,6 +27,14 @@ export const musicProfile = [
     musicStyles: ["Rock", "Pop", "Internacional"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Banda-Cover"],
+    playlistItems: [
+      { bandName: "Boston", songName: "More Than a Feeling" },
+      { bandName: "The Rolling Stones", songName: "Paint It Black" },
+      { bandName: "AC/DC", songName: "Thunderstruck" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Master of Puppets" },
+      { bandName: "Black Sabbath", songName: "Iron Man" },
+    ],
   },
   {
     id: "1",
@@ -46,6 +54,14 @@ export const musicProfile = [
     musicStyles: ["Pagode", "Nacional", "Internacional"],
     offerInstrumentals: false,
     typeOfMusicianData: ["Banda-Autoral", "Cover"],
+    playlistItems: [
+      { bandName: "Nirvana", songName: "Come as you are" },
+      { bandName: "ZZ Top", songName: "Enjoy and Get It On" },
+      { bandName: "Lynyrd Skynyrd", songName: "Simple Man" },
+      { bandName: "Led Zeppelin", songName: "Rock and Roll" },
+      { bandName: "Jimi Hendrix", songName: "Somewhere" },
+      { bandName: "Boston", songName: "More Than a Feeling" },
+    ],
   },
   {
     id: "2",
@@ -66,6 +82,14 @@ export const musicProfile = [
     musicStyles: ["Rock", "Pop", "Internacional", "Blues"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Cantor-Compositor", "Cover"],
+    playlistItems: [
+      { bandName: "AC/DC", songName: "Back in Black" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Enter Sandman" },
+      { bandName: "Pink Floyd", songName: "Comfortably Numb" },
+      { bandName: "Queen", songName: "Bohemian Rhapsody" },
+      { bandName: "The Beatles", songName: "Let It Be" },
+    ],
   },
   {
     id: "3",
@@ -86,6 +110,14 @@ export const musicProfile = [
     musicStyles: ["Pagode", "Jazz", "Nacional", "Internacional"],
     offerInstrumentals: false,
     typeOfMusicianData: ["Solista", "Músico de sessão", "Cantor-Compositor"],
+    playlistItems: [
+      { bandName: "Só Pra Contrariar", songName: "Essa Tal Liberdade" },
+      { bandName: "Raça Negra", songName: "Cheia de Manias" },
+      { bandName: "Exaltasamba", songName: "Livre Pra Voar" },
+      { bandName: "Grupo Revelação", songName: "Deixa Acontecer" },
+      { bandName: "Fundo de Quintal", songName: "A Amizade" },
+      { bandName: "Os Travessos", songName: "Tô Te Filmando (Sorria)" },
+    ],
   },
   {
     id: "4",
@@ -106,6 +138,16 @@ export const musicProfile = [
     musicStyles: ["Jazz", "Nacional", "Internacional"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Solista", "Cantor-Compositor", "Músico de sessão"],
+    playlistItems: [
+      {
+        bandName: "Os Paralamas do Sucesso",
+        songName: "Lanterna dos Afogados",
+      },
+      { bandName: "Legião Urbana", songName: "Tempo Perdido" },
+      { bandName: "Engenheiros do Hawaii", songName: "Piano Bar" },
+      { bandName: "Raul Seixas", songName: "Maluco Beleza" },
+      { bandName: "Cássia Eller", songName: "Malandragem" },
+    ],
   },
   {
     id: "5",
@@ -126,6 +168,16 @@ export const musicProfile = [
     musicStyles: ["Rock", "Blues", "Pop", "Canto"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Cantor-Compositor", "Cover"],
+    playlistItems: [
+      {
+        bandName: "Os Paralamas do Sucesso",
+        songName: "Lanterna dos Afogados",
+      },
+      { bandName: "Legião Urbana", songName: "Tempo Perdido" },
+      { bandName: "Engenheiros do Hawaii", songName: "Piano Bar" },
+      { bandName: "Raul Seixas", songName: "Maluco Beleza" },
+      { bandName: "Cássia Eller", songName: "Malandragem" },
+    ],
   },
   {
     id: "6",
@@ -146,6 +198,14 @@ export const musicProfile = [
     musicStyles: ["Rock", "Nacional", "Pop"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Cantor-Compositor", "Cover", "Solista"],
+    playlistItems: [
+      { bandName: "AC/DC", songName: "Back in Black" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Enter Sandman" },
+      { bandName: "Pink Floyd", songName: "Comfortably Numb" },
+      { bandName: "Queen", songName: "Bohemian Rhapsody" },
+      { bandName: "The Beatles", songName: "Let It Be" },
+    ],
   },
   {
     id: "7",
@@ -166,6 +226,14 @@ export const musicProfile = [
     musicStyles: ["Blues", "Rock", "Pop"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Cantor-Compositor", "Solista", "Cover"],
+    playlistItems: [
+      { bandName: "B.B. King", songName: "The Thrill Is Gone" },
+      { bandName: "Stevie Ray Vaughan", songName: "Pride and Joy" },
+      { bandName: "Muddy Waters", songName: "Mannish Boy" },
+      { bandName: "Howlin' Wolf", songName: "Smokestack Lightnin'" },
+      { bandName: "Robert Johnson", songName: "Cross Road Blues" },
+      { bandName: "John Lee Hooker", songName: "Boom Boom" },
+    ],
   },
   {
     id: "8",
@@ -186,6 +254,14 @@ export const musicProfile = [
     musicStyles: ["Internacional", "Blues", "Rock", "Pop"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Solista", "Cantor-Compositor", "Músico de sessão"],
+    playlistItems: [
+      { bandName: "AC/DC", songName: "Back in Black" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Enter Sandman" },
+      { bandName: "Pink Floyd", songName: "Comfortably Numb" },
+      { bandName: "Queen", songName: "Bohemian Rhapsody" },
+      { bandName: "The Beatles", songName: "Let It Be" },
+    ],
   },
   {
     id: "9",
@@ -206,6 +282,19 @@ export const musicProfile = [
     musicStyles: ["Internacional", "Nacional", "Blues", "Rock", "Pop"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Banda-Autoral", "Cover"],
+    playlistItems: [
+      { bandName: "Nirvana", songName: "Come as you are" },
+      { bandName: "ZZ Top", songName: "Enjoy and Get It On" },
+      { bandName: "Lynyrd Skynyrd", songName: "Simple Man" },
+      { bandName: "Led Zeppelin", songName: "Rock and Roll" },
+      { bandName: "Jimi Hendrix", songName: "Somewhere" },
+      { bandName: "Boston", songName: "More Than a Feeling" },
+      { bandName: "The Rolling Stones", songName: "Paint It Black" },
+      { bandName: "AC/DC", songName: "Thunderstruck" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Master of Puppets" },
+      { bandName: "Black Sabbath", songName: "Iron Man" },
+    ],
   },
   {
     id: "10",
@@ -227,6 +316,14 @@ export const musicProfile = [
     musicStyles: ["Gospel", "Rock", "Pop", "Internacional", "Nacional"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Banda-Autoral", "Cover"],
+    playlistItems: [
+      { bandName: "AC/DC", songName: "Back in Black" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Enter Sandman" },
+      { bandName: "Pink Floyd", songName: "Comfortably Numb" },
+      { bandName: "Queen", songName: "Bohemian Rhapsody" },
+      { bandName: "The Beatles", songName: "Let It Be" },
+    ],
   },
   {
     id: "11",
@@ -246,6 +343,14 @@ export const musicProfile = [
     musicStyles: ["Clássica", "Rock", "Pop", "Internacional", "Nacional"],
     offerInstrumentals: true,
     typeOfMusicianData: ["Orquestra"],
+    playlistItems: [
+      { bandName: "Beethoven", songName: "Symphony No. 5" },
+      { bandName: "Tchaikovsky", songName: "1812 Overture" },
+      { bandName: "Mozart", songName: "Eine Kleine Nachtmusik" },
+      { bandName: "Bach", songName: "Brandenburg Concerto No. 3" },
+      { bandName: "Vivaldi", songName: "The Four Seasons" },
+      { bandName: "Holst", songName: "The Planets" },
+    ],
   },
   {
     id: "12",
@@ -266,5 +371,13 @@ export const musicProfile = [
     musicStyles: ["Blues", "Rock", "Internacional", "Nacional"],
     offerInstrumentals: false,
     typeOfMusicianData: ["Banda-Autoral", "Cover"],
+    playlistItems: [
+      { bandName: "AC/DC", songName: "Back in Black" },
+      { bandName: "Guns N' Roses", songName: "Sweet Child O' Mine" },
+      { bandName: "Metallica", songName: "Enter Sandman" },
+      { bandName: "Pink Floyd", songName: "Comfortably Numb" },
+      { bandName: "Queen", songName: "Bohemian Rhapsody" },
+      { bandName: "The Beatles", songName: "Let It Be" },
+    ],
   },
 ];

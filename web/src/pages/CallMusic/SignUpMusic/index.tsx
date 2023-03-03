@@ -166,7 +166,7 @@ export function SignUpMusic() {
         {({ values, handleChange, setFieldValue, isSubmitting }) => (
           <Information>
             <AddressContainer>
-              <Title>Perfil de Cadastro</Title>
+              <Title>Cadastro Simples</Title>
               <TitleMinor>Tipo de Perfil:</TitleMinor>
               <InputRadio>
                 <SelectionAndImage>
