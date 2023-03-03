@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { Form, Formik } from "formik";
+import { Field, Form } from "formik";
+import { NumericFormat } from "react-number-format";
 
 export const Container = styled.main`
   display: flex;
@@ -34,7 +35,26 @@ export const Title = styled.p`
   margin-bottom: 1rem;
 `;
 
+export const TitleMinor = styled.p`
+  display: flex;
+  justify-content: center;
+  font-size: large;
+  font-weight: 500;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+`;
+
 export const InputView = styled.div``;
+
+export const PriceByHour = styled.div``;
+
+export const NumericFormatInput = styled(NumericFormat)`
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid;
+  outline: none;
+  font-size: 18px;
+`;
 
 export const InputContainer = styled.div`
   display: grid;
@@ -50,6 +70,25 @@ export const InputRadio = styled.div`
   border: 1px solid ${(props) => props.theme["gray-500"]};
   border-radius: 1rem;
 `;
+
+export const SelectionAndImage = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const ImageSoloBand = styled.img`
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 50px;
+  margin-top: 1rem;
+`;
+
+export const StyledCheckbox = styled(Field)`
+  width: 20px;
+  height: 20px;
+`;
+
 export const InputOption = styled.div`
   display: flex;
   flex-direction: row;
@@ -68,6 +107,7 @@ export const InputOption = styled.div`
   label {
     padding: 1rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 
   input[type="radio"]:checked + label {

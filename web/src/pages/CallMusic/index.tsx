@@ -26,7 +26,7 @@ export function CallMusic() {
               <img src={musicien} alt="logo" />
               <h3>Músico</h3>
             </OptionContainer>
-            <OptionContainer onClick={() => navigate("/Educational")}>
+            <OptionContainer onClick={() => navigate("/CallMusic/MainPage")}>
               <img src={company} alt="logo" />
               <h3>Contratante ou Empresário</h3>
             </OptionContainer>

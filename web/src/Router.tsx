@@ -17,6 +17,7 @@ import { QuizGame } from "./pages/Educational/QuizGame";
 import { FinishedGame } from "./pages/Educational/QuizGame/FinishedGame";
 import { CallMusic } from "./pages/CallMusic";
 import { SignUpMusic } from "./pages/CallMusic/SignUpMusic";
+import { MainPage } from "./pages/CallMusic/MainPage";
 
 export function Router() {
   return (
@@ -48,6 +49,7 @@ export function Router() {
       />
       <Route path="/CallMusic" element={<CallMusic />} />
       <Route path="/CallMusic/SignUpMusic" element={<SignUpMusic />} />
+      <Route path="/CallMusic/MainPage" element={<MainPage />} />
     </Routes>
   );
 }
