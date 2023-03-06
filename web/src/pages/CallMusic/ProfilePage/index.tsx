@@ -130,7 +130,13 @@ export function ProfilePage() {
             </div>
           </SignUpIcons>
           <Buttons>
-            <ContactButton>
+            <ContactButton
+              onClick={() =>
+                navigate("/CallMusic/FormPage", {
+                  state: state,
+                })
+              }
+            >
               <div>Entrar em Contato</div>
               <GrContact size={35} />
             </ContactButton>

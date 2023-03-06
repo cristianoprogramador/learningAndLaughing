@@ -1,8 +1,10 @@
 import { FooterEducational } from "../../../components/FooterEducational";
 import {
   BandInfo,
+  CitySelection,
   Container,
   ContainerProfile,
+  DateEvent,
   FilterSelection,
   GridContainer,
   InputsSearch,
@@ -13,6 +15,7 @@ import {
   Price,
   PriceInfo,
   ProfileContainer,
+  SearchButton,
   SectionTitle,
   TextFilter,
 } from "./styles";
@@ -20,12 +23,38 @@ import {
 import { useNavigate } from "react-router-dom";
 import { musicProfile } from "../../../services/musicData";
 
-import { HeaderEducational } from "../../../components/HeaderEducational";
 import { HeaderCallMusic } from "../../../components/HeaderCallMusic";
 import headerIMAGE from "../../../assets/images/headerimage.jpg";
+import Select from "react-select";
+import { useState } from "react";
+import SearchBarCity from "../../../components/SearchBarCity";
+import { MdPersonSearch } from "react-icons/md";
 
 export function MainPage() {
   const navigate = useNavigate();
+  const [citySelected, setCitySelected] = useState("");
+
+  const [filteredData, setFilteredData] = useState([]);
+  const [wordEntered, setWordEntered] = useState("");
+
+  const handleChange = (selectedOption) => {
+    setCitySelected(selectedOption);
+    console.log(`Option selected:`, selectedOption);
+  };
+
+  function handleClick(e) {
+    e.target.setAttribute("type", "date");
+  }
+
+  const cities = [
+    { value: "Ribeirão Preto", label: "Ribeirão Preto" },
+    { value: "São Paulo", label: "São Paulo" },
+    { value: "Campinas", label: "Campinas" },
+  ];
+
+  const today = new Date();
+  const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
+  const minDate = tomorrow.toISOString().split("T")[0];
 
   return (
     <Container>
@@ -37,8 +66,18 @@ export function MainPage() {
       >
         <TextFilter>Encontre o artista perfeito para seu evento!</TextFilter>
         <InputsSearch>
-          <input name="teste" />
-          <input name="teste" />
+          {/* <input placeholder="Em qual cidade será?" /> */}
+          <SearchBarCity placeholder="Em qual cidade será?" data={cities} />
+          <DateEvent
+            placeholder="Data do evento"
+            type="text"
+            onClick={handleClick}
+            min={minDate}
+          />
+          <SearchButton>
+            <MdPersonSearch size={30} />
+            Pesquisar
+          </SearchButton>
         </InputsSearch>
       </FilterSelection>
 

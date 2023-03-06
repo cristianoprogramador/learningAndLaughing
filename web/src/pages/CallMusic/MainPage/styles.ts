@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { SwiperSlide } from "swiper/react";
+import Select from "react-select";
 
 export const Container = styled.main`
   display: flex;
@@ -29,7 +29,7 @@ export const TextFilter = styled.div`
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  margin-bottom: 4rem;
+  margin-bottom: 2rem;
   color: white;
   font-size: 45px;
   font-family: Georgia, "Times New Roman", Times, serif, "Arial Narrow", Arial,
@@ -40,20 +40,34 @@ export const TextFilter = styled.div`
 export const InputsSearch = styled.div`
   display: flex;
   flex-direction: row;
+  position: relative;
   justify-content: center;
-  gap: 1rem;
+  align-items: center;
+  margin-bottom: -19px;
+  gap: 2rem;
+`;
 
-  input {
-    font-size: 1rem;
-    color: ${(props) => props.theme["gray-500"]};
-    text-align: left;
-    box-shadow: 0 0 0 0;
-    border: 0 none;
-    outline: 0;
-    background-color: lightgray;
-    padding: 10px;
-    height: 100%;
-  }
+export const DateEvent = styled.input`
+  background-color: white;
+  height: 30px;
+  width: 200px;
+  font-size: 18px;
+  padding: 15px;
+  font-family: Roboto;
+  border: 0;
+`;
+
+export const SearchButton = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: ${(props) => props.theme["blue-500"]};
+  height: 55px;
+  width: 120px;
+  font-size: 18px;
+  border-radius: 10px;
+  cursor: pointer;
 `;
 
 export const Introduction = styled.div`

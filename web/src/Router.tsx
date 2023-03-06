@@ -19,6 +19,7 @@ import { CallMusic } from "./pages/CallMusic";
 import { SignUpMusic } from "./pages/CallMusic/SignUpMusic";
 import { MainPage } from "./pages/CallMusic/MainPage";
 import { ProfilePage } from "./pages/CallMusic/ProfilePage";
+import { FormPage } from "./pages/CallMusic/FormPage";
 
 export function Router() {
   return (
@@ -52,6 +53,7 @@ export function Router() {
       <Route path="/CallMusic/SignUpMusic" element={<SignUpMusic />} />
       <Route path="/CallMusic/MainPage" element={<MainPage />} />
       <Route path="/CallMusic/ProfilePage" element={<ProfilePage />} />
+      <Route path="/CallMusic/FormPage" element={<FormPage />} />
     </Routes>
   );
 }
