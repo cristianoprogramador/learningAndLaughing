@@ -15,6 +15,47 @@ export const MainMenu = styled.div`
   min-height: 650px;
 `;
 
+export const FilterSelection = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 350px;
+`;
+
+export const TextFilter = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin-bottom: 4rem;
+  color: white;
+  font-size: 45px;
+  font-family: Georgia, "Times New Roman", Times, serif, "Arial Narrow", Arial,
+    sans-serif;
+  text-shadow: black 3px 3px 2px;
+`;
+
+export const InputsSearch = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+
+  input {
+    font-size: 1rem;
+    color: ${(props) => props.theme["gray-500"]};
+    text-align: left;
+    box-shadow: 0 0 0 0;
+    border: 0 none;
+    outline: 0;
+    background-color: lightgray;
+    padding: 10px;
+    height: 100%;
+  }
+`;
+
 export const Introduction = styled.div`
   display: flex;
   flex-direction: column;
@@ -55,7 +96,7 @@ export const ContainerProfile = styled.div`
   gap: 3rem;
 `;
 
-export const ProfileContaine = styled.div`
+export const ProfileContainer = styled.div`
   width: 340px;
   height: 340px;
   border-radius: 30px;

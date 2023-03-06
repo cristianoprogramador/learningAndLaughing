@@ -28,8 +28,6 @@ import instagramSVG from "../../../assets/svg/instagram.svg";
 
 import { useLocation, useNavigate } from "react-router-dom";
 
-import { HeaderEducational } from "../../../components/HeaderEducational";
-
 import band1 from "../../../assets/musicProfile/band1.jpg";
 import band2 from "../../../assets/musicProfile/band2.jpg";
 import band3 from "../../../assets/musicProfile/band3.jpg";
@@ -37,6 +35,7 @@ import band4 from "../../../assets/musicProfile/band4.jpg";
 import { MdOutlinePermMedia } from "react-icons/md";
 import { IoIosListBox } from "react-icons/io";
 import { GrContact } from "react-icons/gr";
+import { HeaderCallMusic } from "../../../components/HeaderCallMusic";
 
 export function ProfilePage() {
   const navigate = useNavigate();
@@ -44,7 +43,7 @@ export function ProfilePage() {
 
   return (
     <Container>
-      <HeaderEducational />
+      <HeaderCallMusic />
       <MainMenu>
         <MidiaContainer>
           <PriceButton>

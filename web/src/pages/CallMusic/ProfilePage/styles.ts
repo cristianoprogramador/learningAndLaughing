@@ -226,7 +226,6 @@ export const PriceButton = styled.div`
   gap: 1rem;
   margin-top: 2rem;
   margin-bottom: 1rem;
-  cursor: pointer;
   transition: 0.3s;
 
   font-size: xx-large;
@@ -256,4 +255,9 @@ export const LessonsContainer = styled.div`
   border-radius: 10px;
   padding: 1rem;
   cursor: pointer;
+  transition: 0.3s;
+
+  :hover {
+    background-color: ${(props) => props.theme["blue-500"]};
+  }
 `;
