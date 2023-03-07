@@ -98,6 +98,7 @@ export const musicProfile = [
     sizeOfTheGroup: "individual",
     teach: true,
     teachWhat: ["Violão", "Guitarra", "Bateria"],
+    teachPrice: 120,
     placesToPlay: [
       "Evento de Empresa",
       "Casa de Show",
@@ -156,6 +157,7 @@ export const musicProfile = [
     sizeOfTheGroup: "individual",
     teach: true,
     teachWhat: ["Violão", "Guitarra"],
+    teachPrice: 120,
     placesToPlay: [
       "Evento Social",
       "Concerto ao ar livre",
@@ -186,6 +188,7 @@ export const musicProfile = [
     sizeOfTheGroup: "individual",
     teach: true,
     teachWhat: ["Violão", "Guitarra", "Canto"],
+    teachPrice: 120,
     placesToPlay: [
       "Chácara",
       "Bar",
@@ -242,6 +245,7 @@ export const musicProfile = [
     sizeOfTheGroup: "individual",
     teach: true,
     teachWhat: ["Bateria", "Guitarra", "Violão"],
+    teachPrice: 120,
     placesToPlay: [
       "Evento de Empresa",
       "Sarau",

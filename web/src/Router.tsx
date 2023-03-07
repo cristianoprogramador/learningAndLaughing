@@ -20,6 +20,7 @@ import { SignUpMusic } from "./pages/CallMusic/SignUpMusic";
 import { MainPage } from "./pages/CallMusic/MainPage";
 import { ProfilePage } from "./pages/CallMusic/ProfilePage";
 import { FormPage } from "./pages/CallMusic/FormPage";
+import { FormPageClass } from "./pages/CallMusic/FormPageClass";
 
 export function Router() {
   return (
@@ -54,6 +55,7 @@ export function Router() {
       <Route path="/CallMusic/MainPage" element={<MainPage />} />
       <Route path="/CallMusic/ProfilePage" element={<ProfilePage />} />
       <Route path="/CallMusic/FormPage" element={<FormPage />} />
+      <Route path="/CallMusic/FormPageClass" element={<FormPageClass />} />
     </Routes>
   );
 }

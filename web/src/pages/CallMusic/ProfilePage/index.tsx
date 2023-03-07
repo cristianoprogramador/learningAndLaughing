@@ -1,4 +1,3 @@
-import { FooterEducational } from "../../../components/FooterEducational";
 import {
   AddButton,
   Bands,
@@ -15,10 +14,8 @@ import {
   Places,
   PlacesAndDetails,
   PlacesToPlay,
-  Playlist,
   PriceButton,
   SignUpIcons,
-  Style,
   Title,
   TitleOption,
 } from "./styles";
@@ -26,20 +23,32 @@ import {
 import facebookSVG from "../../../assets/svg/facebook.svg";
 import instagramSVG from "../../../assets/svg/instagram.svg";
 
+import { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 
-import band1 from "../../../assets/musicProfile/band1.jpg";
+import { GrContact } from "react-icons/gr";
+import { MdOutlinePermMedia } from "react-icons/md";
 import band2 from "../../../assets/musicProfile/band2.jpg";
 import band3 from "../../../assets/musicProfile/band3.jpg";
 import band4 from "../../../assets/musicProfile/band4.jpg";
-import { MdOutlinePermMedia } from "react-icons/md";
-import { IoIosListBox } from "react-icons/io";
-import { GrContact } from "react-icons/gr";
+import { FooterCallMusic } from "../../../components/FooterCallMusic";
 import { HeaderCallMusic } from "../../../components/HeaderCallMusic";
+import { ModalSetList } from "../../../components/ModalSetList";
 
 export function ProfilePage() {
   const navigate = useNavigate();
   const { state } = useLocation();
+
+  const bandNames = state.playlistItems.reduce((nomes: any, item: any) => {
+    if (!nomes.includes(item.bandName)) {
+      nomes.push(item.bandName);
+    }
+    return nomes;
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
@@ -70,7 +79,7 @@ export function ProfilePage() {
           <Title>{state.nameOfTheGroup}</Title>
           <PlacesAndDetails>
             <PlacesToPlay>
-              {state.typeOfMusicianData.map((place: any, index) => {
+              {state.typeOfMusicianData.map((place: any, index: any) => {
                 return <Places key={index}>{place}</Places>;
               })}
             </PlacesToPlay>
@@ -94,7 +103,7 @@ export function ProfilePage() {
           <PlacesAndDetails>
             <TitleOption>Lugares para Show</TitleOption>
             <PlacesToPlay>
-              {state.placesToPlay.map((place: any, index) => {
+              {state.placesToPlay.map((place: any, index: any) => {
                 return <Places key={index}>{place}</Places>;
               })}
             </PlacesToPlay>
@@ -102,7 +111,7 @@ export function ProfilePage() {
           <PlacesAndDetails>
             <TitleOption>Estilos Musicais</TitleOption>
             <PlacesToPlay>
-              {state.musicStyles.map((place: any, index) => {
+              {state.musicStyles.map((place: any, index: any) => {
                 return <Places key={index}>{place}</Places>;
               })}
             </PlacesToPlay>
@@ -110,15 +119,15 @@ export function ProfilePage() {
           <PlacesAndDetails>
             <TitleOption>Repertório:</TitleOption>
             <BandsToPlay>
-              {state.playlistItems.map((place: any, index) => {
-                return <Bands key={index}>{place.bandName}</Bands>;
+              {bandNames.map((place: any, index: any) => {
+                return <Bands key={index}>{place}</Bands>;
               })}
             </BandsToPlay>
           </PlacesAndDetails>
-          <AddButton>
-            <IoIosListBox size={20} />
-            <div>Ver Lista de Músicas</div>
-          </AddButton>
+          <ModalSetList
+            title={"Ver Lista de Músicas"}
+            state={state.playlistItems}
+          />
           <SignUpIcons>
             <div style={{ cursor: "pointer" }}>
               <img src={facebookSVG} alt="facebook" />
@@ -141,10 +150,16 @@ export function ProfilePage() {
               <GrContact size={35} />
             </ContactButton>
             {state.teach && (
-              <LessonsContainer>
+              <LessonsContainer
+                onClick={() =>
+                  navigate("/CallMusic/FormPageClass", {
+                    state: state,
+                  })
+                }
+              >
                 <div>Aulas de</div>
                 <div>
-                  {state.teachWhat.map((teach, index) => {
+                  {state.teachWhat.map((teach: any, index: any) => {
                     return (
                       <div style={{ margin: 5, fontSize: 18 }} key={index}>
                         <strong>{teach}</strong>{" "}
@@ -157,7 +172,7 @@ export function ProfilePage() {
           </Buttons>
         </InformationContainer>
       </MainMenu>
-      <FooterEducational />
+      <FooterCallMusic />
     </Container>
   );
 }

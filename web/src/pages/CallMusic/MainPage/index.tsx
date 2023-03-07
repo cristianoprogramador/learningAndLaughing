@@ -1,7 +1,5 @@
-import { FooterEducational } from "../../../components/FooterEducational";
 import {
   BandInfo,
-  CitySelection,
   Container,
   ContainerProfile,
   DateEvent,
@@ -23,12 +21,12 @@ import {
 import { useNavigate } from "react-router-dom";
 import { musicProfile } from "../../../services/musicData";
 
-import { HeaderCallMusic } from "../../../components/HeaderCallMusic";
-import headerIMAGE from "../../../assets/images/headerimage.jpg";
-import Select from "react-select";
 import { useState } from "react";
-import SearchBarCity from "../../../components/SearchBarCity";
 import { MdPersonSearch } from "react-icons/md";
+import headerIMAGE from "../../../assets/images/headerimage.jpg";
+import { FooterCallMusic } from "../../../components/FooterCallMusic";
+import { HeaderCallMusic } from "../../../components/HeaderCallMusic";
+import SearchBarCity from "../../../components/SearchBarCity";
 
 export function MainPage() {
   const navigate = useNavigate();
@@ -55,6 +53,14 @@ export function MainPage() {
   const today = new Date();
   const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
   const minDate = tomorrow.toISOString().split("T")[0];
+
+  const handleButtonClick = () => {
+    const { profile } = props;
+    props.history.push({
+      pathname: "/CallMusic/ProfilePage",
+      state: profile,
+    });
+  };
 
   return (
     <Container>
@@ -142,7 +148,7 @@ export function MainPage() {
           })}
         </ContainerProfile>
       </MainMenu>
-      <FooterEducational />
+      <FooterCallMusic />
     </Container>
   );
 }
