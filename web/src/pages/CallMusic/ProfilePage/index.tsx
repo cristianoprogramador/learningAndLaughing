@@ -146,7 +146,7 @@ export function ProfilePage() {
                 })
               }
             >
-              <div>Entrar em Contato</div>
+              <div>Enviar Proposta para Evento</div>
               <GrContact size={35} />
             </ContactButton>
             {state.teach && (

@@ -7,6 +7,8 @@ export const Container = styled.main`
   flex-direction: column;
 `;
 
+export const MainMenu = styled.div``;
+
 export const Information = styled(Form)`
   display: flex;
   justify-content: center;
@@ -185,4 +187,110 @@ export const TotalText = styled.div`
   flex-direction: row;
   justify-content: space-between;
   margin-bottom: 0.7rem;
+`;
+
+export const DescriptionEvent = styled(Field)`
+  width: 97%;
+  height: 150px;
+  padding: 10px;
+  font-size: medium;
+  border-radius: 3px;
+  border: 0;
+`;
+
+export const ModalContainer = styled.div`
+  align-self: center;
+`;
+
+export const ButtonModal = styled.button`
+  display: flex;
+  flex-direction: row;
+  background-color: ${(props) => props.theme["blue-700"]};
+  border-radius: 10px;
+  padding: 1rem;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  cursor: pointer;
+  transition: 0.3s;
+  color: lightgray;
+  border: 0;
+
+  :hover {
+    background-color: ${(props) => props.theme["blue-300"]};
+  }
+`;
+
+export const Panel = styled.main`
+  display: flex;
+  flex-direction: row;
+  color: black;
+  gap: 2rem;
+`;
+
+export const InsertPlayListContainer = styled.div`
+  width: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const ContainerMusic = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+`;
+
+export const ContainerMusicInsert = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  margin-bottom: 8px;
+  gap: 5px;
+`;
+
+export const ContainerMusicClose = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+`;
+
+export const OptionModal = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  label {
+    color: black;
+  }
+`;
+
+export const AddNameBandSong = styled(Field)`
+  border: 1px gray solid;
+  border-radius: 5px;
+  text-align: left;
+  padding: 10px;
+`;
+
+export const ButtonAdd = styled.button`
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: darkgreen;
+  color: white;
+`;
+
+export const ButtonRemove = styled.button`
+  padding: 8px;
+  border: 0;
+  border-radius: 4px;
+  background-color: darkred;
+  color: white;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
 `;

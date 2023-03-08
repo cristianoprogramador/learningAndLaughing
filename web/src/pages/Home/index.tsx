@@ -35,7 +35,7 @@ export function Home() {
               <img src={StudyingImage} alt="logo" />
               <h3>Programação & Educação</h3>
             </OptionContainer>
-            <OptionContainer onClick={() => navigate("/CallMusic")}>
+            <OptionContainer onClick={() => navigate("/CallMusic/MainPage")}>
               <img src={callmusic} alt="logo" />
               <h3>CallMusic</h3>
             </OptionContainer>

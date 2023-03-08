@@ -2,10 +2,15 @@ import React, { useState } from "react";
 import "./styles.css";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 
-function SearchBarCity({ placeholder, data }) {
+interface SearchBarProps {
+  onSelections: (wordEntered: string) => void;
+}
+
+function SearchBarCity({ placeholder, data }, props: SearchBarProps) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const [citySelected, setCitySelected] = useState("");
+  const [searchTerm, setSearchTerm] = useState("");
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
@@ -31,7 +36,10 @@ function SearchBarCity({ placeholder, data }) {
     console.log(value);
     setWordEntered(value.value);
     setFilteredData([]);
+    props.onSelections(value.value);
   };
+
+  console.log(wordEntered);
 
   return (
     <div className="search">
@@ -58,6 +66,7 @@ function SearchBarCity({ placeholder, data }) {
                 className="dataItem"
                 key={key}
                 onClick={() => handleSelections(value)}
+                onChange={(event) => setSearchTerm(event.target.value)}
               >
                 <p>{value.value}</p>
               </a>

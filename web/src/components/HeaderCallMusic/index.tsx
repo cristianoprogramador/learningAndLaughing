@@ -157,7 +157,9 @@ export function HeaderCallMusic({ open }: HeaderProps) {
           {profileMenu && (
             <ProfileOptions>
               <OptionsView>
-                <p onClick={() => navigate("/Profile")}>Editar Perfil</p>
+                <p onClick={() => navigate("/CallMusic/SignUpMusic")}>
+                  Perfil de Músico
+                </p>
               </OptionsView>
               <OptionsView>
                 <p onClick={() => navigate("/HistoryActions")}>

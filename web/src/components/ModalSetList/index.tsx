@@ -37,9 +37,9 @@ interface MiniModalProps {
 }
 
 export function ModalSetList({ state, title }: MiniModalProps) {
-  const [modalIsOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
   console.log(state);
+  const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
     setIsOpen(true);
