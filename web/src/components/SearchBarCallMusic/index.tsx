@@ -17,16 +17,16 @@ export function SearchBarCallMusic() {
     if (searchTerm === "") {
       return null;
     } else if (event.key === "Enter") {
-      navigate("/SuperMarket/ProductsSearched", {
+      navigate("/CallMusic/MainPage", {
         state: searchTerm,
       });
     }
   };
   const handleSearchByClick = () => {
     if (searchTerm === "") {
-      navigate("/SuperMarket/ProductsFiltered");
+      navigate("/CallMusic/MainPage");
     } else {
-      navigate("/SuperMarket/ProductsSearched", {
+      navigate("/CallMusic/MainPage", {
         state: searchTerm,
       });
     }
@@ -38,14 +38,14 @@ export function SearchBarCallMusic() {
         <FaSearch
           style={{ cursor: "pointer" }}
           size={26}
-          // onClick={handleSearchByClick}
+          onClick={handleSearchByClick}
         />
       </IconView>
       <InputBar
         placeholder="Pesquisar por artista, estilo musical..."
-        // value={searchTerm}
-        // onChange={handleSearchTermChange}
-        // onKeyDown={handleSearch}
+        value={searchTerm}
+        onChange={handleSearchTermChange}
+        onKeyDown={handleSearch}
       />
     </Container>
   );

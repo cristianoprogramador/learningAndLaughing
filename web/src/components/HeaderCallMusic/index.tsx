@@ -26,10 +26,9 @@ import Drawer from "react-modern-drawer";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { useNavigate } from "react-router-dom";
-import { DrawerMenu } from "../DrawerMenu";
-import { DrawerMenuEducational } from "../DrawerMenuEducational";
 import { SearchBarCallMusic } from "../SearchBarCallMusic";
 import { BsPin } from "react-icons/bs";
+import { DrawerMenuCallMusic } from "../DrawerMenuCallMusic";
 
 interface HeaderProps {
   open?: boolean;
@@ -88,7 +87,7 @@ export function HeaderCallMusic({ open }: HeaderProps) {
                 backgroundColor: "black",
               }}
             >
-              <DrawerMenuEducational
+              <DrawerMenuCallMusic
                 closeDrawer={(data: boolean) => setIsOpen(data)}
               />
             </Drawer>

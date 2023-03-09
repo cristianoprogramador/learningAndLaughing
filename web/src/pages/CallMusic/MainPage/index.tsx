@@ -18,7 +18,7 @@ import {
   TextFilter,
 } from "./styles";
 
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { musicProfile } from "../../../services/musicData";
 
 import { useEffect, useState } from "react";
@@ -32,6 +32,9 @@ export function MainPage() {
   const navigate = useNavigate();
   const [citySelected, setCitySelected] = useState("");
   const [filter, setFilter] = useState(musicProfile);
+  const { state } = useLocation();
+
+  console.log("TAVINDO ALGO", state);
 
   function handleClick(e) {
     e.target.setAttribute("type", "date");
@@ -51,7 +54,7 @@ export function MainPage() {
     setCitySelected(city);
   };
 
-  function showArtists(state: string) {
+  function showArtistsByCity(state: string) {
     if (state !== "") {
       console.log(state);
       let FilteredItems;
@@ -65,8 +68,32 @@ export function MainPage() {
     }
   }
 
+  function showArtistsByStylesOrName(state: string) {
+    if (state === null) {
+      return null;
+    }
+    const filteredItems = musicProfile.filter((item) => {
+      const nameMatches = item.nameOfTheGroup
+        .toLowerCase()
+        .includes(state.toLowerCase());
+
+      const styleMatches = item.musicStyles.some((style) =>
+        style.toLowerCase().includes(state.toLowerCase())
+      );
+
+      return nameMatches || styleMatches;
+    });
+
+    setFilter(filteredItems);
+  }
+
   useEffect(() => {
-    showArtists(citySelected);
+    showArtistsByCity(citySelected);
+    showArtistsByStylesOrName(state);
+  }, [state]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
   }, []);
 
   return (
@@ -91,7 +118,7 @@ export function MainPage() {
             onClick={handleClick}
             min={minDate}
           />
-          <SearchButton onClick={() => showArtists(citySelected)}>
+          <SearchButton onClick={() => showArtistsByCity(citySelected)}>
             <MdPersonSearch size={30} />
             Pesquisar
           </SearchButton>

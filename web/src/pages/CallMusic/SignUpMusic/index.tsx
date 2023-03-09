@@ -34,7 +34,7 @@ import makeAnimated from "react-select/animated";
 
 import Modal from "react-modal";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../../components/Button";
 import { Input } from "../../../components/InputFormik";
@@ -229,6 +229,10 @@ export function SignUpMusic() {
       .nullable()
       .required("Favor informar a cidade principal de atuação"),
   });
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <Container>
