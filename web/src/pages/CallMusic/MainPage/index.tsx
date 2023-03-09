@@ -21,7 +21,7 @@ import {
 import { useNavigate } from "react-router-dom";
 import { musicProfile } from "../../../services/musicData";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { MdPersonSearch } from "react-icons/md";
 import headerIMAGE from "../../../assets/images/headerimage.jpg";
 import { FooterCallMusic } from "../../../components/FooterCallMusic";
@@ -31,14 +31,7 @@ import SearchBarCity from "../../../components/SearchBarCity";
 export function MainPage() {
   const navigate = useNavigate();
   const [citySelected, setCitySelected] = useState("");
-
-  const [filteredData, setFilteredData] = useState([]);
-  const [wordEntered, setWordEntered] = useState("");
-
-  const handleChange = (selectedOption) => {
-    setCitySelected(selectedOption);
-    console.log(`Option selected:`, selectedOption);
-  };
+  const [filter, setFilter] = useState(musicProfile);
 
   function handleClick(e) {
     e.target.setAttribute("type", "date");
@@ -54,13 +47,27 @@ export function MainPage() {
   const tomorrow = new Date(today.getTime() + 24 * 60 * 60 * 1000);
   const minDate = tomorrow.toISOString().split("T")[0];
 
-  const handleButtonClick = () => {
-    const { profile } = props;
-    props.history.push({
-      pathname: "/CallMusic/ProfilePage",
-      state: profile,
-    });
+  const handleCitySelected = (city: string) => {
+    setCitySelected(city);
   };
+
+  function showArtists(state: string) {
+    if (state !== "") {
+      console.log(state);
+      let FilteredItems;
+      FilteredItems = musicProfile.filter((item) =>
+        item.mainCity.includes(state)
+      );
+      setFilter(FilteredItems);
+      // setCitySelected("");
+    } else {
+      setFilter(musicProfile);
+    }
+  }
+
+  useEffect(() => {
+    showArtists(citySelected);
+  }, []);
 
   return (
     <Container>
@@ -73,14 +80,18 @@ export function MainPage() {
         <TextFilter>Encontre o artista perfeito para seu evento!</TextFilter>
         <InputsSearch>
           {/* <input placeholder="Em qual cidade será?" /> */}
-          <SearchBarCity placeholder="Em qual cidade será?" data={cities} />
+          <SearchBarCity
+            placeholder="Em qual cidade será?"
+            data={cities}
+            onCitySelected={handleCitySelected}
+          />
           <DateEvent
             placeholder="Data do evento"
             type="text"
             onClick={handleClick}
             min={minDate}
           />
-          <SearchButton>
+          <SearchButton onClick={() => showArtists(citySelected)}>
             <MdPersonSearch size={30} />
             Pesquisar
           </SearchButton>
@@ -102,7 +113,7 @@ export function MainPage() {
         <SectionTitle>Artistas da sua Região!</SectionTitle>
 
         <ContainerProfile>
-          {musicProfile.map((profile, index) => {
+          {filter.map((profile, index) => {
             return (
               <GridContainer
                 key={profile.id}

@@ -2,20 +2,29 @@ import React, { useState } from "react";
 import "./styles.css";
 import { AiOutlineSearch, AiOutlineClose } from "react-icons/ai";
 
-interface SearchBarProps {
-  onSelections: (wordEntered: string) => void;
+interface SearchBarCityProps {
+  placeholder: string;
+  data: string[];
 }
 
-function SearchBarCity({ placeholder, data }, props: SearchBarProps) {
+function SearchBarCity(props) {
   const [filteredData, setFilteredData] = useState([]);
   const [wordEntered, setWordEntered] = useState("");
   const [citySelected, setCitySelected] = useState("");
+
   const [searchTerm, setSearchTerm] = useState("");
+
+  const [selectedCity, setSelectedCity] = useState("");
+
+  function handleCitySelect2(city: string) {
+    console.log("SERA", city);
+    setSelectedCity(city);
+  }
 
   const handleFilter = (event) => {
     const searchWord = event.target.value;
     setWordEntered(searchWord);
-    const newFilter = data.filter((value) => {
+    const newFilter = props.data.filter((value) => {
       return value.label.toLowerCase().includes(searchWord.toLowerCase());
     });
 
@@ -29,32 +38,32 @@ function SearchBarCity({ placeholder, data }, props: SearchBarProps) {
   const clearInput = () => {
     setFilteredData([]);
     setWordEntered("");
+    props.onCitySelected("");
+    setCitySelected("");
   };
 
   const handleSelections = (value) => {
     setCitySelected(value.value);
-    console.log(value);
     setWordEntered(value.value);
     setFilteredData([]);
-    props.onSelections(value.value);
+    setSearchTerm(value.value);
+    props.onCitySelected(value.value);
   };
-
-  console.log(wordEntered);
 
   return (
     <div className="search">
       <div className="searchInputs">
         <input
           type="text"
-          placeholder={placeholder}
+          placeholder={props.placeholder}
           value={wordEntered}
           onChange={handleFilter}
         />
         <div className="searchIcon">
-          {filteredData.length === 0 ? (
-            <AiOutlineSearch />
-          ) : (
+          {filteredData.length > 0 || citySelected !== "" ? (
             <AiOutlineClose id="clearBtn" onClick={clearInput} />
+          ) : (
+            <AiOutlineSearch />
           )}
         </div>
       </div>
@@ -66,7 +75,7 @@ function SearchBarCity({ placeholder, data }, props: SearchBarProps) {
                 className="dataItem"
                 key={key}
                 onClick={() => handleSelections(value)}
-                onChange={(event) => setSearchTerm(event.target.value)}
+                // onChange={(event) => handleCitySelect(event.target.value)}
               >
                 <p>{value.value}</p>
               </a>

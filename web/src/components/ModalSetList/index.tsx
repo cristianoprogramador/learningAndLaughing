@@ -38,7 +38,7 @@ interface MiniModalProps {
 
 export function ModalSetList({ state, title }: MiniModalProps) {
   const navigate = useNavigate();
-  console.log(state);
+  // console.log(state);
   const [modalIsOpen, setIsOpen] = useState(false);
 
   function openModal() {
@@ -73,9 +73,9 @@ export function ModalSetList({ state, title }: MiniModalProps) {
               <h3>Banda</h3>
               <h3>Musica</h3>
             </MusicGrid>
-            {state.slice(0, 25).map((music) => {
+            {state.slice(0, 25).map((music, index) => {
               return (
-                <MusicGrid>
+                <MusicGrid key={index}>
                   <div>{music.bandName}</div>
                   <div>{music.songName}</div>
                 </MusicGrid>
@@ -88,9 +88,9 @@ export function ModalSetList({ state, title }: MiniModalProps) {
                 <h3>Banda</h3>
                 <h3>Musica</h3>
               </MusicGrid>
-              {state.slice(25, 50).map((music) => {
+              {state.slice(25, 50).map((music, index) => {
                 return (
-                  <MusicGrid>
+                  <MusicGrid key={index}>
                     <div>{music.bandName}</div>
                     <div>{music.songName}</div>
                   </MusicGrid>
@@ -104,9 +104,9 @@ export function ModalSetList({ state, title }: MiniModalProps) {
                 <h3>Banda</h3>
                 <h3>Musica</h3>
               </MusicGrid>
-              {state.slice(50, 75).map((music) => {
+              {state.slice(50, 75).map((music, index) => {
                 return (
-                  <MusicGrid>
+                  <MusicGrid key={index}>
                     <div>{music.bandName}</div>
                     <div>{music.songName}</div>
                   </MusicGrid>
@@ -120,9 +120,9 @@ export function ModalSetList({ state, title }: MiniModalProps) {
                 <h3>Banda</h3>
                 <h3>Musica</h3>
               </MusicGrid>
-              {state.slice(75, 100).map((music) => {
+              {state.slice(75, 100).map((music, index) => {
                 return (
-                  <MusicGrid>
+                  <MusicGrid key={index}>
                     <div>{music.bandName}</div>
                     <div>{music.songName}</div>
                   </MusicGrid>
