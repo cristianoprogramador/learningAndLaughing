@@ -36,7 +36,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Vivo X90 Pro+ é um smartphone de alta qualidade, com câmera quádrupla de 50MP e um processador Snapdragon 888. Com sua tela AMOLED curva de 6,78 polegadas e suporte a 5G, é uma excelente escolha para quem procura desempenho, design e recursos de fotografia avançados.",
-    image: phone0,
+    image: "https://i.imgur.com/bELAUKn.jpg",
   },
   {
     id: "1",
@@ -47,7 +47,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O iQOO 11 é um smartphone com tela AMOLED de 120Hz, processador Snapdragon 870 e carregamento rápido de 120W, oferecendo desempenho e velocidade para usuários exigentes.",
-    image: phone1,
+    image: "https://i.imgur.com/Uaf42SB.jpg",
   },
   {
     id: "2",
@@ -58,7 +58,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Lenovo Legion Y70 é, sem dúvida, um dos smartphones Android mais avançados e abrangentes disponíveis no mercado, graças ao seu rico equipamento e recursos multimídia avançados. Tem um grande display de 6.67 polegadas com uma resolução de 2400x1080 pixel. As funcionalidades oferecidas pelo Lenovo Legion Y70 são muitas e inovadoras.",
-    image: phone2,
+    image: "https://i.imgur.com/AYkg1nn.jpg",
   },
   {
     id: "3",
@@ -69,7 +69,7 @@ export const products = [
     special: "normal",
     description:
       "O Redmi K50 Ultra é um smartphone com tela AMOLED de 6,67 polegadas, processador Dimensity 1200 e câmera quádrupla de 64MP, oferecendo recursos avançados para fotografia e vídeo.",
-    image: phone3,
+    image: "https://i.imgur.com/vJ24BAS.jpg",
   },
   {
     id: "4",
@@ -80,7 +80,7 @@ export const products = [
     special: "normal",
     description:
       "O ASUS Zenfone 9 é um smartphone com tela AMOLED de 6,67 polegadas, processador Snapdragon 888 e câmera tripla de 64MP, oferecendo desempenho e recursos avançados de fotografia.",
-    image: phone4,
+    image: "https://i.imgur.com/TX5fiH0.jpg",
   },
   {
     id: "5",
@@ -91,7 +91,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Xiaomi 12T Pro é um smartphone com tela AMOLED de 6,81 polegadas, processador Snapdragon 888+ e câmera tripla de 108MP, oferecendo recursos de alta performance para usuários exigentes.",
-    image: phone5,
+    image: "https://i.imgur.com/R4b5uWF.jpg",
   },
   {
     id: "6",
@@ -102,7 +102,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Red Magic 7 é um smartphone gamer com tela AMOLED de 6,8 polegadas, processador Snapdragon 888 e câmera tripla de 64MP, além de contar com recursos exclusivos para jogos, como botões personalizáveis e sistema de resfriamento avançado.",
-    image: phone6,
+    image: "https://i.imgur.com/t2kCfDx.jpg",
   },
   {
     id: "7",
@@ -113,7 +113,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Monitor BenQ ZOWIE é projetado para jogos competitivos, com taxa de atualização de 240Hz e tempo de resposta de 1ms, além de recursos para redução de reflexos e ajustes avançados de imagem.",
-    image: monitor0,
+    image: "https://i.imgur.com/h7K5bvB.jpg",
   },
   {
     id: "8",
@@ -124,7 +124,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Monitor LG Full HD é um modelo de entrada com tela IPS de 23,8 polegadas, oferecendo boa qualidade de imagem e recursos básicos para uso doméstico e de escritório.",
-    image: monitor1,
+    image: "https://i.imgur.com/PqqNCGf.jpg",
   },
   {
     id: "9",
@@ -135,7 +135,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Monitor Dell Ultrasharp é um modelo profissional com tela IPS de 27 polegadas e resolução 4K, além de contar com recursos avançados para calibração de cores e ajustes ergonômicos.",
-    image: monitor2,
+    image: "https://i.imgur.com/AiNJVwP.jpg",
   },
   {
     id: "10",
@@ -146,7 +146,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O AOC Hero 27 é um monitor gamer com tela IPS de 27 polegadas, taxa de atualização de 144Hz e tempo de resposta de 1ms, além de contar com recursos avançados para redução de desfoque e ajustes de imagem.",
-    image: monitor3,
+    image: "https://i.imgur.com/hohRcGl.jpg",
   },
   {
     id: "11",
@@ -157,7 +157,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Monitor BenQ BL2420PT é um modelo profissional com tela IPS de 23,8 polegadas e resolução 2K, além de contar com recursos avançados para calibração de cores e ajustes ergonômicos.",
-    image: monitor4,
+    image: "https://i.imgur.com/d6ePmRD.jpg",
   },
   {
     id: "12",
@@ -168,7 +168,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Monitor Acer 27 é um modelo intermediário com tela IPS de 27 polegadas e resolução 2K, oferecendo boa qualidade de imagem e recursos básicos para uso doméstico e de escritório.",
-    image: monitor5,
+    image: "https://i.imgur.com/UK2LyzD.jpg",
   },
   {
     id: "13",
@@ -179,7 +179,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "A GeForce RTX 4090 é uma placa de vídeo topo de linha da Nvidia, projetada para oferecer desempenho de última geração em jogos e tarefas profissionais, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real.",
-    image: vga1,
+    image: "https://i.imgur.com/5pOsuxC.jpg",
   },
   {
     id: "14",
@@ -190,7 +190,7 @@ export const products = [
     special: "normal",
     description:
       "A GeForce RTX 4080 é uma placa de vídeo de alto desempenho, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real, oferecendo recursos avançados para jogos e tarefas profissionais.",
-    image: vga2,
+    image: "https://i.imgur.com/zrEwwZW.jpg",
   },
   {
     id: "15",
@@ -201,7 +201,7 @@ export const products = [
     special: "normal",
     description:
       "A GeForce RTX 4070 Ti é uma placa de vídeo topo de linha da Nvidia, projetada para oferecer desempenho e velocidade de última geração em jogos e tarefas profissionais, com suporte a resoluções 4K e tecnologia de traçado de raios em tempo real.",
-    image: vga3,
+    image: "https://i.imgur.com/PZYaZfw.jpg",
   },
   {
     id: "16",
@@ -212,7 +212,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "A GeForce RTX 3090 Ti é uma placa de vídeo de alto desempenho, projetada para jogos e tarefas profissionais exigentes, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real, além de contar com 24 GB de memória GDDR6X.",
-    image: vga4,
+    image: "https://i.imgur.com/kaozOpp.jpg",
   },
   {
     id: "17",
@@ -223,7 +223,7 @@ export const products = [
     special: "bestsellers",
     description:
       "A Radeon RX 7900 XTX é uma placa de vídeo de alto desempenho da AMD, projetada para jogos e tarefas profissionais, com suporte a resoluções 4K e tecnologia de traçado de raios em tempo real, oferecendo recursos avançados para usuários exigentes.",
-    image: vga5,
+    image: "https://i.imgur.com/UTnQ5yf.jpg",
   },
   {
     id: "18",
@@ -234,7 +234,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Controle Playstation 4 é o joystick oficial da Sony para a geração anterior do console, oferecendo design ergonômico, conexão sem fio Bluetooth e sensor de movimento.",
-    image: game0,
+    image: "https://i.imgur.com/XYgOfth.jpg",
   },
   {
     id: "19",
@@ -245,7 +245,7 @@ export const products = [
     special: "bestsellers",
     description:
       "O Controle Playstation 5 é o joystick oficial da Sony para a nova geração do console, oferecendo design inovador, feedback tátil avançado, gatilhos adaptáveis e microfone embutido.",
-    image: game1,
+    image: "https://i.imgur.com/PBk1kp3.jpg",
   },
   {
     id: "20",
@@ -256,7 +256,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Controle Xbox One é o joystick oficial da Microsoft para a geração anterior do console, oferecendo design ergonômico, conexão sem fio e compatibilidade com PCs Windows.",
-    image: game2,
+    image: "https://i.imgur.com/ijzjGQt.jpg",
   },
   {
     id: "21",
@@ -267,7 +267,7 @@ export const products = [
     special: "normal",
     description:
       "O Controle Xbox Series X é o joystick oficial da Microsoft para a nova geração do console, oferecendo design aprimorado, gatilhos adaptáveis, feedback tátil avançado e compatibilidade com PCs Windows.",
-    image: game3,
+    image: "https://i.imgur.com/M6VS4gZ.jpg",
   },
   {
     id: "22",
@@ -278,7 +278,7 @@ export const products = [
     special: "dailyoffer",
     description:
       "O Xbox Series X é o console de última geração da Microsoft, oferecendo desempenho e velocidade avançados, com suporte a resoluções 4K e 120fps, além de contar com recursos exclusivos, como o Quick Resume e a tecnologia de som espacial.",
-    image: game4,
+    image: "https://i.imgur.com/k2BkVN6.jpg",
   },
   {
     id: "23",
@@ -289,7 +289,7 @@ export const products = [
     special: "normal",
     description:
       "O Playstation 5 é o console de última geração da Sony, oferecendo desempenho e velocidade avançados, com suporte a resoluções 4K e 120fps, além de contar com recursos exclusivos, como o controle DualSense com feedback tátil e gatilhos adaptáveis.",
-    image: game5,
+    image: "https://i.imgur.com/akATz4t.jpg",
   },
   {
     id: "24",
@@ -300,7 +300,7 @@ export const products = [
     special: "cart",
     description:
       "A LG Smart TV OLED 55 4K oferece qualidade de imagem excepcional, com tecnologia de pixels autoilumináveis que oferecem cores vibrantes e pretos profundos, além de contar com o sistema operacional webOS para acesso fácil a conteúdos de streaming.",
-    image: tv0,
+    image: "https://i.imgur.com/wWjOetk.jpg",
   },
   {
     id: "25",
@@ -311,7 +311,7 @@ export const products = [
     special: "cart",
     description:
       "A Samsung Smart TV 55 QLED 4K oferece qualidade de imagem excepcional, com tecnologia de pontos quânticos que oferecem cores vivas e brilho intenso, além de contar com o sistema operacional Tizen para acesso fácil a conteúdos de streaming.",
-    image: tv1,
+    image: "https://i.imgur.com/ePUg3U3.jpg",
   },
   {
     id: "26",
@@ -322,6 +322,6 @@ export const products = [
     special: "cart",
     description:
       "A Smart TV AOC 43 Full HD ROKU TV oferece qualidade de imagem em alta definição, com acesso fácil a conteúdos de streaming através do sistema operacional Roku TV, além de contar com recursos exclusivos, como o controle remoto com botões de atalho para serviços de streaming populares.",
-    image: tv2,
+    image: "https://i.imgur.com/eBTjW3y.jpg",
   },
 ];

@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 import { FaHandshake, FaRegCreditCard, FaMobileAlt } from "react-icons/fa";
-import { products } from "../../services/productsData.js";
+
 import { typeOfProduct } from "../../services/typeOfProductData.js";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -28,17 +28,37 @@ import "swiper/css/scrollbar";
 import { Footer } from "../../components/Footer";
 import { Header } from "../../components/Header";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { api } from "../../utils/api";
+import { ProductsProps } from "../../types/Products";
 
 export function SuperMarket() {
   const navigate = useNavigate();
   const [filtered, setFiltered] = useState();
 
-  const dailyOfferProducts = products.filter(
+  const [productsData, setProductsData] = useState<ProductsProps[]>([]);
+
+  // console.log("Vindo da API", productsData);
+  // console.log("Vindo da Javascript", products);
+
+  async function fetchProducts() {
+    try {
+      const { data } = await api.get("/products");
+      setProductsData(data.result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
+  const dailyOfferProducts = productsData.filter(
     (product) => product.special === "dailyoffer"
   );
 
-  const bestSellersProducts = products.filter(
+  const bestSellersProducts = productsData.filter(
     (product) => product.special === "bestsellers"
   );
 

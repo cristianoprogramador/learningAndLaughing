@@ -1,7 +1,7 @@
 const db = require("../db");
 
 module.exports = {
-  buscarTodos: () => {
+  searchAll: () => {
     return new Promise((aceito, rejeitado) => {
       db.query("SELECT * FROM products", (error, results) => {
         if (error) {
@@ -13,7 +13,7 @@ module.exports = {
     });
   },
 
-  buscarUm: (id) => {
+  searchOne: (id) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
         "SELECT * FROM products WHERE id = ?",
@@ -33,7 +33,7 @@ module.exports = {
     });
   },
 
-  inserir: (productName, brand) => {
+  insert: (productName, brand) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
         "INSERT INTO products (productName, brand) VALUES (?, ?)",
@@ -49,7 +49,7 @@ module.exports = {
     });
   },
 
-  alterar: (id, productName, brand) => {
+  update: (id, productName, brand) => {
     return new Promise((aceito, rejeitado) => {
       db.query(
         "UPDATE products SET productName = ?, brand = ? WHERE id = ?",
@@ -65,7 +65,7 @@ module.exports = {
     });
   },
 
-  excluir: (id) => {
+  delete: (id) => {
     return new Promise((aceito, rejeitado) => {
       db.query("DELETE FROM products WHERE id = ?", [id], (error, results) => {
         if (error) {

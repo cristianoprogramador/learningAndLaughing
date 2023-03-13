@@ -14,7 +14,7 @@ import {
 } from "./styles";
 
 import { FaHandshake, FaRegCreditCard, FaMobileAlt } from "react-icons/fa";
-import { products } from "../../../services/productsData.js";
+
 import { typeOfProduct } from "../../../services/typeOfProductData.js";
 
 import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
@@ -31,43 +31,65 @@ import { Header } from "../../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
+import { api } from "../../../utils/api";
+import { ProductsProps } from "../../../types/Products";
 
 export function ProductsFiltered() {
   const navigate = useNavigate();
   const { state } = useLocation();
-  const [filter, setFilter] = useState(products);
+  const [productsData, setProductsData] = useState<ProductsProps[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  const [filter, setFilter] = useState(productsData);
 
   const [nameCategory, setNameCategory] = useState("Todos os produtos");
 
-  function showProducts() {
-    console.log(state);
-    if (state === "dailyoffer") {
-      const filteredItems = products.filter(
-        (product) => product.special === state
-      );
-      setFilter(filteredItems);
-      setNameCategory("Melhores ofertas do dia");
-    } else if (state === "bestsellers") {
-      const filteredItems = products.filter(
-        (product) => product.special === state
-      );
-      setFilter(filteredItems);
-      setNameCategory("Produtos mais vendidos");
-    } else if (state !== null) {
-      const filteredItems = products.filter(
-        (product) => product.type === state
-      );
-      setFilter(filteredItems);
-      setNameCategory("Categoria: " + state.toUpperCase());
-    } else {
-      setFilter(products);
-      setNameCategory("Todos os produtos");
+  async function fetchProducts() {
+    try {
+      const { data } = await api.get("/products");
+      setProductsData(data.result);
+      setLoading(false);
+    } catch (error) {
+      console.error(error);
     }
   }
 
   useEffect(() => {
-    showProducts();
-  }, [state]);
+    fetchProducts();
+  }, []);
+
+  useEffect(() => {
+    if (productsData.length > 0) {
+      if (state === "dailyoffer") {
+        const filteredItems = productsData.filter(
+          (product) => product.special === state
+        );
+        setFilter(filteredItems);
+        setNameCategory("Melhores ofertas do dia");
+      } else if (state === "bestsellers") {
+        const filteredItems = productsData.filter(
+          (product) => product.special === state
+        );
+        setFilter(filteredItems);
+        setNameCategory("Produtos mais vendidos");
+      } else if (state !== null) {
+        const filteredItems = productsData.filter(
+          (product) => product.type === state
+        );
+        setFilter(filteredItems);
+        setNameCategory("Categoria: " + state.toUpperCase());
+      } else {
+        setFilter(productsData);
+        setNameCategory("Todos os produtos");
+      }
+    }
+  }, [state, productsData]);
+
+  console.log("OQ TEM AQUI", productsData);
+
+  if (loading) {
+    return <p>Carregando...</p>;
+  }
 
   return (
     <Container>

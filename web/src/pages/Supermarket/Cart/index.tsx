@@ -19,8 +19,6 @@ import {
 import { ErrorMessage, Form, Formik } from "formik";
 import * as Yup from "yup";
 
-import { products } from "../../../services/productsData.js";
-
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
@@ -31,23 +29,7 @@ import { useEffect, useState } from "react";
 import { useCart } from "../../../hooks/useCart";
 import { CartItem } from "../../../contexts/Context";
 import { CartCard } from "../../../components/CartCard";
-
-const cartProducts = products.filter((product) => product.special === "cart");
-
-interface CartCardProps {
-  product: CartItem;
-}
-
-export interface AddressFormProps {
-  zipCode: string;
-  street: string;
-  addressNumber: string;
-  district: string;
-  city: string;
-  stateCode: string;
-  paymentMethod: string;
-  deliverSystem: string;
-}
+import { AddressFormProps } from "../../../types/Products";
 
 export function Cart() {
   const [deliveryPrice, setDeliveryPrice] = useState(0);
@@ -97,6 +79,8 @@ export function Cart() {
       .oneOf(["sedexHoje", "sedex", "pac"], "Tipo de entrega inválido")
       .required("Tipo de entrega é obrigatório"),
   });
+
+  console.log("Items", cartItems);
 
   return (
     <Container>

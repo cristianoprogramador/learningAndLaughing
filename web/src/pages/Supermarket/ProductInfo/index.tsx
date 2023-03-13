@@ -24,6 +24,8 @@ export function ProductInfo() {
   const { state } = useLocation();
   const navigate = useNavigate();
 
+  console.log(state);
+
   useEffect(() => {
     if (!state) {
       navigate("/SuperMarket");
@@ -32,7 +34,7 @@ export function ProductInfo() {
 
   if (!state) return <></>;
 
-  const priceWithDescont = Number(state.price.replace(/[^0-9.-]+/g, "")) / 10;
+  const priceWithDescont = state.price / 10;
 
   const priceCorret = Math.round(priceWithDescont * 100) / 100;
 

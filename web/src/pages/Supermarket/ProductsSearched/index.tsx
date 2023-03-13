@@ -14,23 +14,14 @@ import {
 } from "./styles";
 
 import { FaHandshake, FaRegCreditCard, FaMobileAlt } from "react-icons/fa";
-import { products } from "../../../services/productsData.js";
-import { typeOfProduct } from "../../../services/typeOfProductData.js";
 
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper";
-
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 import { Footer } from "../../../components/Footer";
 import { Header } from "../../../components/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
+import { ProductsProps } from "../../../types/Products";
+import { api } from "../../../utils/api";
 
 export function ProductsSearched() {
   const navigate = useNavigate();
@@ -44,7 +35,8 @@ export function ProductsSearched() {
 
   if (!state) return <></>;
 
-  const [filter, setFilter] = useState(products);
+  const [productsData, setProductsData] = useState<ProductsProps[]>([]);
+  const [filter, setFilter] = useState(productsData);
 
   const nameCategory = "Pesquisa por:";
 
@@ -56,7 +48,7 @@ export function ProductsSearched() {
 
   function showProducts(state: string) {
     let FilteredItems;
-    FilteredItems = products.filter(
+    FilteredItems = productsData.filter(
       (item) =>
         item.name.toLowerCase().includes(state.toLowerCase()) ||
         item.description.toLowerCase().includes(state.toLowerCase()) ||
@@ -65,9 +57,22 @@ export function ProductsSearched() {
     setFilter(FilteredItems);
   }
 
+  async function fetchProducts() {
+    try {
+      const { data } = await api.get("/products");
+      setProductsData(data.result);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
+  useEffect(() => {
+    fetchProducts();
+  }, []);
+
   useEffect(() => {
     showProducts(state);
-  }, [filtro]);
+  }, [filtro, productsData]);
 
   return (
     <Container>

@@ -1,26 +1,31 @@
 const ProductService = require("../services/ProductService");
 
 module.exports = {
-  buscarTodos: async (req, res) => {
+  searchAll: async (req, res) => {
     let json = { error: "", result: [] };
 
-    let products = await ProductService.buscarTodos();
+    let products = await ProductService.searchAll();
 
     for (let i in products) {
       json.result.push({
         id: products[i].id,
-        productName: products[i].productName,
+        name: products[i].name,
+        price: products[i].price,
         brand: products[i].brand,
+        type: products[i].type,
+        special: products[i].special,
+        description: products[i].description,
+        image: products[i].image,
       });
     }
     res.json(json);
   },
 
-  buscarUm: async (req, res) => {
+  searchOne: async (req, res) => {
     let json = { error: "", result: {} };
 
     let id = req.params.id;
-    let product = await ProductService.buscarUm(id);
+    let product = await ProductService.searchOne(id);
 
     if (product) {
       json.result = product;
@@ -29,14 +34,14 @@ module.exports = {
     res.json(json);
   },
 
-  inserir: async (req, res) => {
+  insert: async (req, res) => {
     let json = { error: "", result: {} };
 
     let productName = req.body.productName;
     let brand = req.body.brand;
 
     if (productName && brand) {
-      let productId = await ProductService.inserir(productName, brand);
+      let productId = await ProductService.insert(productName, brand);
       json.result = {
         id: productId,
         productName,
@@ -49,7 +54,7 @@ module.exports = {
     res.json(json);
   },
 
-  alterar: async (req, res) => {
+  update: async (req, res) => {
     let json = { error: "", result: {} };
 
     let id = req.params.id;
@@ -57,7 +62,7 @@ module.exports = {
     let brand = req.body.brand;
 
     if (id && productName && brand) {
-      await ProductService.alterar(id, productName, brand);
+      await ProductService.update(id, productName, brand);
       json.result = {
         id,
         productName,
@@ -69,10 +74,10 @@ module.exports = {
     res.json(json);
   },
 
-  excluir: async (req, res) => {
+  delete: async (req, res) => {
     let json = { error: "", result: {} };
 
-    await ProductService.excluir(req.params.id);
+    await ProductService.delete(req.params.id);
 
     res.json(json);
   },
