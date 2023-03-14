@@ -14,6 +14,7 @@ export interface Product {
 
 export interface CartItem extends Product {
   quantity: number;
+  special: string;
 }
 
 interface CartContextType {

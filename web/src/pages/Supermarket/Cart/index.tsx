@@ -30,6 +30,8 @@ import { useCart } from "../../../hooks/useCart";
 import { CartItem } from "../../../contexts/Context";
 import { CartCard } from "../../../components/CartCard";
 import { AddressFormProps } from "../../../types/Products";
+import axios from "axios";
+import { api } from "../../../utils/api";
 
 export function Cart() {
   const [deliveryPrice, setDeliveryPrice] = useState(0);
@@ -80,7 +82,44 @@ export function Cart() {
       .required("Tipo de entrega é obrigatório"),
   });
 
-  console.log("Items", cartItems);
+  const handleSubmit = async (value) => {
+    console.log("OQ RAIOS VEM", value);
+    console.log("Items", cartItems);
+
+    try {
+      const response = await api.post("/orders", {
+        zipCode: value.zipCode,
+        street: value.street,
+        addressNumber: value.addressNumber,
+        district: value.district,
+        city: value.city,
+        stateCode: value.stateCode,
+        paymentMethod: value.paymentMethod,
+        deliverSystem: value.deliverSystem,
+        items: cartItems.map((item) => {
+          return {
+            id: item.id,
+            name: item.name,
+            brand: item.brand,
+            type: item.type,
+            price: item.price,
+            quantity: item.quantity,
+            image: item.image,
+            special: item.special,
+          };
+        }),
+      });
+
+      console.log("OQ TA TECENU", response.data);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      clearCart();
+      navigate("/SuperMarket/Delivery", {
+        state: value,
+      });
+    }
+  };
 
   return (
     <Container>
@@ -91,6 +130,8 @@ export function Cart() {
         onSubmit={(values, actions) => {
           console.log({ values, actions });
           actions.setSubmitting(false);
+          console.log(values);
+          handleSubmit(values);
           clearCart();
           navigate("/SuperMarket/Delivery", {
             state: values,
