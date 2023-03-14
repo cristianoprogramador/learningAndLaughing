@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import {
   Container,
   ImageContainer,
@@ -22,7 +21,6 @@ export function Home() {
 
   return (
     <Container>
-      {/* <Header open /> */}
       <TitleSelection>
         <SelectionContainer>
           <h1>Selecione o tipo de Conteúdo:</h1>

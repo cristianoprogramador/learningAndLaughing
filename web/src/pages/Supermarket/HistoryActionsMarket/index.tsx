@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
-import { Footer } from "../../components/Footer";
-import { HeaderMarket } from "../../components/HeaderMarket";
+import { Footer } from "../../../components/Footer";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import {
   Container,
   ContainerAction,
@@ -15,14 +15,14 @@ import {
   TitleIndex,
 } from "./styles";
 
-import phone0 from "../../assets/products/phone0.jpg";
-import phone1 from "../../assets/products/phone1.jpg";
-import phone2 from "../../assets/products/phone2.jpg";
+import phone0 from "../../../assets/products/phone0.jpg";
+import phone1 from "../../../assets/products/phone1.jpg";
+import phone2 from "../../../assets/products/phone2.jpg";
 
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { ActionsCard } from "../../components/ActionsCard";
+import { ActionsCard } from "../../../components/ActionsCard";
 
-export function HistoryActions() {
+export function HistoryActionsMarket() {
   const navigate = useNavigate();
 
   const data = [
@@ -98,7 +98,7 @@ export function HistoryActions() {
 
   return (
     <Container>
-      <HeaderMarket open />
+      <HeaderMarket />
       <ProfileContainer>
         <InformationContainer>
           <Title>Ações Realizadas</Title>

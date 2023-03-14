@@ -21,6 +21,7 @@ import { MainPage } from "./pages/CallMusic/MainPage";
 import { ProfilePage } from "./pages/CallMusic/ProfilePage";
 import { FormPage } from "./pages/CallMusic/FormPage";
 import { FormPageClass } from "./pages/CallMusic/FormPageClass";
+import { HistoryActionsMarket } from "./pages/Supermarket/HistoryActionsMarket";
 
 export function Router() {
   return (
@@ -30,7 +31,6 @@ export function Router() {
       <Route path="/SignUp" element={<SignUp />} />
       <Route path="/Home" element={<Home />} />
       <Route path="/Profile" element={<Profile />} />
-      <Route path="/HistoryActions" element={<HistoryActions />} />
       <Route path="/SuperMarket" element={<SuperMarket />} />
       <Route path="/SuperMarket/ProductInfo" element={<ProductInfo />} />
       <Route
@@ -41,6 +41,10 @@ export function Router() {
         path="/SuperMarket/ProductsSearched"
         element={<ProductsSearched />}
       />
+      <Route
+        path="/SuperMarket/HistoryActionsMarket"
+        element={<HistoryActionsMarket />}
+      />
       <Route path="/SuperMarket/Cart" element={<Cart />} />
       <Route path="/SuperMarket/Delivery" element={<Delivery />} />
       <Route path="/Educational" element={<Educational />} />
@@ -50,6 +54,7 @@ export function Router() {
         path="/Educational/QuizGame/FinishedGame"
         element={<FinishedGame />}
       />
+
       <Route path="/CallMusic" element={<CallMusic />} />
       <Route path="/CallMusic/SignUpMusic" element={<SignUpMusic />} />
       <Route path="/CallMusic/MainPage" element={<MainPage />} />

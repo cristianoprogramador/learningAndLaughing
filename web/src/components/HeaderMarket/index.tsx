@@ -31,7 +31,7 @@ import Drawer from "react-modern-drawer";
 
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
-import { DrawerMenu } from "../DrawerMenu";
+import { DrawerMenuMarket } from "../DrawerMenuMarket";
 import { useNavigate } from "react-router-dom";
 import { useCart } from "../../hooks/useCart";
 
@@ -39,7 +39,7 @@ interface HeaderProps {
   open?: boolean;
 }
 
-export function Header({ open }: HeaderProps) {
+export function HeaderMarket({ open }: HeaderProps) {
   const { cartQuantity } = useCart();
 
   const navigate = useNavigate();
@@ -94,7 +94,9 @@ export function Header({ open }: HeaderProps) {
                 backgroundColor: "black",
               }}
             >
-              <DrawerMenu closeDrawer={(data: boolean) => setIsOpen(data)} />
+              <DrawerMenuMarket
+                closeDrawer={(data: boolean) => setIsOpen(data)}
+              />
             </Drawer>
           </>
         )}
@@ -169,7 +171,9 @@ export function Header({ open }: HeaderProps) {
                 <p onClick={() => navigate("/Profile")}>Editar Perfil</p>
               </OptionsView>
               <OptionsView>
-                <p onClick={() => navigate("/HistoryActions")}>
+                <p
+                  onClick={() => navigate("/SuperMarket/HistoryActionsMarket")}
+                >
                   Ações realizadas
                 </p>
               </OptionsView>

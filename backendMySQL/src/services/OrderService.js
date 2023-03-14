@@ -61,4 +61,60 @@ module.exports = {
       );
     });
   },
+
+  getOrders: () => {
+    return new Promise((aceito, rejeitado) => {
+      db.query(
+        `
+        SELECT o.*, oi.*
+        FROM orders o
+        LEFT JOIN order_items oi
+        ON o.id = oi.orderId
+        ORDER BY o.id
+      `,
+        (error, results) => {
+          if (error) {
+            rejeitado(error);
+            return;
+          }
+
+          // Agrupa os itens de cada pedido em um array
+          const orders = [];
+          let currentOrder = null;
+          results.forEach((row) => {
+            if (!currentOrder || currentOrder.id !== row.orderId) {
+              // Novo pedido encontrado, adiciona no array de pedidos
+              currentOrder = {
+                id: row.orderId,
+                zipCode: row.zipCode,
+                street: row.street,
+                addressNumber: row.addressNumber,
+                district: row.district,
+                city: row.city,
+                stateCode: row.stateCode,
+                paymentMethod: row.paymentMethod,
+                deliverSystem: row.deliverSystem,
+                items: [],
+              };
+              orders.push(currentOrder);
+            }
+
+            // Adiciona o item ao array de itens do pedido atual
+            currentOrder.items.push({
+              id: row.id,
+              name: row.name,
+              brand: row.brand,
+              type: row.type,
+              price: row.price,
+              quantity: row.quantity,
+              image: row.image,
+              special: row.special,
+            });
+          });
+
+          aceito(orders);
+        }
+      );
+    });
+  },
 };

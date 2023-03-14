@@ -1,4 +1,4 @@
-import { Header } from "../../components/Header";
+import { HeaderMarket } from "../../components/HeaderMarket";
 import {
   ButtonSelection,
   Camera,
@@ -43,7 +43,7 @@ export function Profile() {
 
   return (
     <Container>
-      <Header open />
+      <HeaderMarket open />
       <ProfileContainer>
         <InformationContainer>
           <ImageContainer>

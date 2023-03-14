@@ -13,7 +13,7 @@ import {
 } from "./styles";
 
 import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import { useLocation, useNavigate } from "react-router-dom";
 import { BsPin, BsTruck } from "react-icons/bs";
 import { Button } from "../../../components/Button";
@@ -71,7 +71,7 @@ export function ProductInfo() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <Information>
         <ProductContainer>
           <ProductImages>

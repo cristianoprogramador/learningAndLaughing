@@ -27,7 +27,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
@@ -85,7 +85,7 @@ export function ProductsFiltered() {
     }
   }, [state, productsData]);
 
-  console.log("OQ TEM AQUI", productsData);
+  // console.log("OQ TEM AQUI", productsData);
 
   if (loading) {
     return <p>Carregando...</p>;
@@ -93,7 +93,7 @@ export function ProductsFiltered() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <Title>SUPERMARKET</Title>
       <LowText>MELHORES PRODUTOS & MELHORES PREÇOS</LowText>
       <GeneralInfo>

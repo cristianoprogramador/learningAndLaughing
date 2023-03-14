@@ -16,7 +16,7 @@ module.exports = {
         deliverSystem,
         items,
       } = req.body;
-      console.log("O QUE TA VINDO DO REQ.BODY ", req.body);
+      // console.log("O QUE TA VINDO DO REQ.BODY ", req.body);
       if (
         zipCode &&
         street &&
@@ -70,16 +70,12 @@ module.exports = {
     res.json(json);
   },
 
-  getAll: async (req, res) => {
-    let json = { error: "", result: [] };
-
+  getOrdersAndItems: async (req, res) => {
     try {
-      const orders = await OrderService.getAll();
-      json.result = orders;
+      const orders = await OrderService.getOrders();
+      res.json({ result: orders });
     } catch (error) {
-      json.error = "Erro ao buscar os pedidos";
+      res.status(500).json({ error: "Erro ao buscar os pedidos" });
     }
-
-    res.json(json);
   },
 };

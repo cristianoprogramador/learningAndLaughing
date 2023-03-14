@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header";
 import {
   Container,
   ImageContainer,
@@ -17,7 +16,6 @@ export function CallMusic() {
 
   return (
     <Container>
-      {/* <Header open /> */}
       <TitleSelection>
         <SelectionContainer>
           <h1>Selecione o Perfil:</h1>

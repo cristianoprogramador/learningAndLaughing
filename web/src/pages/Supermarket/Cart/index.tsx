@@ -21,7 +21,7 @@ import * as Yup from "yup";
 
 import { useNavigate } from "react-router-dom";
 import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import { Input } from "../../../components/InputFormik";
 import { Button } from "../../../components/Button";
 import { QuantityInput } from "../../../components/QuantityInput";
@@ -82,7 +82,7 @@ export function Cart() {
       .required("Tipo de entrega é obrigatório"),
   });
 
-  const handleSubmit = async (value) => {
+  const handleSubmit = async (value: AddressFormProps) => {
     console.log("OQ RAIOS VEM", value);
     console.log("Items", cartItems);
 
@@ -123,7 +123,7 @@ export function Cart() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <Formik
         initialValues={initialValues}
         validationSchema={validationSchema}

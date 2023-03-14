@@ -16,7 +16,7 @@ import {
 import { FaHandshake, FaRegCreditCard, FaMobileAlt } from "react-icons/fa";
 
 import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import { useLocation, useNavigate } from "react-router-dom";
 
 import { useEffect, useState } from "react";
@@ -44,7 +44,7 @@ export function ProductsSearched() {
   const capitalizedString2 = filtro.charAt(0).toUpperCase() + filtro.slice(1);
   const combinedString = nameCategory + " " + capitalizedString2;
 
-  console.log("OQ VEM NO FILTRO" + filtro);
+  // console.log("OQ VEM NO FILTRO" + filtro);
 
   function showProducts(state: string) {
     let FilteredItems;
@@ -76,7 +76,7 @@ export function ProductsSearched() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <Title>SUPERMARKET</Title>
       <LowText>MELHORES PRODUTOS & MELHORES PREÇOS</LowText>
       <GeneralInfo>

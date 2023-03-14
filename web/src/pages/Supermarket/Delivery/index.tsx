@@ -11,7 +11,7 @@ import {
 
 import { useLocation, useNavigate } from "react-router-dom";
 import { Footer } from "../../../components/Footer";
-import { Header } from "../../../components/Header";
+import { HeaderMarket } from "../../../components/HeaderMarket";
 import delivery from "../../../assets/images/deliverguy.png";
 import { useState, useEffect } from "react";
 import { AddressFormProps } from "../Cart";
@@ -64,7 +64,7 @@ export function Delivery() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <ConfirmationView>
         <DeliveryContainer>
           <DeliveryIMG src={delivery} alt="logo" />

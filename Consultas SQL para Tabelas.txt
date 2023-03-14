@@ -1,0 +1,124 @@
+use dbApiProducts;
+
+create table products (
+	id int primary key auto_increment,
+    productName varchar(30),
+    brand varchar(15)
+);
+
+insert into products (productName, brand) values ('Vivo X90 Pro+', 'Vivo');
+insert into products (productName, brand) values ('iQOO 11', 'Vivo');
+
+CREATE TABLE products (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(10,2) NOT NULL,
+  brand VARCHAR(50) NOT NULL,
+  type VARCHAR(50) NOT NULL,
+  special VARCHAR(50) NOT NULL,
+  description TEXT NOT NULL,
+  image VARCHAR(255) NOT NULL
+);
+
+INSERT INTO products (name, price, brand, type, special, description, image)
+VALUES ('Vivo X90 Pro+', 1450.20, 'Vivo', 'smartphone', 'bestsellers', 'O Vivo X90 Pro+ é um smartphone de alta qualidade, com câmera quádrupla de 50MP e um processador Snapdragon 888. Com sua tela AMOLED curva de 6,78 polegadas e suporte a 5G, é uma excelente escolha para quem procura desempenho, design e recursos de fotografia avançados.', LOAD_FILE('C:\Trabalho\ProjetosPessoais\learningAndLaughing\web\src\assets\products/phone0.jpg'));
+
+INSERT INTO products (name, price, brand, type, special, description, image) VALUES 
+("Vivo X90 Pro+", "1450.20", "Vivo", "smartphone", "bestsellers", "O Vivo X90 Pro+ é um smartphone de alta qualidade, com câmera quádrupla de 50MP e um processador Snapdragon 888. Com sua tela AMOLED curva de 6,78 polegadas e suporte a 5G, é uma excelente escolha para quem procura desempenho, design e recursos de fotografia avançados.", "https://i.imgur.com/bELAUKn.jpg"),
+("iQOO 11", "1150.00", "Vivo", "smartphone", "dailyoffer", "O iQOO 11 é um smartphone com tela AMOLED de 120Hz, processador Snapdragon 870 e carregamento rápido de 120W, oferecendo desempenho e velocidade para usuários exigentes.", "https://i.imgur.com/Uaf42SB.jpg"),
+("Legion Y70", "2330.00", "Lenovo", "smartphone", "bestsellers", "O Lenovo Legion Y70 é, sem dúvida, um dos smartphones Android mais avançados e abrangentes disponíveis no mercado, graças ao seu rico equipamento e recursos multimídia avançados. Tem um grande display de 6.67 polegadas com uma resolução de 2400x1080 pixel. As funcionalidades oferecidas pelo Lenovo Legion Y70 são muitas e inovadoras.", "https://i.imgur.com/AYkg1nn.jpg"),
+("Redmi K50 Ultra", "1800.20", "Xiaomi", "smartphone", "normal", "O Redmi K50 Ultra é um smartphone com tela AMOLED de 6,67 polegadas, processador Dimensity 1200 e câmera quádrupla de 64MP, oferecendo recursos avançados para fotografia e vídeo.", "https://i.imgur.com/vJ24BAS.jpg"),
+("ASUS Zenfone 9", "1700.00", "Asus", "smartphone", "normal", "O ASUS Zenfone 9 é um smartphone com tela AMOLED de 6,67 polegadas, processador Snapdragon 888 e câmera tripla de 64MP, oferecendo desempenho e recursos avançados de fotografia.", "https://i.imgur.com/TX5fiH0.jpg"),
+("Xiaomi 12T Pro", "1222.00", "Xiaomi", "smartphone", "bestsellers", "O Xiaomi 12T Pro é um smartphone com tela AMOLED de 6,81 polegadas, processador Snapdragon 888+ e câmera tripla de 108MP, oferecendo recursos de alta performance para usuários exigentes.", "https://i.imgur.com/R4b5uWF.jpg"),
+( 'Red Magic 7', '1990.50', 'Nubia', 'smartphone', 'dailyoffer', 'O Red Magic 7 é um smartphone gamer com tela AMOLED de 6,8 polegadas, processador Snapdragon 888 e câmera tripla de 64MP, além de contar com recursos exclusivos para jogos, como botões personalizáveis e sistema de resfriamento avançado.', 'https://i.imgur.com/t2kCfDx.jpg'),
+( 'Monitor BenQ ZOWIE', '1990.00', 'BenQ', 'monitor', 'bestsellers', 'O Monitor BenQ ZOWIE é projetado para jogos competitivos, com taxa de atualização de 240Hz e tempo de resposta de 1ms, além de recursos para redução de reflexos e ajustes avançados de imagem.', 'https://i.imgur.com/h7K5bvB.jpg'),
+( 'Monitor LG Full HD', '2590.00', 'LG', 'monitor', 'dailyoffer', 'O Monitor LG Full HD é um modelo de entrada com tela IPS de 23,8 polegadas, oferecendo boa qualidade de imagem e recursos básicos para uso doméstico e de escritório.', 'https://i.imgur.com/PqqNCGf.jpg'),
+('Monitor Dell Ultrasharp', '2200.50', 'Dell', 'monitor', 'dailyoffer', 'O Monitor Dell Ultrasharp é um modelo profissional com tela IPS de 27 polegadas e resolução 4K, além de contar com recursos avançados para calibração de cores e ajustes ergonômicos.', 'https://i.imgur.com/AiNJVwP.jpg'),
+( 'AOC Hero 27', '2150.00', 'AOC', 'monitor', 'bestsellers', 'O AOC Hero 27 é um monitor gamer com tela IPS de 27 polegadas, taxa de atualização de 144Hz e tempo de resposta de 1ms, além de contar com recursos avançados para redução de desfoque e ajustes de imagem.', 'https://i.imgur.com/hohRcGl.jpg'),
+( 'Monitor BenQ BL2420PT', '1150.00', 'BenQ', 'monitor', 'dailyoffer', 'O Monitor BenQ BL2420PT é um modelo profissional com tela IPS de 23,8 polegadas e resolução 2K, além de contar com recursos avançados para calibração de cores e ajustes ergonômicos.', 'https://i.imgur.com/d6ePmRD.jpg'),
+( 'Monitor Acer 27', '2150.00', 'Acer', 'monitor', 'bestsellers', 'O Monitor Acer 27 é um modelo intermediário com tela IPS de 27 polegadas e resolução 2K, oferecendo boa qualidade de imagem e recursos básicos para uso doméstico e de escritório.', 'https://i.imgur.com/UK2LyzD.jpg'),
+( "GeForce RTX 4090", "7150.50", "Nvidia", "placa de video", "dailyoffer", "A GeForce RTX 4090 é uma placa de vídeo topo de linha da Nvidia, projetada para oferecer desempenho de última geração em jogos e tarefas profissionais, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real.", "https://i.imgur.com/5pOsuxC.jpg"),
+("GeForce RTX 4080", "4150.00", "Nvidia", "placa de video", "normal", "A GeForce RTX 4080 é uma placa de vídeo de alto desempenho, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real, oferecendo recursos avançados para jogos e tarefas profissionais.", "https://i.imgur.com/zrEwwZW.jpg"),
+( "GeForce RTX 4070 Ti", "3180.00", "Nvidia", "placa de video", "normal", "A GeForce RTX 4070 Ti é uma placa de vídeo topo de linha da Nvidia, projetada para oferecer desempenho e velocidade de última geração em jogos e tarefas profissionais, com suporte a resoluções 4K e tecnologia de traçado de raios em tempo real.", "https://i.imgur.com/PZYaZfw.jpg"),
+( "GeForce RTX 3090 Ti", "2980.00", "Nvidia", "placa de video", "dailyoffer", "A GeForce RTX 3090 Ti é uma placa de vídeo de alto desempenho, projetada para jogos e tarefas profissionais exigentes, com suporte a resoluções 8K e tecnologia de traçado de raios em tempo real, além de contar com 24 GB de memória GDDR6X.", "https://i.imgur.com/kaozOpp.jpg"),
+( "Radeon RX 7900 XTX", "2780.50", "AMD", "placa de video", "bestsellers", "A Radeon RX 7900 XTX é uma placa de vídeo de alto desempenho da AMD, projetada para jogos e tarefas profissionais, com suporte a resoluções 4K e tecnologia de traçado de raios em tempo real, oferecendo recursos avançados para usuários exigentes.", "https://i.imgur.com/UTnQ5yf.jpg"),
+( "Controle Playstation 4", "400.00", "Sony", "videogame", "bestsellers", "O Controle Playstation 4 é o joystick oficial da Sony para a geração anterior do console, oferecendo design ergonômico, conexão sem fio Bluetooth e sensor de movimento.", "https://i.imgur.com/XYgOfth.jpg"),
+( 'Controle Playstation 5', '500.00', 'Sony', 'videogame', 'bestsellers', 'O Controle Playstation 5 é o joystick oficial da Sony para a nova geração do console, oferecendo design inovador, feedback tátil avançado, gatilhos adaptáveis e microfone embutido.', 'https://i.imgur.com/PBk1kp3.jpg'),
+( 'Controle Xbox One', '350.52', 'Microsoft', 'videogame', 'dailyoffer', 'O Controle Xbox One é o joystick oficial da Microsoft para a geração anterior do console, oferecendo design ergonômico, conexão sem fio e compatibilidade com PCs Windows.', 'https://i.imgur.com/ijzjGQt.jpg'),
+( 'Controle Xbox Series X', '450.20', 'Microsoft', 'videogame', 'normal', 'O Controle Xbox Series X é o joystick oficial da Microsoft para a nova geração do console, oferecendo design aprimorado, gatilhos adaptáveis, feedback tátil avançado e compatibilidade com PCs Windows.', 'https://i.imgur.com/M6VS4gZ.jpg'),
+('Xbox Series X', '4000.80', 'Microsoft', 'videogame', 'dailyoffer', 'O Xbox Series X é o console de última geração da Microsoft, oferecendo desempenho e velocidade avançados, com suporte a resoluções 4K e 120fps, além de contar com recursos exclusivos, como o Quick Resume e a tecnologia de som espacial.', 'https://i.imgur.com/k2BkVN6.jpg'),
+( 'Playstation 5', '4450.20', 'Sony', 'videogame', 'normal', 'O Playstation 5 é o console de última geração da Sony, oferecendo desempenho e velocidade avançados, com suporte a resoluções 4K e 120fps, além de contar com recursos exclusivos, como o controle DualSense com feedback tátil e gatilhos adaptáveis.', 'https://i.imgur.com/akATz4t.jpg'),
+( 'LG Smart TV OLED 55 4K', '7600.50', 'LG', 'smart TV', 'cart', 'A LG Smart TV OLED 55 4K oferece qualidade de imagem excepcional, com tecnologia de pixels autoilumináveis que oferecem cores vibrantes e pretos profundos, além de contar com o sistema operacional webOS para acesso fácil a conteúdos de streaming.', 'https://i.imgur.com/wWjOetk.jpg'),
+( 'Samsung Smart TV 55 QLED 4K', '6600.50', 'Samsung', 'smart TV', 'cart', 'A Samsung Smart TV 55 QLED 4K oferece qualidade de imagem excepcional, com tecnologia de pontos quânticos que oferecem cores vivas e brilho intenso, além de contar com o sistema operacional Tizen para acesso fácil a conteúdos de streaming.', 'https://i.imgur.com/ePUg3U3.jpg'),
+('Smart TV AOC 43 Full HD ROKU TV', '2010.10', 'AOC', 'smart TV', 'cart', 'A Smart TV AOC 43 Full HD ROKU TV oferece qualidade de imagem em alta definição, com acesso fácil a conteúdos de streaming através do sistema operacional Roku TV, além de contar com recursos exclusivos, como o controle remoto com botões de atalho para serviços de streaming populares.', 'https://i.imgur.com/eBTjW3y.jpg');
+
+
+CREATE TABLE orders (
+  id INT NOT NULL AUTO_INCREMENT ,
+  zipCode VARCHAR(12) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  addressNumber VARCHAR(10) NOT NULL,
+  district VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  stateCode VARCHAR(2) NOT NULL,
+  paymentMethod VARCHAR(255) NOT NULL,
+  deliverSystem VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id)
+);
+
+CREATE TABLE order_items (
+  id INT NOT NULL AUTO_INCREMENT,
+  orderId INT NOT NULL,
+  brand VARCHAR(255) NOT NULL,
+  image VARCHAR(255) NOT NULL,
+  name VARCHAR(255) NOT NULL,
+  price DECIMAL(10, 2) NOT NULL,
+  quantity INT NOT NULL,
+  special VARCHAR(255) NOT NULL,
+  type VARCHAR(255) NOT NULL,
+  PRIMARY KEY (id),
+  FOREIGN KEY (orderId) REFERENCES orders(id)
+);
+
+CREATE TABLE orderlist (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  zipCode VARCHAR(12) NOT NULL,
+  street VARCHAR(255) NOT NULL,
+  addressNumber VARCHAR(10) NOT NULL,
+  district VARCHAR(255) NOT NULL,
+  city VARCHAR(255) NOT NULL,
+  stateCode VARCHAR(2) NOT NULL,
+  paymentMethod VARCHAR(255) NOT NULL,
+  deliverSystem VARCHAR(255) NOT NULL
+);
+
+ALTER TABLE orders ADD COLUMN created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP;
+
+SELECT
+    orders.id as orderId,
+    orders.zipCode,
+    orders.street,
+    orders.addressNumber,
+    orders.district,
+    orders.city,
+    orders.stateCode,
+    orders.paymentMethod,
+    orders.deliverSystem,
+    order_items.id as itemId,
+    order_items.brand,
+    order_items.name,
+    order_items.image,
+    order_items.price,
+    order_items.quantity,
+    order_items.special,
+    order_items.type
+FROM orders
+LEFT JOIN order_items
+ON orders.id = order_items.orderId
+ORDER BY orders.id;
+
+
+
+
+
+

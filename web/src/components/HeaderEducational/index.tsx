@@ -25,7 +25,6 @@ import Drawer from "react-modern-drawer";
 //import styles 👇
 import "react-modern-drawer/dist/index.css";
 import { useNavigate } from "react-router-dom";
-import { DrawerMenu } from "../DrawerMenu";
 import { DrawerMenuEducational } from "../DrawerMenuEducational";
 
 interface HeaderProps {

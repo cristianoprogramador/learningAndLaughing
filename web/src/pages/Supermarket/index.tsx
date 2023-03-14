@@ -26,7 +26,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 import { Footer } from "../../components/Footer";
-import { Header } from "../../components/Header";
+import { HeaderMarket } from "../../components/HeaderMarket";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { api } from "../../utils/api";
@@ -64,7 +64,7 @@ export function SuperMarket() {
 
   return (
     <Container>
-      <Header />
+      <HeaderMarket />
       <Title>SUPERMARKET</Title>
       <LowText>MELHORES PRODUTOS & MELHORES PREÇOS</LowText>
       <GeneralInfo>
@@ -93,8 +93,6 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log("slide change")}
       >
         {dailyOfferProducts.map((product, index) => {
           return (
@@ -136,8 +134,6 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log("slide change")}
       >
         {bestSellersProducts.map((product, index) => {
           return (
@@ -182,8 +178,6 @@ export function SuperMarket() {
         spaceBetween={20}
         slidesPerView={5}
         navigation
-        // onSwiper={(swiper) => console.log(swiper)}
-        // onSlideChange={() => console.log("slide change")}
       >
         {typeOfProduct.map((product, index) => {
           return (
